@@ -2,7 +2,7 @@ package com.optivem.eshop.systemtest.driver.adapter.tax.client;
 
 import com.optivem.eshop.systemtest.driver.adapter.tax.client.dtos.ExtCountryDetailsResponse;
 import com.optivem.eshop.systemtest.driver.adapter.tax.client.dtos.error.ExtTaxErrorResponse;
-import com.optivem.eshop.systemtest.driver.adapter.shared.http.JsonHttpClient;
+import com.optivem.eshop.systemtest.driver.adapter.shared.client.http.JsonHttpClient;
 import com.optivem.common.Closer;
 import com.optivem.common.Result;
 
