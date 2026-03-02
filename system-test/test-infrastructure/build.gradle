@@ -19,6 +19,7 @@ repositories {
 
 dependencies {
     api project(':common')
+    api project(':channel')
     api project(':dsl-core')
     api project(':driver-adapter')
     api project(':dsl-port')

@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.app.shop;
+package com.optivem.eshop.systemtest.channel;
 
 public class ChannelType {
     public static final String UI = "UI";
@@ -8,4 +8,3 @@ public class ChannelType {
         // Utility class
     }
 }
-

@@ -1,6 +1,7 @@
 rootProject.name = 'eshop-tests-java'
 
 include 'common'
+include 'channel'
 
 include 'system-test:test-infrastructure'
 

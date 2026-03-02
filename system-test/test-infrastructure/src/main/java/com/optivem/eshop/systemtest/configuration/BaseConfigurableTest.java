@@ -4,7 +4,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.app.AppConfiguration;
 import com.optivem.eshop.systemtest.driver.port.clock.ClockDriver;
 import com.optivem.eshop.systemtest.driver.port.erp.ErpDriver;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.ChannelType;
+import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.port.tax.TaxDriver;
 import com.optivem.eshop.systemtest.driver.adapter.clock.ClockRealDriver;
