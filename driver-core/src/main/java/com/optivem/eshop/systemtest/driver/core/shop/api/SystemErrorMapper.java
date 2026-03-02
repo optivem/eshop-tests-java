@@ -1,7 +1,7 @@
-package com.optivem.eshop.systemtest.driver.core.shop.driver.api;
+package com.optivem.eshop.systemtest.driver.core.shop.api;
 
 import com.optivem.eshop.systemtest.driver.api.shop.dtos.errors.SystemError;
-import com.optivem.eshop.systemtest.driver.core.shop.client.api.dtos.errors.ProblemDetailResponse;
+import com.optivem.eshop.systemtest.driver.core.shop.api.client.dtos.errors.ProblemDetailResponse;
 
 public class SystemErrorMapper {
     private SystemErrorMapper() {

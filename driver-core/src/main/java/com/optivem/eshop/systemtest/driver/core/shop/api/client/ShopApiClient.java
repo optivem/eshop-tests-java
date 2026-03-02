@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.driver.core.shop.client.api;
+package com.optivem.eshop.systemtest.driver.core.shop.api.client;
 
-import com.optivem.eshop.systemtest.driver.core.shop.client.api.controllers.CouponController;
-import com.optivem.eshop.systemtest.driver.core.shop.client.api.controllers.HealthController;
-import com.optivem.eshop.systemtest.driver.core.shop.client.api.controllers.OrderController;
-import com.optivem.eshop.systemtest.driver.core.shop.client.api.dtos.errors.ProblemDetailResponse;
+import com.optivem.eshop.systemtest.driver.core.shop.api.client.controllers.CouponController;
+import com.optivem.eshop.systemtest.driver.core.shop.api.client.controllers.HealthController;
+import com.optivem.eshop.systemtest.driver.core.shop.api.client.controllers.OrderController;
+import com.optivem.eshop.systemtest.driver.core.shop.api.client.dtos.errors.ProblemDetailResponse;
 import com.optivem.eshop.systemtest.driver.core.shared.http.JsonHttpClient;
 import com.optivem.common.Closer;
 

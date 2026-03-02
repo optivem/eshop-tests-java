@@ -1,12 +1,12 @@
-package com.optivem.eshop.systemtest.driver.core.shop.driver.ui;
+package com.optivem.eshop.systemtest.driver.core.shop.ui;
 
 import com.microsoft.playwright.Browser;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.ShopUiClient;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.pages.CouponManagementPage;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.pages.HomePage;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.pages.NewOrderPage;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.pages.OrderDetailsPage;
-import com.optivem.eshop.systemtest.driver.core.shop.client.ui.pages.OrderHistoryPage;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.ShopUiClient;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.pages.CouponManagementPage;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.pages.HomePage;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.pages.NewOrderPage;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.pages.OrderDetailsPage;
+import com.optivem.eshop.systemtest.driver.core.shop.ui.client.pages.OrderHistoryPage;
 import com.optivem.eshop.systemtest.driver.api.shop.dtos.coupons.BrowseCouponsResponse;
 import com.optivem.eshop.systemtest.driver.api.shop.dtos.coupons.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.api.shop.dtos.orders.OrderStatus;
