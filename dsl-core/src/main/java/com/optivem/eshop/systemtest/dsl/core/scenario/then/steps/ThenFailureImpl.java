@@ -1,18 +1,18 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 
-import com.optivem.eshop.systemtest.dsl.core.system.shared.ResponseVerification;
-import com.optivem.eshop.systemtest.dsl.core.system.shared.VoidVerification;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenFailure;
-import com.optivem.eshop.systemtest.dsl.core.system.shop.usecases.base.ShopUseCaseResult;
-import com.optivem.eshop.systemtest.dsl.core.system.shop.usecases.base.SystemErrorFailureVerification;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.base.ShopUseCaseResult;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.base.SystemErrorFailureVerification;
 
 public class ThenFailureImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>>
         extends BaseThenStep<Void, VoidVerification> implements ThenFailure {
     private final SystemErrorFailureVerification failureVerification;
 
-    public ThenFailureImpl(SystemDsl app, ExecutionResultContext executionResult,
+    public ThenFailureImpl(AppDsl app, ExecutionResultContext executionResult,
             ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         super(app, executionResult, null);
         if (result == null) {

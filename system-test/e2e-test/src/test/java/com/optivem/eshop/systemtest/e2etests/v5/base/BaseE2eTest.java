@@ -1,9 +1,9 @@
 package com.optivem.eshop.systemtest.e2etests.v5.base;
 
-import com.optivem.eshop.systemtest.base.v5.BaseSystemDslTest;
-import com.optivem.eshop.systemtest.dsl.core.system.shared.ExternalSystemMode;
+import com.optivem.eshop.systemtest.base.v5.BaseAppDslTest;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.ExternalSystemMode;
 
-public abstract class BaseE2eTest extends BaseSystemDslTest {
+public abstract class BaseE2eTest extends BaseAppDslTest {
     @Override
     protected ExternalSystemMode getFixedExternalSystemMode() {
         return ExternalSystemMode.REAL;

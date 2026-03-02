@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
 
-import com.optivem.eshop.systemtest.dsl.core.system.shared.VoidVerification;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.common.Converter;
@@ -16,7 +16,7 @@ public class WhenPublishCouponImpl extends BaseWhenStep<Void, VoidVerification> 
     private String validTo;
     private String usageLimit;
 
-    public WhenPublishCouponImpl(SystemDsl app) {
+    public WhenPublishCouponImpl(AppDsl app) {
         super(app);
         withCouponCode(DEFAULT_COUPON_CODE);
         withDiscountRate(DEFAULT_DISCOUNT_RATE);
@@ -56,7 +56,7 @@ public class WhenPublishCouponImpl extends BaseWhenStep<Void, VoidVerification> 
     }
 
     @Override
-    protected ExecutionResult<Void, VoidVerification> execute(SystemDsl app) {
+    protected ExecutionResult<Void, VoidVerification> execute(AppDsl app) {
         var result = app.shop().publishCoupon()
                 .couponCode(couponCode)
                 .discountRate(discountRate)

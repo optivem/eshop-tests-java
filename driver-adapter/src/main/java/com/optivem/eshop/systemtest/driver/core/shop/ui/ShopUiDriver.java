@@ -19,8 +19,8 @@ import com.optivem.common.Result;
 
 import java.util.Objects;
 
-import static com.optivem.eshop.systemtest.dsl.core.system.shop.commons.SystemResults.failure;
-import static com.optivem.eshop.systemtest.dsl.core.system.shop.commons.SystemResults.success;
+import static com.optivem.eshop.systemtest.dsl.core.app.shop.commons.SystemResults.failure;
+import static com.optivem.eshop.systemtest.dsl.core.app.shop.commons.SystemResults.success;
 
 public class ShopUiDriver implements ShopDriver {
     private final ShopUiClient client;

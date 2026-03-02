@@ -1,17 +1,17 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then;
 
-import com.optivem.eshop.systemtest.dsl.core.system.shared.ResponseVerification;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.then.steps.ThenFailureImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.then.steps.ThenSuccessImpl;
 import com.optivem.eshop.systemtest.dsl.port.then.Then;
 
 public class ThenImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> implements Then {
-    private final SystemDsl app;
+    private final AppDsl app;
     private final ExecutionResult<TSuccessResponse, TSuccessVerification> executionResult;
 
-    public ThenImpl(SystemDsl app, ExecutionResult<TSuccessResponse, TSuccessVerification> executionResult) {
+    public ThenImpl(AppDsl app, ExecutionResult<TSuccessResponse, TSuccessVerification> executionResult) {
         this.app = app;
         this.executionResult = executionResult;
     }

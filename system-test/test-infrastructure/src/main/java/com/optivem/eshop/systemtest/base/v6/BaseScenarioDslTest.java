@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.base.v6;
 
 import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDslImpl;
 import com.optivem.common.Closer;
 import com.optivem.testing.extensions.ChannelExtension;
@@ -11,13 +11,13 @@ import org.junit.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(ChannelExtension.class)
 public class BaseScenarioDslTest extends BaseConfigurableTest {
-    private SystemDsl app;
+    private AppDsl app;
     protected ScenarioDslImpl scenario;
 
     @BeforeEach
     void setUp() {
         var configuration = loadConfiguration();
-        this.app = createSystemDsl(configuration);
+        this.app = createAppDsl(configuration);
         scenario = new ScenarioDslImpl(app);
     }
 

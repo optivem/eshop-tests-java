@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
 import com.optivem.common.Converter;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenOrder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
@@ -62,7 +62,7 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
     }
 
     @Override
-    public void execute(SystemDsl app) {
+    public void execute(AppDsl app) {
 
         app.shop().placeOrder()
                 .orderNumber(orderNumber)

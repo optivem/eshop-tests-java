@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given;
 
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenClockImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCountryImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCouponImpl;
@@ -13,14 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GivenImpl implements Given {
-    private final SystemDsl app;
+    private final AppDsl app;
     private final List<GivenProductImpl> products;
     private final List<GivenOrderImpl> orders;
     private GivenClockImpl clock;
     private final List<GivenCountryImpl> countries;
     private final List<GivenCouponImpl> coupons;
 
-    public GivenImpl(SystemDsl app) {
+    public GivenImpl(AppDsl app) {
         this.app = app;
         this.products = new ArrayList<>();
         this.orders = new ArrayList<>();

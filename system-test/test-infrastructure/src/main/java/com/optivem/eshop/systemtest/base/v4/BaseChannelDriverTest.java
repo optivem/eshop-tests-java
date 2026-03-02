@@ -1,9 +1,9 @@
 package com.optivem.eshop.systemtest.base.v4;
 
 import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemConfiguration;
+import com.optivem.eshop.systemtest.dsl.core.app.AppConfiguration;
 import com.optivem.eshop.systemtest.driver.adapter.erp.ErpRealDriver;
-import com.optivem.eshop.systemtest.dsl.core.system.shop.ChannelType;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.ChannelType;
 import com.optivem.eshop.systemtest.driver.adapter.shop.api.ShopApiDriver;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.ShopUiDriver;
@@ -38,7 +38,7 @@ public class BaseChannelDriverTest extends BaseConfigurableTest {
         Closer.close(taxDriver);
     }
 
-    private ShopDriver createChannelShopDriver(SystemConfiguration configuration) {
+    private ShopDriver createChannelShopDriver(AppConfiguration configuration) {
         var channel = ChannelContext.get();
 
         if(channel == null) {

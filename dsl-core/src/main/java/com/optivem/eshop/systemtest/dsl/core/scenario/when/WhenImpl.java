@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.when;
 
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenBrowseCouponsImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenCancelOrderImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenGoToShopImpl;
@@ -12,17 +12,17 @@ import com.optivem.eshop.systemtest.dsl.port.when.When;
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
 public class WhenImpl implements When {
-    private final SystemDsl app;
+    private final AppDsl app;
     private boolean hasProduct;
     private boolean hasTaxRate;
 
-    public WhenImpl(SystemDsl app, boolean hasProduct, boolean hasTaxRate) {
+    public WhenImpl(AppDsl app, boolean hasProduct, boolean hasTaxRate) {
         this.app = app;
         this.hasProduct = hasProduct;
         this.hasTaxRate = hasTaxRate;
     }
 
-    public WhenImpl(SystemDsl app) {
+    public WhenImpl(AppDsl app) {
         this(app, false, false);
     }
 

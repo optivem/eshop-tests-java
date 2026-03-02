@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.acceptancetests.v7;
 
 import com.optivem.eshop.systemtest.acceptancetests.v7.base.BaseAcceptanceTest;
-import com.optivem.eshop.systemtest.dsl.core.system.shop.ChannelType;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.ChannelType;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.testing.*;
 import org.junit.jupiter.api.TestTemplate;

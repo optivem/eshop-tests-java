@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
 import com.optivem.common.Converter;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenProduct;
 
@@ -33,7 +33,7 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
     }
 
     @Override
-    public void execute(SystemDsl app) {
+    public void execute(AppDsl app) {
         app.erp().returnsProduct()
                 .sku(sku)
                 .unitPrice(unitPrice)

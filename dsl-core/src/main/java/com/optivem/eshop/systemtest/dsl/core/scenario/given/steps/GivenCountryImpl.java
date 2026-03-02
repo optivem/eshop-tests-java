@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
 import com.optivem.common.Converter;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCountry;
 
@@ -32,7 +32,7 @@ public class GivenCountryImpl extends BaseGivenStep implements GivenCountry {
     }
 
     @Override
-    public void execute(SystemDsl app) {
+    public void execute(AppDsl app) {
         app.tax().returnsTaxRate()
                 .country(country)
                 .taxRate(taxRate)

@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenClock;
@@ -19,7 +19,7 @@ public class GivenClockImpl extends BaseGivenStep implements GivenClock {
     }
 
     @Override
-    public void execute(SystemDsl app) {
+    public void execute(AppDsl app) {
         app.clock().returnsTime()
             .time(time)
             .execute()

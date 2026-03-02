@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
 import com.optivem.common.Converter;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemDsl;
+import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCoupon;
 
@@ -58,7 +58,7 @@ public class GivenCouponImpl extends BaseGivenStep implements GivenCoupon {
     }
 
     @Override
-    public void execute(SystemDsl app) {
+    public void execute(AppDsl app) {
         var result = app.shop().publishCoupon()
                 .couponCode(couponCode)
                 .discountRate(discountRate)

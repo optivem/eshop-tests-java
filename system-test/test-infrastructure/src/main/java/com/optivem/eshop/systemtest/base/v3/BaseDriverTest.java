@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.base.v3;
 
 import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
-import com.optivem.eshop.systemtest.dsl.core.system.SystemConfiguration;
+import com.optivem.eshop.systemtest.dsl.core.app.AppConfiguration;
 import com.optivem.eshop.systemtest.driver.adapter.erp.ErpRealDriver;
 import com.optivem.eshop.systemtest.driver.adapter.shop.api.ShopApiDriver;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
@@ -13,7 +13,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 public class BaseDriverTest extends BaseConfigurableTest {
-    protected SystemConfiguration configuration;
+    protected AppConfiguration configuration;
 
     protected ShopDriver shopDriver;
     protected ErpRealDriver erpDriver;
