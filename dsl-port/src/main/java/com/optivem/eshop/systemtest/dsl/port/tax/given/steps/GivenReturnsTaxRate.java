@@ -3,9 +3,9 @@ package com.optivem.eshop.systemtest.dsl.port.tax.given.steps;
 import com.optivem.eshop.systemtest.dsl.port.tax.given.steps.base.GivenStep;
 
 public interface GivenReturnsTaxRate extends GivenStep {
-    GivenReturnsTaxRate country(String countryAlias);
+    GivenReturnsTaxRate withCountry(String countryAlias);
 
-    GivenReturnsTaxRate taxRate(String taxRate);
+    GivenReturnsTaxRate withTaxRate(String taxRate);
 
-    GivenReturnsTaxRate taxRate(double taxRate);
+    GivenReturnsTaxRate withTaxRate(double taxRate);
 }
