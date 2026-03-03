@@ -1,10 +1,10 @@
 package com.optivem.eshop.systemtest.dsl.port.tax.given;
 
-import com.optivem.eshop.systemtest.dsl.port.tax.given.steps.GivenReturnsTaxRate;
-import com.optivem.eshop.systemtest.dsl.port.tax.when.When;
+import com.optivem.eshop.systemtest.dsl.port.tax.given.steps.GivenCountry;
+import com.optivem.eshop.systemtest.dsl.port.tax.then.Then;
 
 public interface Given {
-    GivenReturnsTaxRate returnsTaxRate();
+    GivenCountry country();
 
-    When when();
+    Then then();
 }

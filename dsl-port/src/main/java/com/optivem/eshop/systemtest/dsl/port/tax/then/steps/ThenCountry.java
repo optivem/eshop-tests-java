@@ -5,11 +5,11 @@ import com.optivem.eshop.systemtest.dsl.port.tax.then.steps.base.ThenStep;
 import java.math.BigDecimal;
 
 public interface ThenCountry extends ThenStep<ThenCountry> {
-    ThenCountry taxRate(BigDecimal expectedTaxRate);
+    ThenCountry hasTaxRate(BigDecimal expectedTaxRate);
 
-    ThenCountry taxRate(double expectedTaxRate);
+    ThenCountry hasTaxRate(double expectedTaxRate);
 
-    ThenCountry taxRate(String expectedTaxRate);
+    ThenCountry hasTaxRate(String expectedTaxRate);
 
-    ThenCountry taxRateIsPositive();
+    ThenCountry hasPositiveTaxRate();
 }

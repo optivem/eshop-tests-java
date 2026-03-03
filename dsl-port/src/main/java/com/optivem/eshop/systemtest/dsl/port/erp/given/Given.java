@@ -1,10 +1,10 @@
 package com.optivem.eshop.systemtest.dsl.port.erp.given;
 
-import com.optivem.eshop.systemtest.dsl.port.erp.given.steps.GivenReturnsProduct;
-import com.optivem.eshop.systemtest.dsl.port.erp.when.When;
+import com.optivem.eshop.systemtest.dsl.port.erp.given.steps.GivenProduct;
+import com.optivem.eshop.systemtest.dsl.port.erp.then.Then;
 
 public interface Given {
-    GivenReturnsProduct returnsProduct();
+    GivenProduct product();
 
-    When when();
+    Then then();
 }

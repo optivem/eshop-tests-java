@@ -5,11 +5,11 @@ import com.optivem.eshop.systemtest.dsl.port.erp.then.steps.base.ThenStep;
 import java.math.BigDecimal;
 
 public interface ThenProduct extends ThenStep<ThenProduct> {
-    ThenProduct sku(String skuParamAlias);
+    ThenProduct hasSku(String skuParamAlias);
 
-    ThenProduct price(BigDecimal expectedPrice);
+    ThenProduct hasPrice(BigDecimal expectedPrice);
 
-    ThenProduct price(double expectedPrice);
+    ThenProduct hasPrice(double expectedPrice);
 
-    ThenProduct price(String expectedPrice);
+    ThenProduct hasPrice(String expectedPrice);
 }

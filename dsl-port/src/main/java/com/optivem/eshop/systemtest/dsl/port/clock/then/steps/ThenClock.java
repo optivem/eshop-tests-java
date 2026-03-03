@@ -5,15 +5,15 @@ import com.optivem.eshop.systemtest.dsl.port.clock.then.steps.base.ThenStep;
 import java.time.Instant;
 
 public interface ThenClock extends ThenStep<ThenClock> {
-    ThenClock timeIsNotNull();
+    ThenClock hasTimeNotNull();
 
-    ThenClock time(Instant expectedTime);
+    ThenClock hasTime(Instant expectedTime);
 
-    ThenClock time(String expectedTime);
+    ThenClock hasTime(String expectedTime);
 
-    ThenClock timeIsAfter(Instant time);
+    ThenClock hasTimeAfter(Instant time);
 
-    ThenClock timeIsBefore(Instant time);
+    ThenClock hasTimeBefore(Instant time);
 
-    ThenClock timeIsBetween(Instant start, Instant end);
+    ThenClock hasTimeBetween(Instant start, Instant end);
 }
