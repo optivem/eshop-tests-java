@@ -9,7 +9,7 @@ import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenPublis
 import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenViewOrderImpl;
 import com.optivem.eshop.systemtest.dsl.port.shop.when.When;
 
-import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
+import static com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults.*;
 
 public class WhenImpl implements When {
     private final AppDsl app;

@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults;
 import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.GivenClock;
 

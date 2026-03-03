@@ -6,7 +6,7 @@ import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.GivenOrder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 
-import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
+import static com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults.*;
 
 public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
     private String orderNumber;

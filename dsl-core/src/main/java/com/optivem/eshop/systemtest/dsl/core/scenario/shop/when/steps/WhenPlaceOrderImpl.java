@@ -1,11 +1,11 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps;
 
-import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
+import static com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults.*;
 
 import com.optivem.common.Converter;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
-import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ExecutionResult;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
 import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenPlaceOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrderVerification;

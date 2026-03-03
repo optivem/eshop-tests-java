@@ -2,7 +2,7 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultContext;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ExecutionResultContext;
 
 public abstract class BaseThenStep<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> {
     protected final AppDsl app;

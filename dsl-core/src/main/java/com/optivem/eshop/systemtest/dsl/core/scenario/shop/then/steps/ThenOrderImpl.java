@@ -2,13 +2,13 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultContext;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ExecutionResultContext;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenOrder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrderVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.ViewOrderVerification;
 
-import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.DEFAULT_COUPON_CODE;
+import static com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults.DEFAULT_COUPON_CODE;
 
 public class ThenOrderImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>>
         extends BaseThenStep<TSuccessResponse, TSuccessVerification> implements ThenOrder {

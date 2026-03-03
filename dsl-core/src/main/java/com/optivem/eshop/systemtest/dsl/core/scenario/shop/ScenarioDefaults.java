@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop;
 
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 

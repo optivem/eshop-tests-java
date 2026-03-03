@@ -5,7 +5,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.GivenCountry;
 
-import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
+import static com.optivem.eshop.systemtest.dsl.core.scenario.shop.ScenarioDefaults.*;
 
 public class GivenCountryImpl extends BaseGivenStep implements GivenCountry {
     private String country;

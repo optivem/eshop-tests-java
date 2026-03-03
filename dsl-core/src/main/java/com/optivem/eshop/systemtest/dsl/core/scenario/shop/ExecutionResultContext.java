@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop;
 
 public class ExecutionResultContext {
     private final String orderNumber;
