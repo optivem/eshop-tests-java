@@ -1,6 +1,8 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.erp.given;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.erp.ExecutionResult;
+import com.optivem.eshop.systemtest.dsl.core.scenario.erp.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.dsl.core.scenario.erp.given.steps.GivenProductImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.erp.then.ThenImpl;
 import com.optivem.eshop.systemtest.dsl.port.erp.given.Given;
@@ -29,10 +31,13 @@ public class GivenImpl implements Given {
         }
 
         var result = app.erp().goToErp().execute();
-
         String lastSku = products.isEmpty() ? null : products.get(products.size() - 1).getSku();
 
-        return new ThenImpl(app, result, lastSku);
+        var executionResult = new ExecutionResultBuilder<>(result)
+                .productSku(lastSku)
+                .build();
+
+        return new ThenImpl<>(app, executionResult);
     }
 
     AppDsl getApp() {

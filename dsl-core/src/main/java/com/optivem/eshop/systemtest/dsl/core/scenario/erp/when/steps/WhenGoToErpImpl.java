@@ -1,18 +1,19 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.erp.when.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.erp.then.ThenImpl;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
+import com.optivem.eshop.systemtest.dsl.core.scenario.erp.ExecutionResult;
+import com.optivem.eshop.systemtest.dsl.core.scenario.erp.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.dsl.port.erp.when.steps.base.WhenStep;
 
-public class WhenGoToErpImpl implements WhenStep {
-    private final AppDsl app;
-
+public class WhenGoToErpImpl extends BaseWhenStep<Void, VoidVerification> implements WhenStep {
     public WhenGoToErpImpl(AppDsl app) {
-        this.app = app;
+        super(app);
     }
 
-    public ThenImpl then() {
+    @Override
+    protected ExecutionResult<Void, VoidVerification> execute(AppDsl app) {
         var result = app.erp().goToErp().execute();
-        return new ThenImpl(app, result, null);
+        return new ExecutionResultBuilder<>(result).build();
     }
 }
