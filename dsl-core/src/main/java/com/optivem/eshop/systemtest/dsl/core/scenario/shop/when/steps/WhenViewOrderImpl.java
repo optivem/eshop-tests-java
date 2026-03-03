@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.DEFAULT_ORDER_NUMBER;
 
@@ -6,7 +6,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenViewOrder;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenViewOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.ViewOrderVerification;
 
 public class WhenViewOrderImpl extends BaseWhenStep<ViewOrderResponse, ViewOrderVerification> implements WhenViewOrder {

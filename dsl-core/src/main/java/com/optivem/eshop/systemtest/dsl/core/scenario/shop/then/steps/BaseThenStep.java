@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;

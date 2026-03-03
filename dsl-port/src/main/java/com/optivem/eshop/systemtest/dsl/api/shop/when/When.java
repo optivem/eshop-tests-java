@@ -1,10 +1,10 @@
-package com.optivem.eshop.systemtest.dsl.port.when;
+package com.optivem.eshop.systemtest.dsl.port.shop.when;
 
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenCancelOrder;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPlaceOrder;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPublishCoupon;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.base.WhenStep;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenViewOrder;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenCancelOrder;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenPlaceOrder;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenPublishCoupon;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.base.WhenStep;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenViewOrder;
 
 public interface When {
     WhenStep goToShop();

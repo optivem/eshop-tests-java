@@ -1,13 +1,13 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.when;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenBrowseCouponsImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenCancelOrderImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenGoToShopImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenPlaceOrderImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenPublishCouponImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.steps.WhenViewOrderImpl;
-import com.optivem.eshop.systemtest.dsl.port.when.When;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenBrowseCouponsImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenCancelOrderImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenGoToShopImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenPlaceOrderImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenPublishCouponImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps.WhenViewOrderImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.When;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 

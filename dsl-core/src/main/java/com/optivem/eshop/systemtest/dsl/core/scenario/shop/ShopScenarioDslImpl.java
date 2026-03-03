@@ -1,15 +1,15 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.port.ScenarioDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.ShopScenarioDsl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.WhenImpl;
 
-public class ScenarioDslImpl implements ScenarioDsl {
+public class ShopScenarioDslImpl implements ShopScenarioDsl {
     private final AppDsl app;
     private boolean executed = false;
 
-    public ScenarioDslImpl(AppDsl app) {
+    public ShopScenarioDslImpl(AppDsl app) {
         this.app = app;
     }
 

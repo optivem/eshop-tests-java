@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.port;
+package com.optivem.eshop.systemtest.dsl.port.shop;
 
-import com.optivem.eshop.systemtest.dsl.port.given.Given;
-import com.optivem.eshop.systemtest.dsl.port.when.When;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.Given;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.When;
 
-public interface ScenarioDsl {
+public interface ShopScenarioDsl {
     Given given();
     When when();
 }

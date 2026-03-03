@@ -1,6 +1,6 @@
-package com.optivem.eshop.systemtest.dsl.port.given.steps;
+package com.optivem.eshop.systemtest.dsl.port.shop.given.steps;
 
-import com.optivem.eshop.systemtest.dsl.port.given.steps.base.GivenStep;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.base.GivenStep;
 
 public interface GivenCoupon extends GivenStep {
     GivenCoupon withCouponCode(String couponCode);

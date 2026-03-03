@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.base.WhenStep;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.base.WhenStep;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.BrowseCouponsVerification;
 

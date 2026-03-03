@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
@@ -7,7 +7,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
-import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPlaceOrder;
+import com.optivem.eshop.systemtest.dsl.port.shop.when.steps.WhenPlaceOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrderVerification;
 
 public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOrderVerification> implements WhenPlaceOrder {

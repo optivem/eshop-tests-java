@@ -1,13 +1,13 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.given;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.given;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenClockImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCountryImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCouponImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenOrderImpl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenProductImpl;
-import com.optivem.eshop.systemtest.dsl.port.given.Given;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps.GivenClockImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps.GivenCountryImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps.GivenCouponImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps.GivenOrderImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps.GivenProductImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.Given;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.WhenImpl;
 
 import java.util.ArrayList;
 import java.util.List;

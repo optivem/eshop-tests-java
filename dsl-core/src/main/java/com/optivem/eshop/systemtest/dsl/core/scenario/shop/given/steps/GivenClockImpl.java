@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenClock;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.GivenClock;
 
 public class GivenClockImpl extends BaseGivenStep implements GivenClock {
     private String time;

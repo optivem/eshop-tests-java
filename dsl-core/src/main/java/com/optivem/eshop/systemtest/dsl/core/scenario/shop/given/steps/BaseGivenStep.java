@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.given.steps.base.GivenStep;
-import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.base.GivenStep;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.WhenImpl;
 
 public abstract class BaseGivenStep implements GivenStep {
     private final GivenImpl given;

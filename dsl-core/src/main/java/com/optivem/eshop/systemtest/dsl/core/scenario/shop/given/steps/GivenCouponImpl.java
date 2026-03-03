@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.steps;
 
 import com.optivem.common.Converter;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCoupon;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.given.GivenImpl;
+import com.optivem.eshop.systemtest.dsl.port.shop.given.steps.GivenCoupon;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 

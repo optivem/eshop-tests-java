@@ -1,9 +1,9 @@
-package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
+package com.optivem.eshop.systemtest.dsl.core.scenario.shop.when.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
-import com.optivem.eshop.systemtest.dsl.core.scenario.then.ThenImpl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.ThenImpl;
 
 public abstract class BaseWhenStep<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> {
     private final AppDsl app;
