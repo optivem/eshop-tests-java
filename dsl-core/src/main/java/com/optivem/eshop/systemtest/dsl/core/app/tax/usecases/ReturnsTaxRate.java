@@ -3,8 +3,8 @@ package com.optivem.eshop.systemtest.dsl.core.app.tax.usecases;
 import com.optivem.eshop.systemtest.driver.port.tax.TaxDriver;
 import com.optivem.eshop.systemtest.driver.port.tax.dtos.ReturnsTaxRateRequest;
 import com.optivem.eshop.systemtest.dsl.core.app.tax.usecases.base.BaseTaxCommand;
-import com.optivem.eshop.systemtest.dsl.core.app.tax.usecases.base.TaxUseCaseResult;
 import com.optivem.common.Converter;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.UseCaseContext;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
 
@@ -31,7 +31,7 @@ public class ReturnsTaxRate extends BaseTaxCommand<Void, VoidVerification> {
     }
 
     @Override
-    public TaxUseCaseResult<Void, VoidVerification> execute() {
+    public AppUseCaseResult<Void, VoidVerification> execute() {
         var country = context.getParamValueOrLiteral(countryAlias);
 
         var request = ReturnsTaxRateRequest.builder()
@@ -41,7 +41,7 @@ public class ReturnsTaxRate extends BaseTaxCommand<Void, VoidVerification> {
 
         var result = driver.returnsTaxRate(request);
 
-        return new TaxUseCaseResult<>(result, context, VoidVerification::new);
+        return new AppUseCaseResult<>(result, context, VoidVerification::new);
     }
 }
 

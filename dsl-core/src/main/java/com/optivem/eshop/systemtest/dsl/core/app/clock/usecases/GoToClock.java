@@ -2,7 +2,7 @@ package com.optivem.eshop.systemtest.dsl.core.app.clock.usecases;
 
 import com.optivem.eshop.systemtest.driver.port.clock.ClockDriver;
 import com.optivem.eshop.systemtest.dsl.core.app.clock.usecases.base.BaseClockCommand;
-import com.optivem.eshop.systemtest.dsl.core.app.clock.usecases.base.ClockUseCaseResult;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.UseCaseContext;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
 
@@ -12,9 +12,9 @@ public class GoToClock extends BaseClockCommand<Void, VoidVerification> {
     }
 
     @Override
-    public ClockUseCaseResult<Void, VoidVerification> execute() {
+    public AppUseCaseResult<Void, VoidVerification> execute() {
         var result = driver.goToClock();
-        return new ClockUseCaseResult<>(result, context, VoidVerification::new);
+        return new AppUseCaseResult<>(result, context, VoidVerification::new);
     }
 }
 

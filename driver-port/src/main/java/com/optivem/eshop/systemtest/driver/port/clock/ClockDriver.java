@@ -1,0 +1,13 @@
+package com.optivem.eshop.systemtest.driver.port.clock;
+
+import com.optivem.eshop.systemtest.driver.port.clock.dtos.GetTimeResponse;
+import com.optivem.eshop.systemtest.driver.port.clock.dtos.ReturnsTimeRequest;
+import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.common.Result;
+
+public interface ClockDriver extends AutoCloseable {
+    Result<Void, ErrorResponse> goToClock();
+    Result<GetTimeResponse, ErrorResponse> getTime();
+    Result<Void, ErrorResponse> returnsTime(ReturnsTimeRequest request);
+}
+

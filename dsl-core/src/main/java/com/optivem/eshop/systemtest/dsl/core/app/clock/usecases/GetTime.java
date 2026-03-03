@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.dsl.core.app.clock.usecases;
 import com.optivem.eshop.systemtest.driver.port.clock.ClockDriver;
 import com.optivem.eshop.systemtest.driver.port.clock.dtos.GetTimeResponse;
 import com.optivem.eshop.systemtest.dsl.core.app.clock.usecases.base.BaseClockCommand;
-import com.optivem.eshop.systemtest.dsl.core.app.clock.usecases.base.ClockUseCaseResult;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.UseCaseContext;
 
 public class GetTime extends BaseClockCommand<GetTimeResponse, GetTimeVerification> {
@@ -12,9 +12,9 @@ public class GetTime extends BaseClockCommand<GetTimeResponse, GetTimeVerificati
     }
 
     @Override
-    public ClockUseCaseResult<GetTimeResponse, GetTimeVerification> execute() {
+    public AppUseCaseResult<GetTimeResponse, GetTimeVerification> execute() {
         var result = driver.getTime();
-        return new ClockUseCaseResult<>(result, context, GetTimeVerification::new);
+        return new AppUseCaseResult<>(result, context, GetTimeVerification::new);
     }
 }
 

@@ -1,14 +1,14 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.shop;
 
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.base.ShopUseCaseResult;
 
 public class ExecutionResultBuilder<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> {
-    private final ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result;
+    private final AppUseCaseResult<TSuccessResponse, TSuccessVerification> result;
     private String orderNumber;
     private String couponCode;
 
-    public ExecutionResultBuilder(ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
+    public ExecutionResultBuilder(AppUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         this.result = result;
     }
 

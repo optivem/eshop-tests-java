@@ -1,13 +1,13 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.erp;
 
-import com.optivem.eshop.systemtest.dsl.core.app.erp.usecases.base.ErpUseCaseResult;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 
 public class ExecutionResultBuilder<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> {
-    private final ErpUseCaseResult<TSuccessResponse, TSuccessVerification> result;
+    private final AppUseCaseResult<TSuccessResponse, TSuccessVerification> result;
     private String productSku;
 
-    public ExecutionResultBuilder(ErpUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
+    public ExecutionResultBuilder(AppUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         this.result = result;
     }
 

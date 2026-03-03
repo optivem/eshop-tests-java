@@ -1,19 +1,19 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.steps;
 
+import com.optivem.eshop.systemtest.dsl.core.app.shared.AppUseCaseResult;
+import com.optivem.eshop.systemtest.dsl.core.app.shared.ErrorVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.shared.VoidVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.shop.ExecutionResultContext;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenFailure;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.base.ShopUseCaseResult;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.base.SystemErrorFailureVerification;
 
 public class ThenFailureImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>>
         extends BaseThenStep<Void, VoidVerification> implements ThenFailure {
-    private final SystemErrorFailureVerification failureVerification;
+    private final ErrorVerification failureVerification;
 
     public ThenFailureImpl(AppDsl app, ExecutionResultContext executionResult,
-            ShopUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
+            AppUseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         super(app, executionResult, null);
         if (result == null) {
             throw new IllegalStateException("Cannot verify failure: no operation was executed");

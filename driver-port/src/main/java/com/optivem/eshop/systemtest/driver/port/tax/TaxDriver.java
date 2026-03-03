@@ -1,0 +1,16 @@
+package com.optivem.eshop.systemtest.driver.port.tax;
+
+import com.optivem.eshop.systemtest.driver.port.tax.dtos.GetTaxResponse;
+import com.optivem.eshop.systemtest.driver.port.tax.dtos.ReturnsTaxRateRequest;
+import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.common.Result;
+
+public interface TaxDriver extends AutoCloseable {
+    Result<Void, ErrorResponse> goToTax();
+
+    Result<GetTaxResponse, ErrorResponse> getTaxRate(String country);
+
+    Result<Void, ErrorResponse> returnsTaxRate(ReturnsTaxRateRequest request);
+}
+
+
