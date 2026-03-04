@@ -1,8 +1,8 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.assume;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.assume.Assume;
-import com.optivem.eshop.systemtest.dsl.port.scenario.assume.Should;
+import com.optivem.eshop.systemtest.dsl.port.assume.Assume;
+import com.optivem.eshop.systemtest.dsl.port.assume.Should;
 
 public class AssumeImpl implements Assume {
     private final AppDsl app;
@@ -43,3 +43,4 @@ public class AssumeImpl implements Assume {
         };
     }
 }
+

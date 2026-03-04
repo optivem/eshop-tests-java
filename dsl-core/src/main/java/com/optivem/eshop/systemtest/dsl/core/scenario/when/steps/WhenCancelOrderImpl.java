@@ -4,7 +4,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.VoidVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
-import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.WhenCancelOrder;
+import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenCancelOrder;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.DEFAULT_ORDER_NUMBER;
 
@@ -32,4 +32,5 @@ public class WhenCancelOrderImpl extends BaseWhenStep<Void, VoidVerification> im
                 .build();
     }
 }
+
 

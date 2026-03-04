@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 import com.optivem.common.Converter;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.given.steps.GivenProduct;
+import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenProduct;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
@@ -41,4 +41,5 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
                 .shouldSucceed();
     }
 }
+
 

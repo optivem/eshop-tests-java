@@ -6,7 +6,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.VoidVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultContext;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.steps.ThenFailure;
+import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenFailure;
 
 public class ThenFailureImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>>
         extends BaseThenStep<Void, VoidVerification> implements ThenFailure {
@@ -37,4 +37,5 @@ public class ThenFailureImpl<TSuccessResponse, TSuccessVerification extends Resp
         return this;
     }
 }
+
 

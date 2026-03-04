@@ -7,8 +7,8 @@ import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCountryIm
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCouponImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenOrderImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenProductImpl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.given.Given;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.Then;
+import com.optivem.eshop.systemtest.dsl.port.given.Given;
+import com.optivem.eshop.systemtest.dsl.port.then.Then;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
 
 import java.util.ArrayList;
@@ -127,4 +127,5 @@ public class GivenImpl implements Given {
         }
     }
 }
+
 

@@ -7,7 +7,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
-import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.WhenPlaceOrder;
+import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPlaceOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrderVerification;
 
 public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOrderVerification> implements WhenPlaceOrder {
@@ -75,4 +75,5 @@ public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOr
                 .build();
     }
 }
+
 

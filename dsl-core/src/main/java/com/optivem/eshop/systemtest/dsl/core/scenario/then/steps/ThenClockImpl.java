@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.clock.usecases.GetTimeVerification;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.steps.ThenClock;
+import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenClock;
 
 public class ThenClockImpl implements ThenClock {
     private final GetTimeVerification verification;
@@ -22,3 +22,4 @@ public class ThenClockImpl implements ThenClock {
         return this;
     }
 }
+

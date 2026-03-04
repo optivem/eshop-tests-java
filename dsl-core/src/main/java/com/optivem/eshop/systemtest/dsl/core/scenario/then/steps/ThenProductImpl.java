@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.erp.usecases.GetProductVerification;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.steps.ThenProduct;
+import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenProduct;
 
 public class ThenProductImpl implements ThenProduct {
     private final GetProductVerification verification;
@@ -22,3 +22,4 @@ public class ThenProductImpl implements ThenProduct {
         return this;
     }
 }
+

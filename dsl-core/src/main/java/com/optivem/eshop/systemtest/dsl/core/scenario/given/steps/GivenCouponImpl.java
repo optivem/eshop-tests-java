@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 import com.optivem.common.Converter;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.given.steps.GivenCoupon;
+import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCoupon;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
@@ -70,4 +70,5 @@ public class GivenCouponImpl extends BaseGivenStep implements GivenCoupon {
         result.shouldSucceed();
     }
 }
+
 

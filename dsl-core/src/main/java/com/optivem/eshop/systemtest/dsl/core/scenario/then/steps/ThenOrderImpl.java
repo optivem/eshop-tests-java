@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 import com.optivem.eshop.systemtest.dsl.core.app.ResponseVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultContext;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.steps.ThenOrder;
+import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenOrder;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrderVerification;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.ViewOrderVerification;
@@ -167,4 +167,5 @@ public class ThenOrderImpl<TSuccessResponse, TSuccessVerification extends Respon
         return this;
     }
 }
+
 

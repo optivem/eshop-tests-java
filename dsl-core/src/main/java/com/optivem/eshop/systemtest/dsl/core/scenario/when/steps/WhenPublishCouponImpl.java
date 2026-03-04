@@ -5,7 +5,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.common.Converter;
-import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.WhenPublishCoupon;
+import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPublishCoupon;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
@@ -70,4 +70,5 @@ public class WhenPublishCouponImpl extends BaseWhenStep<Void, VoidVerification> 
                 .build();
     }
 }
+
 

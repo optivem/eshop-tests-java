@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.tax.usecases.GetTaxVerification;
-import com.optivem.eshop.systemtest.dsl.port.scenario.then.steps.ThenCountry;
+import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenCountry;
 
 public class ThenCountryImpl implements ThenCountry {
     private final GetTaxVerification verification;
@@ -28,3 +28,4 @@ public class ThenCountryImpl implements ThenCountry {
         return this;
     }
 }
+

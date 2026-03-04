@@ -4,7 +4,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.app.VoidVerification;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
-import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.base.WhenStep;
+import com.optivem.eshop.systemtest.dsl.port.when.steps.base.WhenStep;
 
 public class WhenGoToTaxImpl extends BaseWhenStep<Void, VoidVerification> implements WhenStep {
     public WhenGoToTaxImpl(AppDsl app) {
@@ -17,3 +17,4 @@ public class WhenGoToTaxImpl extends BaseWhenStep<Void, VoidVerification> implem
         return new ExecutionResultBuilder<>(result).build();
     }
 }
+
