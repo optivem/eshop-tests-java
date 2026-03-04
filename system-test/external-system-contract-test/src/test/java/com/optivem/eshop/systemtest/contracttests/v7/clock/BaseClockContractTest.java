@@ -8,6 +8,6 @@ public abstract class BaseClockContractTest extends BaseExternalSystemContractTe
     void shouldBeAbleToGetTime() {
         scenario
                 .given().clock().withTime("2024-01-02T09:00:00Z")
-                .then().clock().hasTimeNotNull();
+                .then().clock().hasTime();
     }
 }

@@ -17,7 +17,7 @@ public class ThenClockImpl implements ThenClock {
     }
 
     @Override
-    public ThenClock hasTimeNotNull() {
+    public ThenClock hasTime() {
         verification.timeIsNotNull();
         return this;
     }
