@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.e2etests.v1.base;
 
-import com.optivem.eshop.systemtest.dsl.common.ExternalSystemMode;
+import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 import com.optivem.eshop.systemtest.base.v1.BaseRawTest;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -19,5 +19,6 @@ public abstract class BaseE2eTest extends BaseRawTest {
         return ExternalSystemMode.REAL;
     }
 }
+
 
 

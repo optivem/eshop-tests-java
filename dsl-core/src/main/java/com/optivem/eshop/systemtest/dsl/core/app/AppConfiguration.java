@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.app;
 
-import com.optivem.eshop.systemtest.dsl.common.ExternalSystemMode;
+import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -14,4 +14,5 @@ public class AppConfiguration {
     private final String clockBaseUrl;
     private final ExternalSystemMode externalSystemMode;
 }
+
 

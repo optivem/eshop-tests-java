@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.e2etests.v6.base;
 
 import com.optivem.eshop.systemtest.base.v6.BaseScenarioDslTest;
-import com.optivem.eshop.systemtest.dsl.common.ExternalSystemMode;
+import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 
 public class BaseE2eTest extends BaseScenarioDslTest {
     
@@ -10,6 +10,7 @@ public class BaseE2eTest extends BaseScenarioDslTest {
         return ExternalSystemMode.REAL;
     }
 }
+
 
 
 

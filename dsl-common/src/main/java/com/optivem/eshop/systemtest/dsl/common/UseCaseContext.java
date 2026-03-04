@@ -1,5 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.common;
 
+import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -110,5 +111,6 @@ public class UseCaseContext {
         return alias == null || alias.isBlank();
     }
 }
+
 
 
