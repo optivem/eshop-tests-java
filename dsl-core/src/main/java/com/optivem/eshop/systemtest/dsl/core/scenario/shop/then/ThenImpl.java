@@ -7,9 +7,7 @@ import com.optivem.eshop.systemtest.dsl.core.scenario.shop.then.steps.ThenCountr
 import com.optivem.eshop.systemtest.dsl.port.shop.then.Then;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenClock;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenCountry;
-import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenFailure;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenProduct;
-import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.ThenSuccess;
 
 public class ThenImpl implements Then {
     protected final AppDsl app;
@@ -36,13 +34,4 @@ public class ThenImpl implements Then {
         return new ThenCountryImpl(verification);
     }
 
-    @Override
-    public ThenSuccess shouldSucceed() {
-        throw new IllegalStateException("Cannot verify success: no operation was executed");
-    }
-
-    @Override
-    public ThenFailure shouldFail() {
-        throw new IllegalStateException("Cannot verify failure: no operation was executed");
-    }
 }

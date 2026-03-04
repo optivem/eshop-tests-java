@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.port.shop.when.steps.base;
 
-import com.optivem.eshop.systemtest.dsl.port.shop.then.Then;
+import com.optivem.eshop.systemtest.dsl.port.shop.then.ThenResult;
 
 public interface WhenStep {
-    Then then();
+    ThenResult then();
 }
