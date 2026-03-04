@@ -20,5 +20,9 @@ public interface When {
     WhenStep browseCoupons();
 
     WhenStep goToErp();
+
+    WhenStep goToTax();
+
+    WhenStep goToClock();
 }
 

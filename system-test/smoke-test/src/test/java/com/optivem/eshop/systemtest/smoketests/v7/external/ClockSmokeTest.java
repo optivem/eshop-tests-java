@@ -1,14 +1,14 @@
 package com.optivem.eshop.systemtest.smoketests.v7.external;
 
-import com.optivem.eshop.systemtest.base.v5.BaseAppDslTest;
+import com.optivem.eshop.systemtest.base.v7.BaseScenarioDslTest;
 import org.junit.jupiter.api.Test;
 
-class ClockSmokeTest extends BaseAppDslTest {
+class ClockSmokeTest extends BaseScenarioDslTest {
     @Test
     void shouldBeAbleToGoToClock() {
-        app.clock().goToClock()
-                .execute()
-                .shouldSucceed();
+        scenario
+                .when().goToClock()
+                .then().shouldSucceed();
     }
 }
 
