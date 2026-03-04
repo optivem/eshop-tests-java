@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.port.scenario;
+package com.optivem.eshop.systemtest.dsl.port;
 
 import com.optivem.eshop.systemtest.dsl.port.scenario.given.Given;
 import com.optivem.eshop.systemtest.dsl.port.scenario.when.When;

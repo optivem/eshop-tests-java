@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.ScenarioDsl;
+import com.optivem.eshop.systemtest.dsl.port.ScenarioDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
 

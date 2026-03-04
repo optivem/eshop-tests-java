@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core.background;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.port.background.BackgroundDsl;
+import com.optivem.eshop.systemtest.dsl.port.BackgroundDsl;
 
 public class BackgroundDslImpl implements BackgroundDsl {
     private final AppDsl app;

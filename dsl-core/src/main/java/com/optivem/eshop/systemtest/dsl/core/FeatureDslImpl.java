@@ -4,7 +4,7 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.background.BackgroundDslImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDslImpl;
 import com.optivem.eshop.systemtest.dsl.port.FeatureDsl;
-import com.optivem.eshop.systemtest.dsl.port.background.BackgroundDsl;
+import com.optivem.eshop.systemtest.dsl.port.BackgroundDsl;
 
 public class FeatureDslImpl implements FeatureDsl {
     private final AppDsl app;

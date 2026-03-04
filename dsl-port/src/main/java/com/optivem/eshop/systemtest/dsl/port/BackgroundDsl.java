@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.dsl.port.background;
+package com.optivem.eshop.systemtest.dsl.port;
 
 public interface BackgroundDsl {
     BackgroundDsl shopRunning();

@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.port;
 
-import com.optivem.eshop.systemtest.dsl.port.background.BackgroundDsl;
-import com.optivem.eshop.systemtest.dsl.port.scenario.ScenarioDsl;
+import com.optivem.eshop.systemtest.dsl.port.BackgroundDsl;
+import com.optivem.eshop.systemtest.dsl.port.ScenarioDsl;
 
 public interface FeatureDsl {
     BackgroundDsl background();
