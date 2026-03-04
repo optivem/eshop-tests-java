@@ -1,11 +1,13 @@
 package com.optivem.eshop.systemtest.dsl.port;
 
+import com.optivem.eshop.systemtest.dsl.port.background.Should;
+
 public interface BackgroundDsl {
-    BackgroundDsl shopRunning();
+    Should shop();
 
-    BackgroundDsl erpRunning();
+    Should erp();
 
-    BackgroundDsl taxRunning();
+    Should tax();
 
-    BackgroundDsl clockRunning();
+    Should clock();
 }

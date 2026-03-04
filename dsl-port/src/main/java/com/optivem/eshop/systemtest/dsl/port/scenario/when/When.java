@@ -7,8 +7,6 @@ import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.WhenViewOrder;
 import com.optivem.eshop.systemtest.dsl.port.scenario.when.steps.base.WhenStep;
 
 public interface When {
-    WhenStep goToShop();
-
     WhenPlaceOrder placeOrder();
 
     WhenCancelOrder cancelOrder();
@@ -18,10 +16,4 @@ public interface When {
     WhenPublishCoupon publishCoupon();
 
     WhenStep browseCoupons();
-
-    WhenStep goToErp();
-
-    WhenStep goToTax();
-
-    WhenStep goToClock();
 }

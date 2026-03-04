@@ -4,8 +4,10 @@ import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.ScenarioDslImpl;
 import com.optivem.eshop.systemtest.dsl.core.BackgroundDslImpl;
+import com.optivem.eshop.systemtest.dsl.core.FeatureDslImpl;
 import com.optivem.eshop.systemtest.dsl.port.ScenarioDsl;
 import com.optivem.eshop.systemtest.dsl.port.BackgroundDsl;
+import com.optivem.eshop.systemtest.dsl.port.FeatureDsl;
 import com.optivem.common.Closer;
 import com.optivem.eshop.systemtest.infrastructure.playwright.BrowserLifecycleExtension;
 import com.optivem.testing.extensions.ChannelExtension;
@@ -23,8 +25,9 @@ public class BaseScenarioDslTest extends BaseConfigurableTest {
     void setUp() {
         var configuration = loadConfiguration();
         app = createAppDsl(configuration);
-        background = new BackgroundDslImpl(app);
-        scenario = new ScenarioDslImpl(app);
+        var feature = new FeatureDslImpl(app);
+        background = feature.background();
+        scenario = feature.scenario();
     }
 
     @AfterEach

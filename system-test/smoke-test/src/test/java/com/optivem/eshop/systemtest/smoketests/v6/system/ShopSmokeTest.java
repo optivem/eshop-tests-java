@@ -9,7 +9,7 @@ class ShopSmokeTest extends BaseScenarioDslTest {
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void shouldBeAbleToGoToShop() {
-        background.shopRunning();
+        background.shop().shouldBeRunning();
     }
 }
 

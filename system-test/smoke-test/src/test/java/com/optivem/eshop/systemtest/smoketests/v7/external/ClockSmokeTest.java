@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class ClockSmokeTest extends BaseScenarioDslTest {
     @Test
     void shouldBeAbleToGoToClock() {
-        background.clockRunning();
+        background.clock().shouldBeRunning();
     }
 }
 
