@@ -68,7 +68,7 @@ public class GivenImpl implements Given {
 
     public Then then() {
         setup();
-        return ThenImpl.create(app);
+        return new ThenImpl(app);
     }
 
     private void setup() {

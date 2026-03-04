@@ -17,14 +17,14 @@ public class ThenImpl<TSuccessResponse, TSuccessVerification extends ResponseVer
     private final AppDsl app;
     private final ExecutionResult<TSuccessResponse, TSuccessVerification> executionResult;
 
+    public ThenImpl(AppDsl app) {
+        this.app = app;
+        this.executionResult = null;
+    }
+
     public ThenImpl(AppDsl app, ExecutionResult<TSuccessResponse, TSuccessVerification> executionResult) {
         this.app = app;
         this.executionResult = executionResult;
-    }
-
-    @SuppressWarnings({"unchecked", "rawtypes"})
-    public static Then create(AppDsl app) {
-        return new ThenImpl(app, null);
     }
 
     public ThenClock clock() {
