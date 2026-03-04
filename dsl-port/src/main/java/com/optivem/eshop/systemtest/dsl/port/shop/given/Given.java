@@ -9,13 +9,13 @@ import com.optivem.eshop.systemtest.dsl.port.shop.then.Then;
 import com.optivem.eshop.systemtest.dsl.port.shop.when.When;
 
 public interface Given {
-    GivenProduct product();
-
-    GivenOrder order();
-
     GivenClock clock();
 
+    GivenProduct product();
+
     GivenCountry country();
+
+    GivenOrder order();
 
     GivenCoupon coupon();
 

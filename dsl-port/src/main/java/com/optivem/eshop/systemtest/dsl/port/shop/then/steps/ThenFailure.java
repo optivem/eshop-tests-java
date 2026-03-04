@@ -6,13 +6,5 @@ public interface ThenFailure extends ThenStep<ThenFailure> {
     ThenFailure errorMessage(String expectedMessage);
 
     ThenFailure fieldErrorMessage(String expectedField, String expectedMessage);
-
-    ThenOrder order();
-
-    ThenOrder order(String orderNumber);
-
-    ThenCoupon coupon();
-
-    ThenCoupon coupon(String couponCode);
 }
 

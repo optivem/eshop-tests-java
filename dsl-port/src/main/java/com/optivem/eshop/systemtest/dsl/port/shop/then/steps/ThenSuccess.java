@@ -3,11 +3,4 @@ package com.optivem.eshop.systemtest.dsl.port.shop.then.steps;
 import com.optivem.eshop.systemtest.dsl.port.shop.then.steps.base.ThenStep;
 
 public interface ThenSuccess extends ThenStep<ThenSuccess> {
-    ThenOrder order();
-
-    ThenOrder order(String orderNumber);
-
-    ThenCoupon coupon();
-
-    ThenCoupon coupon(String couponCode);
 }
