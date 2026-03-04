@@ -18,7 +18,7 @@ class ViewOrderPositiveTest extends BaseE2eTest {
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void shouldViewPlacedOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var returnsProductRequest = ReturnsProductRequest.builder()
                 .sku(sku)
@@ -39,10 +39,10 @@ class ViewOrderPositiveTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // When
+        // WhenStage
         var viewOrderResult = shopDriver.viewOrder(orderNumber);
 
-        // Then
+        // ThenStage
         assertThatResult(viewOrderResult).isSuccess();
 
         var order = viewOrderResult.getValue();
@@ -61,4 +61,5 @@ class ViewOrderPositiveTest extends BaseE2eTest {
         assertThat(order.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

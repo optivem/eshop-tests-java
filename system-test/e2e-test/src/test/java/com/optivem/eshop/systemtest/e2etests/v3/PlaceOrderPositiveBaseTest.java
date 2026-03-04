@@ -17,7 +17,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
     @Test
     void shouldPlaceOrderWithCorrectSubtotalPrice() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var returnsProductRequest = ReturnsProductRequest.builder()
                 .sku(sku)
@@ -27,7 +27,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
         var returnsProductResult = erpDriver.returnsProduct(returnsProductRequest);
         assertThatResult(returnsProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity("5")
@@ -39,7 +39,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopDriver.viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -55,7 +55,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
             "99.99, 1, 99.99"
     })
     void shouldPlaceOrderWithCorrectSubtotalPriceParameterized(String unitPrice, String quantity, String expectedSubtotalPrice) {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var returnsProductRequest = ReturnsProductRequest.builder()
                 .sku(sku)
@@ -65,7 +65,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
         var returnsProductResult = erpDriver.returnsProduct(returnsProductRequest);
         assertThatResult(returnsProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity(quantity)
@@ -77,7 +77,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopDriver.viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -87,7 +87,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
 
     @Test
     void shouldPlaceOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var returnsProductRequest = ReturnsProductRequest.builder()
                 .sku(sku)
@@ -97,7 +97,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
         var returnsProductResult = erpDriver.returnsProduct(returnsProductRequest);
         assertThatResult(returnsProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity("5")
@@ -110,7 +110,7 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
         assertThat(orderNumber).startsWith("ORD-");
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopDriver.viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -130,4 +130,5 @@ abstract class PlaceOrderPositiveBaseTest extends BaseE2eTest {
         assertThat(order.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

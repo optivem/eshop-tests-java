@@ -21,7 +21,7 @@ class ViewOrderPositiveApiTest extends BaseE2eTest {
 
     @Test
     void shouldViewPlacedOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -46,10 +46,10 @@ class ViewOrderPositiveApiTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // When
+        // WhenStage
         var viewOrderResult = shopApiClient.orders().viewOrder(orderNumber);
 
-        // Then
+        // ThenStage
         assertThatResult(viewOrderResult).isSuccess();
 
         var order = viewOrderResult.getValue();
@@ -67,4 +67,5 @@ class ViewOrderPositiveApiTest extends BaseE2eTest {
         assertThat(order.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

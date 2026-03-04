@@ -6,7 +6,7 @@ import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenPublishCoupon;
 import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenViewOrder;
 import com.optivem.eshop.systemtest.dsl.port.when.steps.base.WhenStep;
 
-public interface When {
+public interface WhenStage {
     WhenPlaceOrder placeOrder();
 
     WhenCancelOrder cancelOrder();
@@ -17,4 +17,5 @@ public interface When {
 
     WhenStep browseCoupons();
 }
+
 

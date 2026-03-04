@@ -22,7 +22,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
 
     @Test
     void shouldPlaceOrderWithCorrectSubtotalPrice() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -36,7 +36,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When - Place order using UI pages
+        // WhenStage - Place order using UI pages
         var homePage = shopUiClient.openHomePage();
         var newOrderPage = homePage.clickNewOrder();
         newOrderPage.inputSku(sku);
@@ -49,7 +49,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
 
         var orderNumber = NewOrderPage.getOrderNumber(placeOrderResult.getValue());
 
-        // Then - View order using UI pages (navigate back to home first, then to order history)
+        // ThenStage - View order using UI pages (navigate back to home first, then to order history)
         var orderHistoryPage = shopUiClient.openHomePage().clickOrderHistory();
         orderHistoryPage.inputOrderNumber(orderNumber);
         orderHistoryPage.clickSearch();
@@ -67,7 +67,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
             "99.99, 1, 99.99"
     })
     void shouldPlaceOrderWithCorrectSubtotalPriceParameterized(String unitPrice, String quantity, String expectedSubtotalPrice) {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -81,7 +81,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When - Place order using UI pages
+        // WhenStage - Place order using UI pages
         var homePage = shopUiClient.openHomePage();
         var newOrderPage = homePage.clickNewOrder();
         newOrderPage.inputSku(sku);
@@ -94,7 +94,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
 
         var orderNumber = NewOrderPage.getOrderNumber(placeOrderResult.getValue());
 
-        // Then - View order using UI pages (navigate back to home first, then to order history)
+        // ThenStage - View order using UI pages (navigate back to home first, then to order history)
         var orderHistoryPage = shopUiClient.openHomePage().clickOrderHistory();
         orderHistoryPage.inputOrderNumber(orderNumber);
         orderHistoryPage.clickSearch();
@@ -106,7 +106,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
 
     @Test
     void shouldPlaceOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -120,7 +120,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When - Place order using UI pages
+        // WhenStage - Place order using UI pages
         var homePage = shopUiClient.openHomePage();
         var newOrderPage = homePage.clickNewOrder();
         newOrderPage.inputSku(sku);
@@ -134,7 +134,7 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
         var orderNumber = NewOrderPage.getOrderNumber(placeOrderResult.getValue());
         assertThat(orderNumber).startsWith("ORD-");
 
-        // Then - View order using UI pages (navigate back to home first, then to order history)
+        // ThenStage - View order using UI pages (navigate back to home first, then to order history)
         var orderHistoryPage = shopUiClient.openHomePage().clickOrderHistory();
         orderHistoryPage.inputOrderNumber(orderNumber);
         orderHistoryPage.clickSearch();
@@ -156,4 +156,5 @@ class PlaceOrderPositiveUiTest extends BaseE2eTest {
         assertThat(orderDetailsPage.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

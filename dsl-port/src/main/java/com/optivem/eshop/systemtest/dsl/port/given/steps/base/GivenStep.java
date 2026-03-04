@@ -1,14 +1,15 @@
 package com.optivem.eshop.systemtest.dsl.port.given.steps.base;
 
-import com.optivem.eshop.systemtest.dsl.port.given.Given;
-import com.optivem.eshop.systemtest.dsl.port.then.Then;
-import com.optivem.eshop.systemtest.dsl.port.when.When;
+import com.optivem.eshop.systemtest.dsl.port.given.GivenStage;
+import com.optivem.eshop.systemtest.dsl.port.then.ThenStage;
+import com.optivem.eshop.systemtest.dsl.port.when.WhenStage;
 
 public interface GivenStep {
-    Given and();
+    GivenStage and();
 
-    When when();
+    WhenStage when();
 
-    Then then();
+    ThenStage then();
 }
+
 

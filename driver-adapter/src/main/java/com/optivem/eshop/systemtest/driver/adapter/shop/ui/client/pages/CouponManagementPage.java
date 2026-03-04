@@ -126,7 +126,7 @@ public class CouponManagementPage extends BasePage {
         }
 
         // Extract date from ISO 8601 format (2024-06-01T00:00:00Z -> 2024-06-01)
-        // Then convert to datetime-local format (2024-06-01T00:00) for HTML input
+        // ThenStage convert to datetime-local format (2024-06-01T00:00) for HTML input
         String dateOnly = validFrom.substring(0, 10); // YYYY-MM-DD
         return dateOnly + TIME_MIDNIGHT;
     }
@@ -137,7 +137,7 @@ public class CouponManagementPage extends BasePage {
         }
 
         // Extract date from ISO 8601 format (2024-08-31T23:59:59Z -> 2024-08-31)
-        // Then convert to datetime-local format (2024-08-31T23:59) for HTML input
+        // ThenStage convert to datetime-local format (2024-08-31T23:59) for HTML input
         String dateOnly = validTo.substring(0, 10); // YYYY-MM-DD
         return dateOnly + TIME_END_OF_DAY;
     }
@@ -159,5 +159,6 @@ public class CouponManagementPage extends BasePage {
         return Converter.toInteger(text, TEXT_UNLIMITED);
     }
 }
+
 
 

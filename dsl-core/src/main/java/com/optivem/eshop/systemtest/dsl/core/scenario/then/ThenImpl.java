@@ -4,12 +4,12 @@ import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.then.steps.ThenClockImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.then.steps.ThenProductImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.then.steps.ThenCountryImpl;
-import com.optivem.eshop.systemtest.dsl.port.then.Then;
+import com.optivem.eshop.systemtest.dsl.port.then.ThenStage;
 import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenClock;
 import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenCountry;
 import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenProduct;
 
-public class ThenImpl implements Then {
+public class ThenImpl implements ThenStage {
     protected final AppDsl app;
 
     public ThenImpl(AppDsl app) {
@@ -35,4 +35,5 @@ public class ThenImpl implements Then {
     }
 
 }
+
 

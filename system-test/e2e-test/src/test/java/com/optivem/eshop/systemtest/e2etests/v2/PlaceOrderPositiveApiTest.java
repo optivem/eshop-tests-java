@@ -22,7 +22,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
 
     @Test
     void shouldPlaceOrderWithCorrectSubtotalPrice() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -36,7 +36,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity("5")
@@ -48,7 +48,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopApiClient.orders().viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -64,7 +64,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
             "99.99, 1, 99.99"
     })
     void shouldPlaceOrderWithCorrectSubtotalPriceParameterized(String unitPrice, String quantity, String expectedSubtotalPrice) {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -78,7 +78,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity(quantity)
@@ -90,7 +90,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopApiClient.orders().viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -100,7 +100,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
 
     @Test
     void shouldPlaceOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -114,7 +114,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
         var createProductResult = erpClient.createProduct(createProductRequest);
         assertThatResult(createProductResult).isSuccess();
 
-        // When
+        // WhenStage
         var placeOrderRequest = PlaceOrderRequest.builder()
                 .sku(sku)
                 .quantity("5")
@@ -127,7 +127,7 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
         assertThat(orderNumber).startsWith("ORD-");
 
-        // Then
+        // ThenStage
         var viewOrderResult = shopApiClient.orders().viewOrder(orderNumber);
         assertThatResult(viewOrderResult).isSuccess();
 
@@ -147,4 +147,5 @@ class PlaceOrderPositiveApiTest extends BaseE2eTest {
         assertThat(order.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

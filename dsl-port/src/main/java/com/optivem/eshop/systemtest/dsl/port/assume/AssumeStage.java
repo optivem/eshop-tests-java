@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.port.assume;
 
-public interface Assume {
+public interface AssumeStage {
     Should shop();
 
     Should erp();
@@ -9,4 +9,5 @@ public interface Assume {
 
     Should clock();
 }
+
 

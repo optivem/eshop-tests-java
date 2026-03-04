@@ -2,7 +2,7 @@ package com.optivem.eshop.systemtest.dsl.core.scenario.given.steps;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
-import com.optivem.eshop.systemtest.dsl.port.then.Then;
+import com.optivem.eshop.systemtest.dsl.port.then.ThenStage;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.base.GivenStep;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
 
@@ -21,11 +21,12 @@ public abstract class BaseGivenStep implements GivenStep {
         return given.when();
     }
 
-    public Then then() {
+    public ThenStage then() {
         return given.then();
     }
 
     public abstract void execute(AppDsl app);
 }
+
 
 

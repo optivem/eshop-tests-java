@@ -21,7 +21,7 @@ class ViewOrderPositiveUiTest extends BaseE2eTest {
 
     @Test
     void shouldViewPlacedOrder() {
-        // Given - Create product and place order
+        // GivenStage - Create product and place order
         var sku = createUniqueSku(SKU);
         var createProductRequest = ExtCreateProductRequest.builder()
                 .id(sku)
@@ -47,7 +47,7 @@ class ViewOrderPositiveUiTest extends BaseE2eTest {
 
         var orderNumber = NewOrderPage.getOrderNumber(placeOrderResult.getValue());
 
-        // When - View order using UI pages (navigate back to home first, then to order history)
+        // WhenStage - View order using UI pages (navigate back to home first, then to order history)
         var orderHistoryPage = shopUiClient.openHomePage().clickOrderHistory();
         orderHistoryPage.inputOrderNumber(orderNumber);
         orderHistoryPage.clickSearch();
@@ -55,7 +55,7 @@ class ViewOrderPositiveUiTest extends BaseE2eTest {
 
         var orderDetailsPage = orderHistoryPage.clickViewOrderDetails(orderNumber);
 
-        // Then
+        // ThenStage
         assertThat(orderDetailsPage.getOrderNumber()).isEqualTo(orderNumber);
         assertThat(orderDetailsPage.getSku()).isEqualTo(sku);
         assertThat(orderDetailsPage.getCountry()).isEqualTo(COUNTRY);
@@ -70,4 +70,5 @@ class ViewOrderPositiveUiTest extends BaseE2eTest {
         assertThat(orderDetailsPage.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

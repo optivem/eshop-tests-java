@@ -5,10 +5,10 @@ import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCountry;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenCoupon;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenOrder;
 import com.optivem.eshop.systemtest.dsl.port.given.steps.GivenProduct;
-import com.optivem.eshop.systemtest.dsl.port.then.Then;
-import com.optivem.eshop.systemtest.dsl.port.when.When;
+import com.optivem.eshop.systemtest.dsl.port.then.ThenStage;
+import com.optivem.eshop.systemtest.dsl.port.when.WhenStage;
 
-public interface Given {
+public interface GivenStage {
     GivenClock clock();
 
     GivenProduct product();
@@ -19,8 +19,9 @@ public interface Given {
 
     GivenCoupon coupon();
 
-    When when();
+    WhenStage when();
 
-    Then then();
+    ThenStage then();
 }
+
 

@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 abstract class ViewOrderPositiveBaseTest extends BaseE2eTest {
     @Test
     void shouldViewPlacedOrder() {
-        // Given
+        // GivenStage
         var sku = createUniqueSku(SKU);
         var returnsProductRequest = ReturnsProductRequest.builder()
                 .sku(sku)
@@ -37,10 +37,10 @@ abstract class ViewOrderPositiveBaseTest extends BaseE2eTest {
 
         var orderNumber = placeOrderResult.getValue().getOrderNumber();
 
-        // When
+        // WhenStage
         var viewOrderResult = shopDriver.viewOrder(orderNumber);
 
-        // Then
+        // ThenStage
         assertThatResult(viewOrderResult).isSuccess();
 
         var order = viewOrderResult.getValue();
@@ -58,4 +58,5 @@ abstract class ViewOrderPositiveBaseTest extends BaseE2eTest {
         assertThat(order.getTotalPrice()).isGreaterThan(BigDecimal.ZERO);
     }
 }
+
 

@@ -7,14 +7,14 @@ import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCountryIm
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenCouponImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenOrderImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.steps.GivenProductImpl;
-import com.optivem.eshop.systemtest.dsl.port.given.Given;
-import com.optivem.eshop.systemtest.dsl.port.then.Then;
+import com.optivem.eshop.systemtest.dsl.port.given.GivenStage;
+import com.optivem.eshop.systemtest.dsl.port.then.ThenStage;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class GivenImpl implements Given {
+public class GivenImpl implements GivenStage {
     private final AppDsl app;
     private GivenClockImpl clock;
     private final List<GivenProductImpl> products;
@@ -65,7 +65,7 @@ public class GivenImpl implements Given {
         return new WhenImpl(app, !products.isEmpty(), !countries.isEmpty());
     }
 
-    public Then then() {
+    public ThenStage then() {
         setup();
         return new ThenImpl(app);
     }
@@ -127,5 +127,6 @@ public class GivenImpl implements Given {
         }
     }
 }
+
 
 

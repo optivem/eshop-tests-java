@@ -1,14 +1,15 @@
 package com.optivem.eshop.systemtest.dsl.port;
 
-import com.optivem.eshop.systemtest.dsl.port.assume.Assume;
-import com.optivem.eshop.systemtest.dsl.port.given.Given;
-import com.optivem.eshop.systemtest.dsl.port.when.When;
+import com.optivem.eshop.systemtest.dsl.port.assume.AssumeStage;
+import com.optivem.eshop.systemtest.dsl.port.given.GivenStage;
+import com.optivem.eshop.systemtest.dsl.port.when.WhenStage;
 
 public interface ScenarioDsl {
-    Assume assume();
+    AssumeStage assume();
 
-    Given given();
+    GivenStage given();
 
-    When when();
+    WhenStage when();
 }
+
 
