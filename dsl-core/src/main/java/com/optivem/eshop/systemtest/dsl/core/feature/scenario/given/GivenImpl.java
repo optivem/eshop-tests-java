@@ -16,17 +16,17 @@ import java.util.List;
 
 public class GivenImpl implements Given {
     private final AppDsl app;
+    private GivenClockImpl clock;
     private final List<GivenProductImpl> products;
     private final List<GivenOrderImpl> orders;
-    private GivenClockImpl clock;
     private final List<GivenCountryImpl> countries;
     private final List<GivenCouponImpl> coupons;
 
     public GivenImpl(AppDsl app) {
         this.app = app;
+        this.clock = null;
         this.products = new ArrayList<>();
         this.orders = new ArrayList<>();
-        this.clock = new GivenClockImpl(this);
         this.countries = new ArrayList<>();
         this.coupons = new ArrayList<>();
     }
@@ -62,7 +62,6 @@ public class GivenImpl implements Given {
 
     public WhenImpl when() {
         setup();
-
         return new WhenImpl(app, !products.isEmpty(), !countries.isEmpty());
     }
 
@@ -79,7 +78,9 @@ public class GivenImpl implements Given {
     }
 
     private void setupClock() {
-        clock.execute(app);
+        if(clock != null) {
+            clock.execute(app);
+        }
     }
 
     private void setupErp() {
