@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class TaxSmokeTest extends BaseScenarioDslTest {
     @Test
     void shouldBeAbleToGoToTax() {
-        background.tax().shouldBeRunning();
+        scenario.assume().tax().shouldBeRunning();
     }
 }
 

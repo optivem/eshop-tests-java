@@ -1,6 +1,7 @@
 package com.optivem.eshop.systemtest.dsl.core;
 
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
+import com.optivem.eshop.systemtest.dsl.core.scenario.assume.AssumeImpl;
 import com.optivem.eshop.systemtest.dsl.port.ScenarioDsl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.systemtest.dsl.core.scenario.when.WhenImpl;
@@ -11,6 +12,10 @@ public class ScenarioDslImpl implements ScenarioDsl {
 
     public ScenarioDslImpl(AppDsl app) {
         this.app = app;
+    }
+
+    public AssumeImpl assume() {
+        return new AssumeImpl(app);
     }
 
     public GivenImpl given() {
