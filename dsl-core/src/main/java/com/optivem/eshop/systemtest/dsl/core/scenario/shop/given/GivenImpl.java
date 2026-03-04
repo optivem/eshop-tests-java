@@ -62,7 +62,6 @@ public class GivenImpl implements Given {
 
     public WhenImpl when() {
         setup();
-        setupShop();
 
         return new WhenImpl(app, !products.isEmpty(), !countries.isEmpty());
     }
@@ -76,6 +75,7 @@ public class GivenImpl implements Given {
         setupClock();
         setupErp();
         setupTax();
+        setupShop();
     }
 
     private void setupClock() {
