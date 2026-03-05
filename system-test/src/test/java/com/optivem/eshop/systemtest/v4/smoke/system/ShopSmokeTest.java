@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v4.smoke.system;
 
-import com.optivem.eshop.systemtest.base.v4.BaseChannelDriverTest;
+import com.optivem.eshop.systemtest.v4.base.BaseChannelDriverTest;
 import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.testing.Channel;
 import org.junit.jupiter.api.TestTemplate;

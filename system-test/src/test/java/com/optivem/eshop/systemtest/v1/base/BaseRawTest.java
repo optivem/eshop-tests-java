@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.base.v1;
+package com.optivem.eshop.systemtest.v1.base;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

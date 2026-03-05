@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v4.smoke.external;
 
-import com.optivem.eshop.systemtest.base.v4.BaseChannelDriverTest;
+import com.optivem.eshop.systemtest.v4.base.BaseChannelDriverTest;
 import org.junit.jupiter.api.Test;
 
 import static com.optivem.common.ResultAssert.assertThatResult;

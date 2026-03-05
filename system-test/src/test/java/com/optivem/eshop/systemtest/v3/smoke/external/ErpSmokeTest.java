@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v3.smoke.external;
 
-import com.optivem.eshop.systemtest.base.v3.BaseDriverTest;
+import com.optivem.eshop.systemtest.v3.base.BaseDriverTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

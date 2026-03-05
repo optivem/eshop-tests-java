@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v1.smoke.system;
 
-import com.optivem.eshop.systemtest.base.v1.BaseRawTest;
+import com.optivem.eshop.systemtest.v1.base.BaseRawTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

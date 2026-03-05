@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v4.e2e.base;
 
-import com.optivem.eshop.systemtest.base.v4.BaseChannelDriverTest;
+import com.optivem.eshop.systemtest.v4.base.BaseChannelDriverTest;
 import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 
 import java.util.UUID;

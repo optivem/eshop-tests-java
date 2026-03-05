@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.base.v2;
+package com.optivem.eshop.systemtest.v2.base;
 
 import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
 import com.optivem.eshop.systemtest.dsl.core.app.AppConfiguration;

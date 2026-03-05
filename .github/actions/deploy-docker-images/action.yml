@@ -129,7 +129,7 @@ runs:
       shell: bash
 
     - name: Run Smoke Tests
-      run: ./gradlew :system-test:smoke-test:test -Denvironment=${{ inputs.environment }} -DexternalSystemMode=${{ inputs.external-system-mode }}
+      run: ./gradlew :system-test:test -Dtype=smoke -Denvironment=${{ inputs.environment }} -DexternalSystemMode=${{ inputs.external-system-mode }}
       shell: bash
 
 

@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.v3.e2e.base;
 
-import com.optivem.eshop.systemtest.base.v3.BaseDriverTest;
+import com.optivem.eshop.systemtest.v3.base.BaseDriverTest;
 import com.optivem.eshop.systemtest.dsl.port.ExternalSystemMode;
 import org.junit.jupiter.api.BeforeEach;
 
