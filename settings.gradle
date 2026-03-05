@@ -3,16 +3,11 @@ rootProject.name = 'eshop-tests-java'
 include 'common'
 include 'channel'
 
-include 'system-test:test-infrastructure'
+include 'system-test'
 
 include 'dsl-core'
 include 'dsl-port'
 include 'driver-port'
 
 include 'driver-adapter'
-
-include 'system-test:acceptance-test'
-include 'system-test:smoke-test'
-include 'system-test:e2e-test'
-include 'system-test:external-system-contract-test'
 
