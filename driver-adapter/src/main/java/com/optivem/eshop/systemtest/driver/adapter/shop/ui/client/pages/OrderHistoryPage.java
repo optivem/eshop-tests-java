@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages;
 
-import com.optivem.eshop.systemtest.driver.adapter.shared.playwright.PageClient;
+import com.optivem.eshop.systemtest.driver.adapter.shared.client.playwright.PageClient;
 
 public class OrderHistoryPage extends BasePage {
     private static final String ORDER_NUMBER_INPUT_SELECTOR = "[aria-label='Order Number']";

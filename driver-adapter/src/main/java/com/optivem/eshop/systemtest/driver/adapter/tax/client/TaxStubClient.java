@@ -1,10 +1,10 @@
 package com.optivem.eshop.systemtest.driver.adapter.tax.client;
 
-import com.optivem.eshop.systemtest.driver.adapter.shared.http.HttpStatus;
+import com.optivem.eshop.systemtest.driver.adapter.shared.client.http.HttpStatus;
 import com.optivem.eshop.systemtest.driver.adapter.tax.client.dtos.ExtCountryDetailsResponse;
 import com.optivem.eshop.systemtest.driver.adapter.tax.client.dtos.error.ExtTaxErrorResponse;
 import com.optivem.common.Result;
-import com.optivem.eshop.systemtest.driver.adapter.shared.wiremock.JsonWireMockClient;
+import com.optivem.eshop.systemtest.driver.adapter.shared.client.wiremock.JsonWireMockClient;
 
 
 public class TaxStubClient extends BaseTaxClient {

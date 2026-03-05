@@ -52,12 +52,19 @@ tasks.named('test') {
     filter {
         def type    = System.getProperty('type')    // smoke | acceptance | e2e | contract
         def version = System.getProperty('version') // v1 | v2 | ... | v7
+        def mode    = System.getProperty('mode')    // stub | real (contract tests only)
         if (type && version) {
             includeTestsMatching "*${type}tests*${version}*"
         } else if (type) {
             includeTestsMatching "*${type}tests*"
         } else if (version) {
             includeTestsMatching "*${version}*"
+        }
+        if (type == 'contract' && mode == 'stub') {
+            includeTestsMatching "*Stub*"
+        }
+        if (type == 'contract' && mode == 'real') {
+            includeTestsMatching "*Real*"
         }
     }
 
@@ -75,6 +82,7 @@ tasks.named('test') {
     systemProperty 'environment',        System.getProperty('environment')
     systemProperty 'externalSystemMode', System.getProperty('externalSystemMode')
     systemProperty 'channel',            System.getProperty('channel')
+    systemProperty 'mode',               System.getProperty('mode')
 
     def includeTags = System.getProperty('includeTags')
     if (includeTags?.contains('isolated')) {

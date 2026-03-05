@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages;
 
-import com.optivem.eshop.systemtest.driver.adapter.shared.playwright.PageClient;
+import com.optivem.eshop.systemtest.driver.adapter.shared.client.playwright.PageClient;
 import com.optivem.common.Converter;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
 
