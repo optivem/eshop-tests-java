@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.driver.adapter.shop.api;
 
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.eshop.systemtest.driver.adapter.shop.api.client.dtos.errors.ProblemDetailResponse;
 
 public class SystemErrorMapper {

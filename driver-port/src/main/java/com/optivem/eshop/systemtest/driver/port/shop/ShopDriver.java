@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.driver.port.shop;
 
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;

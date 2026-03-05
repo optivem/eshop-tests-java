@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.driver.port.shared.error;
+package com.optivem.eshop.systemtest.driver.port.shared.dtos;
 
 import lombok.Builder;
 import lombok.Data;

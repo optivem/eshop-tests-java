@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.shared;
 
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

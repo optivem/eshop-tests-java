@@ -5,7 +5,7 @@ import com.optivem.eshop.systemtest.driver.port.clock.ClockDriver;
 import com.optivem.eshop.systemtest.driver.adapter.clock.client.ClockRealClient;
 import com.optivem.eshop.systemtest.driver.port.clock.dtos.GetTimeResponse;
 import com.optivem.eshop.systemtest.driver.port.clock.dtos.ReturnsTimeRequest;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Result;
 
 public class ClockRealDriver implements ClockDriver {

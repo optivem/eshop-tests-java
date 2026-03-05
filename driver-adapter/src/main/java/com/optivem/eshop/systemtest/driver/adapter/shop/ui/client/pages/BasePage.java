@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages;
 
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Result;
 import com.optivem.eshop.systemtest.driver.adapter.shared.client.playwright.PageClient;
 

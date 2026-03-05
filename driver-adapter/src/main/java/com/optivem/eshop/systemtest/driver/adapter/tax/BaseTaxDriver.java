@@ -4,7 +4,7 @@ import com.optivem.eshop.systemtest.driver.port.tax.TaxDriver;
 
 import com.optivem.eshop.systemtest.driver.adapter.tax.client.BaseTaxClient;
 import com.optivem.eshop.systemtest.driver.port.tax.dtos.GetTaxResponse;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Closer;
 import com.optivem.common.Result;
 

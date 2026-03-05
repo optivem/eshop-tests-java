@@ -6,7 +6,7 @@ import com.optivem.eshop.systemtest.driver.adapter.clock.client.ClockStubClient;
 import com.optivem.eshop.systemtest.driver.adapter.clock.client.dtos.ExtGetTimeResponse;
 import com.optivem.eshop.systemtest.driver.port.clock.dtos.GetTimeResponse;
 import com.optivem.eshop.systemtest.driver.port.clock.dtos.ReturnsTimeRequest;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Closer;
 import com.optivem.common.Converter;
 import com.optivem.common.Result;

@@ -5,7 +5,7 @@ import com.optivem.eshop.systemtest.driver.port.erp.ErpDriver;
 import com.optivem.eshop.systemtest.driver.adapter.erp.client.BaseErpClient;
 import com.optivem.eshop.systemtest.driver.port.erp.dtos.GetProductRequest;
 import com.optivem.eshop.systemtest.driver.port.erp.dtos.GetProductResponse;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Closer;
 import com.optivem.common.Result;
 

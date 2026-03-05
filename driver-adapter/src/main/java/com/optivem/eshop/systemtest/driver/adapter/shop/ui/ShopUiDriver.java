@@ -14,7 +14,7 @@ import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Result;
 
 import java.util.Objects;

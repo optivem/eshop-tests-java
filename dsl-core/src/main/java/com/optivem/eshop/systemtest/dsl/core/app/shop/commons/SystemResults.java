@@ -1,6 +1,6 @@
 package com.optivem.eshop.systemtest.dsl.core.app.shop.commons;
 
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Result;
 
 public final class SystemResults {

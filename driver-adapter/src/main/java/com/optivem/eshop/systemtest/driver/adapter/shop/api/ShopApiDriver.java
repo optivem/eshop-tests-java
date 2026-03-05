@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.driver.adapter.shop.api;
 import com.optivem.eshop.systemtest.driver.adapter.shop.api.client.ShopApiClient;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;

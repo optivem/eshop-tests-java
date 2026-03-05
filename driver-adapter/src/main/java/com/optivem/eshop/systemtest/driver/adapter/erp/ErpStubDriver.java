@@ -3,7 +3,7 @@ package com.optivem.eshop.systemtest.driver.adapter.erp;
 import com.optivem.eshop.systemtest.driver.adapter.erp.client.ErpStubClient;
 import com.optivem.eshop.systemtest.driver.adapter.erp.client.dtos.ExtProductDetailsResponse;
 import com.optivem.eshop.systemtest.driver.port.erp.dtos.ReturnsProductRequest;
-import com.optivem.eshop.systemtest.driver.port.shared.error.ErrorResponse;
+import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.common.Converter;
 import com.optivem.common.Result;
 
