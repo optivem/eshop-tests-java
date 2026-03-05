@@ -1,0 +1,15 @@
+package com.optivem.eshop.systemtest.v6.smoke.system;
+
+import com.optivem.eshop.systemtest.base.v6.BaseScenarioDslTest;
+import com.optivem.eshop.systemtest.channel.ChannelType;
+import com.optivem.testing.Channel;
+import org.junit.jupiter.api.TestTemplate;
+
+class ShopSmokeTest extends BaseScenarioDslTest {
+    @TestTemplate
+    @Channel({ChannelType.UI, ChannelType.API})
+    void shouldBeAbleToGoToShop() {
+        scenario.assume().shop().shouldBeRunning();
+    }
+}
+

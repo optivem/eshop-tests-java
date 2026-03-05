@@ -1,0 +1,19 @@
+package com.optivem.eshop.systemtest.v7.acceptance;
+
+import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
+import com.optivem.eshop.systemtest.channel.ChannelType;
+import com.optivem.testing.Channel;
+import org.junit.jupiter.api.TestTemplate;
+
+class BrowseCouponsPositiveTest extends BaseAcceptanceTest {
+    @TestTemplate
+    @Channel({ ChannelType.UI, ChannelType.API })
+    void shouldBeAbleToBrowseCoupons() {
+        scenario
+                .when().browseCoupons()
+                .then().shouldSucceed();
+    }
+
+}
+
+

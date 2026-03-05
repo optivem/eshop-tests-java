@@ -54,9 +54,9 @@ tasks.named('test') {
         def version = System.getProperty('version') // v1 | v2 | ... | v7
         def mode    = System.getProperty('mode')    // stub | real (contract tests only)
         if (type && version) {
-            includeTestsMatching "*${type}tests*${version}*"
+            includeTestsMatching "*${version}*${type}*"
         } else if (type) {
-            includeTestsMatching "*${type}tests*"
+            includeTestsMatching "*${type}*"
         } else if (version) {
             includeTestsMatching "*${version}*"
         }

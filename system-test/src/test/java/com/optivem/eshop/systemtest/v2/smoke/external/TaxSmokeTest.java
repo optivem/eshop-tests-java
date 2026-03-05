@@ -1,0 +1,22 @@
+package com.optivem.eshop.systemtest.v2.smoke.external;
+
+import com.optivem.eshop.systemtest.base.v2.BaseClientTest;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static com.optivem.common.ResultAssert.assertThatResult;
+
+class TaxSmokeTest extends BaseClientTest {
+    @BeforeEach
+    void setUp() {
+        setUpExternalClients();
+    }
+
+    @Test
+    void shouldBeAbleToGoToTax() {
+        var result = taxClient.checkHealth();
+        assertThatResult(result).isSuccess();
+    }
+}
+
+

@@ -1,0 +1,23 @@
+package com.optivem.eshop.systemtest.v3.smoke.system;
+
+import com.optivem.eshop.systemtest.base.v3.BaseDriverTest;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static com.optivem.common.ResultAssert.assertThatResult;
+
+public abstract class ShopBaseSmokeTest extends BaseDriverTest {
+    @BeforeEach
+    void setUp() {
+        setShopDriver();
+    }
+
+    protected abstract void setShopDriver();
+
+    @Test
+    void shouldBeAbleToGoToShop() {
+        var result = shopDriver.goToShop();
+        assertThatResult(result).isSuccess();
+    }
+}
+
