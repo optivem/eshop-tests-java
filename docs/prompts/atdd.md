@@ -18,12 +18,21 @@ When the user provides acceptance criteria, translate each scenario directly int
 - If the DSL needs to be extended with new methods, call them directly in the test as if they exist — do not add them to the DSL interface yet. Compile errors are expected and intentional.
 - After writing each test, verify it matches the acceptance criteria exactly — Given maps to Given, When maps to When, Then maps to Then. Every precondition stated in the scenario must appear in the test. If anything is unclear, ask before proceeding.
 
+## Suite Selection
+
+Each acceptance test is annotated with a channel. Use the matching suite placeholder throughout all phases:
+- `<acceptance-api>` — for tests annotated with `@Channel(API)`
+- `<acceptance-ui>` — for tests annotated with `@Channel(UI)`
+
+If a test covers both channels, run both suites.
+
 ## RED 1 - Acceptance Tests (DRAFT)
 
 1. Write the acceptance tests.
 2. Run the tests and verify they fail (compile error is expected if new DSL methods are needed):
    ```
-   .\Run-SystemTests.ps1 -Suite <suite> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName>
    ```
 3. STOP. Present the tests to the user and ask for approval. Do NOT continue.
 
@@ -34,7 +43,8 @@ When the user provides acceptance criteria, translate each scenario directly int
    b. Implement the new methods by throwing `UnsupportedOperationException("TODO: DSL")` — do not implement DSL.
    c. Run the tests and verify they fail with a runtime error:
       ```
-      .\Run-SystemTests.ps1 -Suite <suite> -Test <TestMethodName>
+      .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName>
+      .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName>
       ```
 2. Mark the tests as `@Disabled("RED 1 - Tests")`.
 3. COMMIT with message `<Scenario> | RED 1 - Tests`.
@@ -53,7 +63,8 @@ When the user provides acceptance criteria, translate each scenario directly int
 1. Implement the Drivers by throwing `UnsupportedOperationException("TODO: Driver")`.
 2. Run the tests and verify they fail with a runtime error:
    ```
-   .\Run-SystemTests.ps1 -Suite <suite> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName>
    ```
 3. Mark the tests as `@Disabled("RED 2 - DSL")`.
 4. Ensure that there are no test files in the list of changed files.
@@ -68,7 +79,8 @@ When the user provides acceptance criteria, translate each scenario directly int
    - Do NOT read or search backend/frontend source code. Model the new method on existing driver methods in the same file.
 3. Run the tests and verify they fail with a runtime error:
    ```
-   .\Run-SystemTests.ps1 -Suite <suite> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName>
    ```
 4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
@@ -109,7 +121,7 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
 2. Implement the External System Stubs.
 3. Execute the External System Contract Tests
    ```
-   .\Run-SystemTests.ps1 -Suite <suite-contract-stub> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <suite-contract-stub> -Test <TestMethodName> -Rebuild
    ```
 4. Verify that the External System Contract Tests pass. If they fail, then ask the user.
 5. STOP. Present the stub implementation to the user and ask for approval. Do NOT continue.
@@ -125,7 +137,7 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
    a. Implement the backend changes.
    b. Run acceptance tests for the API channel:
       ```
-      .\Run-SystemTests.ps1 -Suite <suite-api> -Test <TestMethodName>
+      .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName> -Rebuild
       ```
    c. If tests fail, fix the backend until the tests pass.
    d. If you have challenges making the tests pass, ask the user.
@@ -134,7 +146,7 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
    a. Implement the frontend changes.
    b. Run acceptance tests for the UI channel:
       ```
-      .\Run-SystemTests.ps1 -Suite <suite-ui> -Test <TestMethodName>
+      .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName> -Rebuild
       ```
    c. If tests fail, fix the frontend until the tests pass.
    d. If you have challenges making the tests pass, ask the user.
@@ -147,8 +159,8 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
 1. Remove the `@Disabled` annotation from the tests.
 2. Run the tests and verify they all pass:
    ```
-   .\Run-SystemTests.ps1 -Suite <suite-api>
-   .\Run-SystemTests.ps1 -Suite <suite-ui>
+   .\Run-SystemTests.ps1 -Suite <acceptance-api> -Test <TestMethodName>
+   .\Run-SystemTests.ps1 -Suite <acceptance-ui> -Test <TestMethodName>
    ```
 3. Ensure that there are no non-test files in the list of changed files.
 4. COMMIT with message `<Scenario> | GREEN - System`.
