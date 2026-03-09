@@ -70,7 +70,7 @@ When the user provides acceptance criteria, translate each scenario directly int
 
 _Only needed if there are runtime failures due to External System Stubs._
 
-Note: If the External System does not even exist yet, make Smoke Tests pass first.
+_If the External System does not even exist yet, make Smoke Tests pass first._
 
 1. Write External System Contract Tests.
 2. Verify that they pass when executed against the Real External System. 
@@ -81,10 +81,10 @@ Note: If the External System does not even exist yet, make Smoke Tests pass firs
 
 ## RED 4 - Contract Tests (COMMIT)
 
-1. Commit the changes.
+1. COMMIT the changes with message `<Scenario> | RED 4 - Contract Tests`.
 2. Automatically proceed to GREEN 1 (DRAFT).
 
-## GREEN 1 - Stubs (DRAFT)
+## GREEN 1 - External System Stubs (DRAFT)
 
 1. Enable the tests marked `@Disabled("RED 4 - Contract Tests")`.
 2. Implement the External System Stubs.
@@ -92,9 +92,9 @@ Note: If the External System does not even exist yet, make Smoke Tests pass firs
 4. Verify that the External System Contract Tests pass. If they fail, fix and repeat.
 5. STOP. Present the stub implementation to the user and ask for approval. Do NOT continue.
 
-## GREEN 1 - Stubs (COMMIT)
+## GREEN 1 - External System Stubs (COMMIT)
 
-1. COMMIT with message `<Scenario> | GREEN 1 - Stubs`.
+1. COMMIT with message `<Scenario> | GREEN - External System Stubs`.
 2. Automatically proceed to GREEN 2 (DRAFT).
 
 ## GREEN 2 - System (DRAFT)
@@ -114,9 +114,9 @@ Note: If the External System does not even exist yet, make Smoke Tests pass firs
 3. By now, all acceptance tests should be passing.
 4. STOP. Present the implementation to the user and ask for approval. Do NOT continue.
 
-## GREEN 3 - Enable Tests
+## GREEN 2 - System (COMMIT)
 
 1. Remove the `@Disabled` annotation from the tests.
 2. Run the tests and verify they all pass.
 3. Ensure that there are no non-test files in the list of changed files.
-4. Commit the changes.
+4. COMMIT with message `<Scenario> | GREEN - System`.

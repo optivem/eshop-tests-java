@@ -10,4 +10,11 @@ public abstract class BaseErpContractTest extends BaseExternalSystemContractTest
                 .given().product().withSku("SKU-123").withUnitPrice(12.0)
                 .then().product("SKU-123").hasSku("SKU-123").hasPrice(12.0);
     }
+
+    @Test
+    void shouldBeAbleToGetReviewableProduct() {
+        scenario
+                .given().product().withSku("SKU-456").isReviewable()
+                .then().product("SKU-456").isReviewable();
+    }
 }
