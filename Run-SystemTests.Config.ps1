@@ -3,6 +3,8 @@
 
 $Config = @{
 
+    TestFilter = "--tests '*.<test>'"
+
     BuildCommands = @(
         @{  Name = "Clean Build";
             Command = ".\gradlew.bat clean compileJava compileTestJava"
