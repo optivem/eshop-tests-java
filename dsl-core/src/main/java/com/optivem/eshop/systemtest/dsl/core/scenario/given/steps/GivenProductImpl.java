@@ -10,6 +10,7 @@ import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
     private String sku;
     private String unitPrice;
+    private String reviewable;
 
     public GivenProductImpl(GivenImpl given) {
         super(given);
@@ -29,6 +30,11 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
 
     public GivenProductImpl withUnitPrice(double unitPrice) {
         withUnitPrice(Converter.fromDouble(unitPrice));
+        return this;
+    }
+
+    public GivenProductImpl isReviewable() {
+        this.reviewable = "true";
         return this;
     }
 
