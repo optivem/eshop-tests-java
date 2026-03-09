@@ -1,27 +1,37 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.then.steps;
 
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.GetReviewVerification;
 import com.optivem.eshop.systemtest.dsl.port.then.steps.ThenReview;
 
 public class ThenReviewImpl implements ThenReview {
+    private final GetReviewVerification verification;
+
+    public ThenReviewImpl(GetReviewVerification verification) {
+        this.verification = verification;
+    }
 
     @Override
     public ThenReview hasRating(int expectedRating) {
-        throw new UnsupportedOperationException("DSL not implemented yet");
+        verification.rating(expectedRating);
+        return this;
     }
 
     @Override
     public ThenReview hasComment(String expectedComment) {
-        throw new UnsupportedOperationException("DSL not implemented yet");
+        verification.comment(expectedComment);
+        return this;
     }
 
     @Override
     public ThenReview hasReviewId() {
-        throw new UnsupportedOperationException("DSL not implemented yet");
+        verification.reviewIdIsNotNull();
+        return this;
     }
 
     @Override
     public ThenReview hasTimestamp() {
-        throw new UnsupportedOperationException("DSL not implemented yet");
+        verification.timestampIsNotNull();
+        return this;
     }
 
     @Override

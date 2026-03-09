@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@Disabled("In Progress - Test")
+@Disabled("In Progress - DSL")
 class SubmitReviewNegativeTest extends BaseAcceptanceTest {
 
     @TestTemplate
@@ -24,8 +24,8 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
 
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
-    @ValueSource(ints = {0, 6})
-    void cannotSubmitReviewWithRatingOutsideRange(int rating) {
+    @ValueSource(strings = {"0", "6"})
+    void cannotSubmitReviewWithRatingOutsideRange(String rating) {
         scenario
                 .when().submitReview()
                     .withRating(rating)

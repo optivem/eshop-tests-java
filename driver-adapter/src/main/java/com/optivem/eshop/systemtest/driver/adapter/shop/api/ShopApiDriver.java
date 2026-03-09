@@ -2,10 +2,13 @@ package com.optivem.eshop.systemtest.driver.adapter.shop.api;
 
 import com.optivem.eshop.systemtest.driver.adapter.shop.api.client.ShopApiClient;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.GetReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewRequest;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.common.Closer;
@@ -51,6 +54,21 @@ public class ShopApiDriver implements ShopDriver {
     @Override
     public Result<BrowseCouponsResponse, ErrorResponse> browseCoupons() {
         return apiClient.coupons().browseCoupons().mapError(SystemErrorMapper::from);
+    }
+
+    @Override
+    public Result<Void, ErrorResponse> deliverOrder(String orderNumber) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
+    }
+
+    @Override
+    public Result<SubmitReviewResponse, ErrorResponse> submitReview(SubmitReviewRequest request) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
+    }
+
+    @Override
+    public Result<GetReviewResponse, ErrorResponse> getReview(String reviewId) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
     }
 }
 

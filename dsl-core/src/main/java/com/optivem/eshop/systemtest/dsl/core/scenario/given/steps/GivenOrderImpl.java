@@ -61,6 +61,10 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
         return this;
     }
 
+    public GivenOrderImpl withStatus(String status) {
+        return withStatus(OrderStatus.valueOf(status));
+    }
+
     @Override
     public void execute(AppDsl app) {
 
@@ -81,7 +85,10 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
         }
 
         if(status == OrderStatus.DELIVERED) {
-            throw new UnsupportedOperationException("DSL not implemented yet");
+            app.shop().deliverOrder()
+                    .orderNumber(orderNumber)
+                    .execute()
+                    .shouldSucceed();
         }
     }
 }

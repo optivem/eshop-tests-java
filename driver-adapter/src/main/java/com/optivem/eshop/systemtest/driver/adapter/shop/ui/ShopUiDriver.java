@@ -8,10 +8,13 @@ import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.NewOrder
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderDetailsPage;
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderHistoryPage;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.GetReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewRequest;
+import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
@@ -188,6 +191,21 @@ public class ShopUiDriver implements ShopDriver {
                 .build();
 
         return success(response);
+    }
+
+    @Override
+    public Result<Void, ErrorResponse> deliverOrder(String orderNumber) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
+    }
+
+    @Override
+    public Result<SubmitReviewResponse, ErrorResponse> submitReview(SubmitReviewRequest request) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
+    }
+
+    @Override
+    public Result<GetReviewResponse, ErrorResponse> getReview(String reviewId) {
+        throw new UnsupportedOperationException("Driver not implemented yet");
     }
 
     // --- page navigation ---

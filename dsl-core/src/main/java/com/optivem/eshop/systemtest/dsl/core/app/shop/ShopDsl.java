@@ -4,8 +4,11 @@ import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.GoToShop;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.BrowseCoupons;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.CancelOrder;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.DeliverOrder;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.GetReview;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PublishCoupon;
+import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.SubmitReview;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.ViewOrder;
 import com.optivem.common.Closer;
 import com.optivem.eshop.systemtest.dsl.core.shared.UseCaseContext;
@@ -38,6 +41,10 @@ public class ShopDsl implements Closeable {
         return new CancelOrder(driver, context);
     }
 
+    public DeliverOrder deliverOrder() {
+        return new DeliverOrder(driver, context);
+    }
+
     public ViewOrder viewOrder() {
         return new ViewOrder(driver, context);
     }
@@ -48,6 +55,14 @@ public class ShopDsl implements Closeable {
 
     public BrowseCoupons browseCoupons() {
         return new BrowseCoupons(driver, context);
+    }
+
+    public SubmitReview submitReview() {
+        return new SubmitReview(driver, context);
+    }
+
+    public GetReview getReview() {
+        return new GetReview(driver, context);
     }
 }
 

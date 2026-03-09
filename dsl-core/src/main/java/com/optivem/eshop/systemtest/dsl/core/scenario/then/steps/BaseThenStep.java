@@ -57,7 +57,11 @@ public abstract class BaseThenStep<TSuccessResponse, TSuccessVerification extend
     }
 
     public ThenReviewImpl review() {
-        return new ThenReviewImpl();
+        if (executionResult.getReviewId() == null) {
+            throw new IllegalStateException("Cannot verify review: no review ID available from the executed operation");
+        }
+        var verification = app.shop().getReview().reviewId(executionResult.getReviewId()).execute().shouldSucceed();
+        return new ThenReviewImpl(verification);
     }
 }
 

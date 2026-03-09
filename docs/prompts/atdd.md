@@ -26,21 +26,27 @@ When the user provides acceptance criteria, translate each scenario directly int
 
 If there were compilation errors in RED 1, then you'll need to implement the DSL in the following way.
 
+### Steps
+
 1. Enable the tests that were marked as `@Disabled` with comment "In Progress - Test".
 2. Implement the DSL for real, which means you'll need to replace the `UnsupportedOperationException("DSL not implemented yet")` with actual implementation.
 3. As you're implementing the DSL, you will probably need to change the Driver interfaces.
 4. STOP and ask for approval to review the DSL implementation and Driver interfaces.
 5. Implement the Drivers by throwing `UnsupportedOperationException("Driver not implemented yet")`.
 6. Make the tests `@Disabled` again, with comment "In Progress - DSL".
-7. Commit the changes.
+7. Ensure that there are no test files in the list of changed files.
+8. Commit the changes.
 
 ## RED 3 - Driver
+
+If there were compilation errors in RED 1, then you'll need to implement the Driver in the following way.
 
 1. Enable the tests that were marked as `@Disabled` with comment "In Progress - DSL".
 2. Implement the Drivers.
 3. STOP and ask for approval to review the Drivers.
 6. Make the tests `@Disabled` again, with comment "In Progress - Implementation".
-7. Commit the changes.
+7. Ensure that there are no test files in the list of changed files.
+8. Commit the changes.
 
 ## GREEN - Backend
 
@@ -59,6 +65,7 @@ If there were compilation errors in RED 1, then you'll need to implement the DSL
 3. By now, all acceptance tests should be passing.
 4. STOP and ask for approval to review the implementation.
 5. Remove the `@Disabled` annotation.
-6. Commit the changes.
+6. Ensure that there are no test files in the list of changed files.
+7. Commit the changes.
 
 // TODO: VJ: Add rules for external system contract tests.
