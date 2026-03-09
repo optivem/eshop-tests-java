@@ -4,12 +4,10 @@ import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
 import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.testing.Channel;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
 class SubmitReviewPositiveTest extends BaseAcceptanceTest {
 
-    @Disabled("RED")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void canSubmitReviewOnDeliveredOrder() {
