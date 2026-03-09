@@ -2,18 +2,9 @@
 
 ## Phase Triggers
 
-Each ATDD phase is a separate, explicit step. **Never proceed to the next phase automatically.** Each phase ends with a hard stop — wait for the user to explicitly say one of the following before continuing:
+Each ATDD phase is a separate, explicit step. **Never proceed to the next phase automatically.** Wait for the user to explicitly say `"proceed to RED 2"`, `"proceed to RED 3"`, etc. before starting the next phase.
 
-- `"proceed to RED 1"` — start writing tests
-- `"proceed to step 4"` (within RED 1) — extend DSL interface and add stubs
-- `"proceed to RED 2"` — implement the DSL
-- `"proceed to step 5"` (within RED 2) — implement driver stubs
-- `"proceed to RED 3"` — implement the drivers
-- `"proceed to RED 4"` — write external system contract tests
-- `"proceed to GREEN 1"` — implement external system stubs
-- `"proceed to GREEN 2"` — implement the backend/frontend
-
-If the user says anything other than these exact triggers after a STOP, ask them clarifying questions — do not execute the next phase.
+If the user says anything other than a phase trigger after a STOP, ask them clarifying questions — do not execute the next phase.
 
 ---
 
@@ -27,70 +18,63 @@ When the user provides acceptance criteria, translate each scenario directly int
 - If the DSL needs to be extended with new methods, call them directly in the test as if they exist — do not add them to the DSL interface yet. Compile errors are expected and intentional.
 - After writing each test, verify it matches the acceptance criteria exactly — Given maps to Given, When maps to When, Then maps to Then. Every precondition stated in the scenario must appear in the test. If anything is unclear, ask before proceeding.
 
-## RED 1 - Test
+## RED 1 - Tests
 
 1. Write the acceptance tests.
-2. Run the tests and verify they fail.
-3. STOP. Present the tests to the user and ask for approval. Do NOT continue. Wait for the user to say "proceed to step 4" before doing anything else.
-4. If there is a compile-time error (due to missing DSL interface methods):
-   a. Extend the DSL interface with the new methods.
-   b. Implement the DSL by throwing `UnsupportedOperationException("DSL not implemented yet")` — do not implement drivers.
-   c. Run the tests and verify they fail due to `UnsupportedOperationException` (runtime, not compile-time).
-5. Mark the tests as `@Disabled` with comment "In Progress - Test".
-6. Commit the changes.
+2. Run the tests and verify they fail (compile error is expected if new DSL methods are needed).
+3. STOP. Present the tests to the user and ask for approval. Do NOT continue.
 
-## RED 2 - DSL
+## RED 2 - DSL Stubs
 
-If there were compilation errors in RED 1, then you'll need to implement the DSL in the following way.
+_Only needed if there were compile-time errors in RED 1._
 
-### Steps
+1. Extend the DSL interface with the new methods.
+2. Implement the new methods by throwing `UnsupportedOperationException("DSL not implemented yet")` — do not implement drivers.
+3. Run the tests and verify they fail with `UnsupportedOperationException` (runtime, not compile-time).
+4. Mark the tests as `@Disabled("In Progress - Test")`.
+5. Commit the changes.
 
-1. Enable the tests that were marked as `@Disabled` with comment "In Progress - Test".
-2. Implement the DSL for real, which means you'll need to replace the `UnsupportedOperationException("DSL not implemented yet")` with actual implementation.
-3. As you're implementing the DSL, you will probably need to change the Driver interfaces.
-4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue. Wait for the user to say "proceed to step 5" before doing anything else.
-5. Implement the Drivers by throwing `UnsupportedOperationException("Driver not implemented yet")`.
-6. Run the tests and verify they fail with `UnsupportedOperationException`.
-7. Make the tests `@Disabled` again, with comment "In Progress - DSL".
-8. Ensure that there are no test files in the list of changed files.
-9. Commit the changes.
+## RED 3 - DSL Implementation
 
-## RED 3 - Driver
+1. Enable the tests marked `@Disabled("In Progress - Test")`.
+2. Implement the DSL for real — replace `UnsupportedOperationException("DSL not implemented yet")` with actual logic.
+3. Update the Driver interfaces as needed.
+4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue.
 
-If there were compilation errors in RED 1, then you'll need to implement the Driver in the following way.
+## RED 4 - Driver Stubs
 
-1. Enable the tests that were marked as `@Disabled` with comment "In Progress - DSL".
+1. Implement the Drivers by throwing `UnsupportedOperationException("Driver not implemented yet")`.
+2. Run the tests and verify they fail with `UnsupportedOperationException`.
+3. Mark the tests as `@Disabled("In Progress - DSL")`.
+4. Ensure that there are no test files in the list of changed files.
+5. Commit the changes.
+
+## RED 5 - Drivers
+
+1. Enable the tests marked `@Disabled("In Progress - DSL")`.
 2. Implement the Drivers.
 3. Run the tests and verify they fail in the `then` stage.
-4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue. Wait for the user to say "proceed to RED 4" or "proceed to GREEN 1" or "proceed to GREEN 2" before doing anything else.
-5. Make the tests `@Disabled` again, with comment "In Progress - Implementation".
-6. Ensure that there are no test files in the list of changed files.
-7. Commit the changes.
+4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
-## RED 4 - Stubs
+## RED 6 - Contract Tests
 
-If there are runtime failures due to External System Stubs, then you'll need to write External System Contract Tests:
+_Only needed if there are runtime failures due to External System Stubs._
+
+Note: If the External System does not even exist yet, make Smoke Tests pass first.
 
 1. Write External System Contract Tests.
-2. STOP. Present the contract tests to the user and ask for approval. Do NOT continue. Wait for the user to say "proceed to step 3" before doing anything else.
-3. Verify that they pass when executed against the Real External System.
-4. Verify that they fail when executed against the Stub External System.
-5. Mark the tests `@Disabled`, with comment "In Progress - Stubs".
-6. Commit the changes.
-
-Note: If the External System doesn't even exist yet, then, before doing the above, please make Smoke Tests pass first.
+2. Verify that they pass when executed against the Real External System.
+3. Verify that they fail when executed against the Stub External System.
+4. Mark the tests `@Disabled("In Progress - Stubs")`.
+5. STOP. Present the contract tests to the user and ask for approval. Do NOT continue.
 
 ## GREEN 1 - Stubs
 
-If there are disabled External System Tests, the you'll need to make them pass:
-
-1. Enable the tests that were marked as `@Disabled` with comment "In Progress - Stubs".
+1. Enable the tests marked `@Disabled("In Progress - Stubs")`.
 2. Implement the External System Stubs.
-3. STOP. Present the stub implementation to the user and ask for approval. Do NOT continue. Wait for the user to say "proceed to step 4" before doing anything else.
-4. Execute `./Run-SystemTests.ps1 -Rebuild -SkipTests`
-3. Verify that the External System Contract Tests pass. If they fail, make fixes and then repeat the rebuild process and test re-execution process.
-3. Commit the changes.
-
+3. Execute `./Run-SystemTests.ps1 -Rebuild -SkipTests`.
+4. Verify that the External System Contract Tests pass. If they fail, fix and repeat.
+5. STOP. Present the stub implementation to the user and ask for approval. Do NOT continue.
 
 ## GREEN 2 - System
 
@@ -98,18 +82,20 @@ If there are disabled External System Tests, the you'll need to make them pass:
    a. Implement the backend changes.
    b. Run acceptance tests for the API channel.
    c. If tests fail, fix the backend until the tests pass.
-   d. If you have challenges in making the tests pass, ask the user.
-   e. Do NOT change the tests/dsl/drivers, change only the backend code.
+   d. If you have challenges making the tests pass, ask the user.
+   e. Do NOT change the tests/dsl/drivers — change only the backend code.
 2. Implement the frontend:
    a. Implement the frontend changes.
    b. Run acceptance tests for the UI channel.
    c. If tests fail, fix the frontend until the tests pass.
-   d. If you have challenges in making the tests pass, ask the user.
-   e. Do NOT change the tests/dsl/drivers, change only the frontend code.
+   d. If you have challenges making the tests pass, ask the user.
+   e. Do NOT change the tests/dsl/drivers — change only the frontend code.
 3. By now, all acceptance tests should be passing.
-4. STOP. Ask the user to review the implementation. Do NOT continue. Wait for the user to say "proceed to step 5" before doing anything else.
-5. Remove the `@Disabled` annotation.
-6. Ensure that there are no test files in the list of changed files.
-7. Commit the changes.
+4. STOP. Present the implementation to the user and ask for approval. Do NOT continue.
 
-// TODO: VJ: Add rules for external system contract tests.
+## GREEN 3 - Enable Tests
+
+1. Remove the `@Disabled` annotation from the tests.
+2. Run the tests and verify they all pass.
+3. Ensure that there are no non-test files in the list of changed files.
+4. Commit the changes.
