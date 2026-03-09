@@ -193,7 +193,18 @@ public class ShopUiDriver implements ShopDriver {
 
     @Override
     public Result<Void, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        throw new UnsupportedOperationException("TODO: Driver");
+        var viewResult = viewOrder(request.getOrderNumber());
+        if (viewResult.isFailure()) {
+            return viewResult.mapVoid();
+        }
+        orderDetailsPage.inputRating(request.getRating());
+        orderDetailsPage.inputComment(request.getComment());
+        orderDetailsPage.clickSubmitReview();
+        var result = orderDetailsPage.getResult();
+        if (result.isFailure()) {
+            return result.mapVoid();
+        }
+        return success();
     }
 
     @Override

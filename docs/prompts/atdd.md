@@ -29,7 +29,7 @@ When the user provides acceptance criteria, translate each scenario directly int
 1. If there were compile-time errors in RED 1 (DRAFT):
    a. Extend the DSL interfaces with the new methods.
    b. Implement the new methods by throwing `UnsupportedOperationException("TODO: DSL")` — do not implement DSL.
-   c. Run the tests and verify they fail with `UnsupportedOperationException("TODO: DSL")` (runtime, not compile-time).
+   c. Run the tests and verify they fail with a runtime error.
 2. Mark the tests as `@Disabled("RED 1 - Tests")`.
 3. COMMIT with message `<Scenario> | RED 1 - Tests`.
 4. If there were compile-time errors in RED 1 (DRAFT), automatically proceed to RED 2 (DRAFT).
@@ -45,7 +45,7 @@ When the user provides acceptance criteria, translate each scenario directly int
 ## RED 2 - DSL (COMMIT)
 
 1. Implement the Drivers by throwing `UnsupportedOperationException("TODO: Driver")`.
-2. Run the tests and verify they fail with `UnsupportedOperationException("TODO: Driver")`. If you receive another message, please alert the user.
+2. Run the tests and verify they fail with a runtime error.
 3. Mark the tests as `@Disabled("RED 2 - DSL")`.
 4. Ensure that there are no test files in the list of changed files.
 5. COMMIT with message `<Scenario> | RED 2 - DSL`.
@@ -55,7 +55,9 @@ When the user provides acceptance criteria, translate each scenario directly int
 
 1. Enable the tests marked `@Disabled("RED 2 - DSL")`.
 2. Implement the Drivers — replace `UnsupportedOperationException("TODO: Driver")` with actual logic.
-3. Run the tests and verify they fail in the `then` stage.
+   - Only look at files in the `driver-adapter` and `driver-port` directories.
+   - Do NOT read or search backend/frontend source code. Model the new method on existing driver methods in the same file.
+3. Run the tests and verify they fail with a runtime error.
 4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
 ## RED 3 - Driver (COMMIT)

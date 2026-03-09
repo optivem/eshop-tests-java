@@ -61,7 +61,7 @@ public class ShopApiDriver implements ShopDriver {
 
     @Override
     public Result<Void, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        throw new UnsupportedOperationException("TODO: Driver");
+        return apiClient.orders().submitReview(request).mapError(SystemErrorMapper::from);
     }
 
 }
