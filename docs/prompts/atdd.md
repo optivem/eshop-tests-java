@@ -24,7 +24,7 @@ When the user provides acceptance criteria, translate each scenario directly int
 2. Run the tests and verify they fail (compile error is expected if new DSL methods are needed).
 3. STOP. Present the tests to the user and ask for approval. Do NOT continue.
 
-## RED 2 - Tests - Commit
+## RED 2 - Tests (COMMIT)
 
 _Only needed if there were compile-time errors in RED 1._
 
@@ -41,7 +41,7 @@ _Only needed if there were compile-time errors in RED 1._
 3. Update the Driver interfaces as needed.
 4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue.
 
-## RED 4 - DSL - Commit
+## RED 4 - DSL (COMMIT)
 
 1. Implement the Drivers by throwing `UnsupportedOperationException("Driver skeleton")`.
 2. Run the tests and verify they fail with `UnsupportedOperationException("Driver skeleton")`.
@@ -56,7 +56,7 @@ _Only needed if there were compile-time errors in RED 1._
 3. Run the tests and verify they fail in the `then` stage.
 5. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
-## RED 6 - Driver - Commit
+## RED 6 - Driver (COMMIT)
 
 1. COMMIT the changes.
 
