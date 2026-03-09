@@ -31,12 +31,12 @@ _Only needed if there were compile-time errors in RED 1._
 1. Extend the DSL interface with the new methods.
 2. Implement the new methods by throwing `UnsupportedOperationException("DSL skeleton")` — do not implement drivers.
 3. Run the tests and verify they fail with `UnsupportedOperationException` (runtime, not compile-time).
-4. Mark the tests as `@Disabled("In Progress - Test")`.
+4. Mark the tests as `@Disabled("RED 2 - DSL Skeleton")`.
 5. Commit the changes.
 
 ## RED 3 - DSL Implementation
 
-1. Enable the tests marked `@Disabled("In Progress - Test")`.
+1. Enable the tests marked `@Disabled("RED 2 - DSL Skeleton")`.
 2. Implement the DSL for real — replace `UnsupportedOperationException("DSL skeleton")` with actual logic.
 3. Update the Driver interfaces as needed.
 4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue.
@@ -45,13 +45,13 @@ _Only needed if there were compile-time errors in RED 1._
 
 1. Implement the Drivers by throwing `UnsupportedOperationException("Driver skeleton")`.
 2. Run the tests and verify they fail with `UnsupportedOperationException`.
-3. Mark the tests as `@Disabled("In Progress - DSL")`.
+3. Mark the tests as `@Disabled("RED 4 - Driver Skeleton")`.
 4. Ensure that there are no test files in the list of changed files.
 5. Commit the changes.
 
 ## RED 5 - Driver Implementation
 
-1. Enable the tests marked `@Disabled("In Progress - DSL")`.
+1. Enable the tests marked `@Disabled("RED 4 - Driver Skeleton")`.
 2. Implement the Drivers — replace `UnsupportedOperationException("Driver skeleton")` with actual logic.
 3. Run the tests and verify they fail in the `then` stage.
 4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
@@ -65,12 +65,12 @@ Note: If the External System does not even exist yet, make Smoke Tests pass firs
 1. Write External System Contract Tests.
 2. Verify that they pass when executed against the Real External System.
 3. Verify that they fail when executed against the Stub External System.
-4. Mark the tests `@Disabled("In Progress - Stubs")`.
+4. Mark the tests `@Disabled("RED 6 - Contract Tests")`.
 5. STOP. Present the contract tests to the user and ask for approval. Do NOT continue.
 
 ## GREEN 1 - Stubs
 
-1. Enable the tests marked `@Disabled("In Progress - Stubs")`.
+1. Enable the tests marked `@Disabled("RED 6 - Contract Tests")`.
 2. Implement the External System Stubs.
 3. Execute `./Run-SystemTests.ps1 -Rebuild -SkipTests`.
 4. Verify that the External System Contract Tests pass. If they fail, fix and repeat.
