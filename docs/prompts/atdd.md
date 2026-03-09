@@ -1,21 +1,5 @@
 # ATDD Rules
 
-## Commit Message Format
-
-Commit messages must follow this format: `<Phase>: <Short description of what changed>`
-
-Examples:
-- `RED 1 - Tests: Add Submit Review acceptance tests`
-- `RED 2 - Tests: Add DSL skeleton for Submit Review`
-- `RED 3 - DSL: Implement Submit Review DSL and driver interfaces`
-- `RED 4 - DSL: Add driver skeleton for Submit Review`
-- `RED 5 - Driver: Implement Submit Review API and UI drivers`
-- `GREEN 1 - Stubs: Implement Submit Review external system stubs`
-- `GREEN 2 - System: Implement Submit Review backend and frontend`
-- `GREEN 3 - Enable Tests: Enable Submit Review acceptance tests`
-
----
-
 ## Phase Triggers
 
 Each ATDD phase is a separate, explicit step. **Never proceed to the next phase automatically.** Wait for the user to explicitly say `"proceed to RED 2"`, `"proceed to RED 3"`, etc. before starting the next phase.
@@ -34,49 +18,49 @@ When the user provides acceptance criteria, translate each scenario directly int
 - If the DSL needs to be extended with new methods, call them directly in the test as if they exist — do not add them to the DSL interface yet. Compile errors are expected and intentional.
 - After writing each test, verify it matches the acceptance criteria exactly — Given maps to Given, When maps to When, Then maps to Then. Every precondition stated in the scenario must appear in the test. If anything is unclear, ask before proceeding.
 
-## RED 1 - Tests
+## RED 1 - Tests (DRAFT)
 
 1. Write the acceptance tests.
 2. Run the tests and verify they fail (compile error is expected if new DSL methods are needed).
 3. STOP. Present the tests to the user and ask for approval. Do NOT continue.
 
-## RED 2 - Tests (COMMIT)
+## RED 1 - Tests (COMMIT)
 
-1. If there were compile-time errors in RED 1:
+1. If there were compile-time errors in RED 1 (DRAFT):
    a. Extend the DSL interfaces with the new methods.
    b. Implement the new methods by throwing `UnsupportedOperationException("TODO: DSL")` — do not implement DSL.
    c. Run the tests and verify they fail with `UnsupportedOperationException("TODO: DSL")` (runtime, not compile-time).
-2. Mark the tests as `@Disabled("RED - Tests")`.
-3. COMMIT the changes.
-4. If there were compile-time errors in RED 1, automatically proceed to RED 3. 
+2. Mark the tests as `@Disabled("RED 1 - Tests")`.
+3. COMMIT with message `<Scenario> | RED 1 - Tests`.
+4. If there were compile-time errors in RED 1 (DRAFT), automatically proceed to RED 2 (DRAFT).
    Otherwise, STOP and wait for the user to indicate what to do next.
 
-## RED 3 - DSL
+## RED 2 - DSL (DRAFT)
 
-1. Enable the tests marked `@Disabled("RED - Tests")`.
+1. Enable the tests marked `@Disabled("RED 1 - Tests")`.
 2. Implement the DSL for real — replace `UnsupportedOperationException("TODO: DSL")` with actual logic.
 3. Update the Driver interfaces as needed.
 4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue.
 
-## RED 4 - DSL (COMMIT)
+## RED 2 - DSL (COMMIT)
 
 1. Implement the Drivers by throwing `UnsupportedOperationException("TODO: Driver")`.
 2. Run the tests and verify they fail with `UnsupportedOperationException("TODO: Driver")`.
-3. Mark the tests as `@Disabled("RED - DSL")`.
+3. Mark the tests as `@Disabled("RED 2 - DSL")`.
 4. Ensure that there are no test files in the list of changed files.
-5. COMMIT the changes.
-6. Automatically proceed to RED 5.
+5. COMMIT with message `<Scenario> | RED 2 - DSL`.
+6. Automatically proceed to RED 3 (DRAFT).
 
-## RED 5 - Driver
+## RED 3 - Driver (DRAFT)
 
-1. Enable the tests marked `@Disabled("RED - DSL")`.
+1. Enable the tests marked `@Disabled("RED 2 - DSL")`.
 2. Implement the Drivers — replace `UnsupportedOperationException("TODO: Driver")` with actual logic.
 3. Run the tests and verify they fail in the `then` stage.
-5. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
+4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
-## RED 6 - Driver (COMMIT)
+## RED 3 - Driver (COMMIT)
 
-1. COMMIT the changes.
+1. COMMIT with message `<Scenario> | RED 3 - Driver`.
 
 
 
