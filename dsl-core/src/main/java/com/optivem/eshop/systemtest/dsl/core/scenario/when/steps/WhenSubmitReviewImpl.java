@@ -1,32 +1,23 @@
 package com.optivem.eshop.systemtest.dsl.core.scenario.when.steps;
 
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewResponse;
 import com.optivem.eshop.systemtest.dsl.core.app.AppDsl;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.SubmitReviewVerification;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.systemtest.dsl.core.scenario.ExecutionResultBuilder;
+import com.optivem.eshop.systemtest.dsl.core.shared.VoidVerification;
 import com.optivem.eshop.systemtest.dsl.port.when.steps.WhenSubmitReview;
 
 import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 
-public class WhenSubmitReviewImpl extends BaseWhenStep<SubmitReviewResponse, SubmitReviewVerification> implements WhenSubmitReview {
-    private String reviewId;
+public class WhenSubmitReviewImpl extends BaseWhenStep<Void, VoidVerification> implements WhenSubmitReview {
     private String orderNumber;
     private String rating;
     private String comment;
 
     public WhenSubmitReviewImpl(AppDsl app) {
         super(app);
-        this.reviewId = DEFAULT_REVIEW_ID;
         this.orderNumber = DEFAULT_ORDER_NUMBER;
         this.rating = DEFAULT_RATING;
         this.comment = EMPTY;
-    }
-
-    @Override
-    public WhenSubmitReviewImpl withReviewId(String reviewId) {
-        this.reviewId = reviewId;
-        return this;
     }
 
     @Override
@@ -48,17 +39,15 @@ public class WhenSubmitReviewImpl extends BaseWhenStep<SubmitReviewResponse, Sub
     }
 
     @Override
-    protected ExecutionResult<SubmitReviewResponse, SubmitReviewVerification> execute(AppDsl app) {
+    protected ExecutionResult<Void, VoidVerification> execute(AppDsl app) {
         var result = app.shop().submitReview()
                 .orderNumber(orderNumber)
-                .reviewId(reviewId)
                 .rating(rating)
                 .comment(comment)
                 .execute();
 
         return new ExecutionResultBuilder<>(result)
                 .orderNumber(orderNumber)
-                .reviewId(reviewId)
                 .build();
     }
 }

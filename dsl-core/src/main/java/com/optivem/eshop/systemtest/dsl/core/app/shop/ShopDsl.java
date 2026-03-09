@@ -5,7 +5,6 @@ import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.GoToShop;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.BrowseCoupons;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.CancelOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.DeliverOrder;
-import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.GetReview;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PlaceOrder;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.PublishCoupon;
 import com.optivem.eshop.systemtest.dsl.core.app.shop.usecases.SubmitReview;
@@ -59,10 +58,6 @@ public class ShopDsl implements Closeable {
 
     public SubmitReview submitReview() {
         return new SubmitReview(driver, context);
-    }
-
-    public GetReview getReview() {
-        return new GetReview(driver, context);
     }
 }
 

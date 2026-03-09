@@ -7,7 +7,7 @@ import com.optivem.testing.Channel;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
-@Disabled("In Progress - DSL")
+@Disabled("In Progress - Implementation")
 class SubmitReviewPositiveTest extends BaseAcceptanceTest {
 
     @TestTemplate
@@ -23,7 +23,6 @@ class SubmitReviewPositiveTest extends BaseAcceptanceTest {
                 .and().review()
                     .hasRating(5)
                     .hasComment("Quality product")
-                    .hasReviewId()
                     .hasTimestamp();
     }
 }

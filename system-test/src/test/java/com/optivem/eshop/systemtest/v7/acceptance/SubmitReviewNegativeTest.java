@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 import org.junit.jupiter.params.provider.ValueSource;
 
-@Disabled("In Progress - DSL")
+@Disabled("In Progress - Implementation")
 class SubmitReviewNegativeTest extends BaseAcceptanceTest {
 
     @TestTemplate

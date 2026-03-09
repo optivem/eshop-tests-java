@@ -19,7 +19,6 @@ public final class ScenarioDefaults {
     public static final OrderStatus DEFAULT_ORDER_STATUS = OrderStatus.PLACED;
 
     // Review defaults
-    public static final String DEFAULT_REVIEW_ID = "DEFAULT-REVIEW";
     public static final String DEFAULT_RATING = "5";
 
     // Clock defaults

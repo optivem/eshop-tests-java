@@ -9,12 +9,12 @@ public class ExecutionResult<TSuccessResponse, TSuccessVerification extends Resp
     private final UseCaseResult<TSuccessResponse, TSuccessVerification> result;
     private final ExecutionResultContext context;
 
-    ExecutionResult(UseCaseResult<TSuccessResponse, TSuccessVerification> result, String orderNumber, String couponCode, String reviewId) {
+    ExecutionResult(UseCaseResult<TSuccessResponse, TSuccessVerification> result, String orderNumber, String couponCode) {
         if (result == null) {
             throw new IllegalArgumentException("Result cannot be null");
         }
         this.result = result;
-        this.context = new ExecutionResultContext(orderNumber, couponCode, reviewId);
+        this.context = new ExecutionResultContext(orderNumber, couponCode);
     }
 }
 

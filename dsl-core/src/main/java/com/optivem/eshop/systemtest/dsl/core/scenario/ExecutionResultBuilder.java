@@ -7,7 +7,6 @@ public class ExecutionResultBuilder<TSuccessResponse, TSuccessVerification exten
     private final UseCaseResult<TSuccessResponse, TSuccessVerification> result;
     private String orderNumber;
     private String couponCode;
-    private String reviewId;
 
     public ExecutionResultBuilder(UseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         this.result = result;
@@ -23,13 +22,8 @@ public class ExecutionResultBuilder<TSuccessResponse, TSuccessVerification exten
         return this;
     }
 
-    public ExecutionResultBuilder<TSuccessResponse, TSuccessVerification> reviewId(String reviewId) {
-        this.reviewId = reviewId;
-        return this;
-    }
-
     public ExecutionResult<TSuccessResponse, TSuccessVerification> build() {
-        return new ExecutionResult<>(result, orderNumber, couponCode, reviewId);
+        return new ExecutionResult<>(result, orderNumber, couponCode);
     }
 }
 

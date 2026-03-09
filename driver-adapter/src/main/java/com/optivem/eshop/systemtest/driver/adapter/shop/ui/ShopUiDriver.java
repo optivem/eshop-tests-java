@@ -8,13 +8,11 @@ import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.NewOrder
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderDetailsPage;
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderHistoryPage;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.GetReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewRequest;
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
@@ -110,6 +108,9 @@ public class ShopUiDriver implements ShopDriver {
         var totalPrice = orderDetailsPage.getTotalPrice();
         var status = orderDetailsPage.getStatus();
         var appliedCoupon = orderDetailsPage.getAppliedCoupon();
+        var reviewTimestamp = orderDetailsPage.getReviewTimestamp();
+        var reviewRating = orderDetailsPage.getReviewRating();
+        var reviewComment = orderDetailsPage.getReviewComment();
 
         var response = ViewOrderResponse.builder()
                 .orderNumber(displayOrderNumber)
@@ -127,6 +128,9 @@ public class ShopUiDriver implements ShopDriver {
                 .country(country)
                 .status(status)
                 .appliedCouponCode(appliedCoupon)
+                .reviewTimestamp(reviewTimestamp)
+                .reviewRating(reviewRating)
+                .reviewComment(reviewComment)
                 .build();
 
         return success(response);
@@ -195,17 +199,37 @@ public class ShopUiDriver implements ShopDriver {
 
     @Override
     public Result<Void, ErrorResponse> deliverOrder(String orderNumber) {
-        throw new UnsupportedOperationException("Driver not implemented yet");
+        var viewResult = viewOrder(orderNumber);
+
+        if (viewResult.isFailure()) {
+            return viewResult.mapVoid();
+        }
+
+        orderDetailsPage.clickDeliverOrder();
+
+        var result = orderDetailsPage.getResult();
+
+        if (result.isFailure()) {
+            return result.mapVoid();
+        }
+
+        return success();
     }
 
     @Override
-    public Result<SubmitReviewResponse, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        throw new UnsupportedOperationException("Driver not implemented yet");
-    }
+    public Result<Void, ErrorResponse> submitReview(SubmitReviewRequest request) {
+        var orderNumber = request.getOrderNumber();
+        var viewResult = viewOrder(orderNumber);
 
-    @Override
-    public Result<GetReviewResponse, ErrorResponse> getReview(String reviewId) {
-        throw new UnsupportedOperationException("Driver not implemented yet");
+        if (viewResult.isFailure()) {
+            return viewResult.mapVoid();
+        }
+
+        orderDetailsPage.inputRating(request.getRating());
+        orderDetailsPage.inputComment(request.getComment());
+        orderDetailsPage.clickSubmitReview();
+
+        return orderDetailsPage.getResult().mapVoid();
     }
 
     // --- page navigation ---

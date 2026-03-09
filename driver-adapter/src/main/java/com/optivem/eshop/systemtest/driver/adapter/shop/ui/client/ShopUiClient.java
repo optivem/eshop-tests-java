@@ -16,6 +16,7 @@ public class ShopUiClient implements AutoCloseable {
     private final String baseUrl;
     private final BrowserContext context;
     private final Page page;
+    private final PageClient pageClient;
     private final HomePage homePage;
 
     private Response response;
@@ -34,7 +35,7 @@ public class ShopUiClient implements AutoCloseable {
         // Each test gets its own page
         this.page = context.newPage();
 
-        var pageClient = new PageClient(page);
+        this.pageClient = new PageClient(page);
         this.homePage = new HomePage(pageClient);
     }
 

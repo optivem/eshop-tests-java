@@ -5,8 +5,6 @@ public interface ThenReview {
 
     ThenReview hasComment(String expectedComment);
 
-    ThenReview hasReviewId();
-
     ThenReview hasTimestamp();
 
     ThenReview and();
