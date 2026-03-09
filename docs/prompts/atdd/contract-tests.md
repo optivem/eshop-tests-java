@@ -4,7 +4,7 @@ _This process is only triggered when RED 3 - Driver fails due to an External Sys
 
 _If the External System does not even exist yet, make Smoke Tests pass first._
 
-## RED 4 - Contract Tests (DRAFT)
+## RED 3.1 - Contract Tests (DRAFT)
 
 1. Write External System Contract Tests.
 2. Verify that they pass when executed against the Real External System:
@@ -19,12 +19,12 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
 4. Mark the tests `@Disabled("RED 4 - Contract Tests")`.
 5. STOP. Present the contract tests to the user and ask for approval. Do NOT continue.
 
-## RED 4 - Contract Tests (COMMIT)
+## RED 3.1 - Contract Tests (COMMIT)
 
 1. COMMIT the changes with message `<Scenario> | RED 4 - Contract Tests`.
 2. Automatically proceed to GREEN 1 (DRAFT).
 
-## GREEN 1 - External System Stubs (DRAFT)
+## RED 3.2 - External System Stubs (DRAFT)
 
 1. Enable the tests marked `@Disabled("RED 4 - Contract Tests")`.
 2. Implement the External System Stubs.
@@ -35,7 +35,7 @@ _If the External System does not even exist yet, make Smoke Tests pass first._
 4. Verify that the External System Contract Tests pass. If they fail, then ask the user.
 5. STOP. Present the stub implementation to the user and ask for approval. Do NOT continue.
 
-## GREEN 1 - External System Stubs (COMMIT)
+## RED 3.2 - External System Stubs (COMMIT)
 
 1. COMMIT with message `<Scenario> | GREEN - External System Stubs`.
 2. Automatically proceed to GREEN 2 (DRAFT).
