@@ -3,13 +3,14 @@
 ## Overview
 
 This workflow takes a user story and produces a working, tested feature using a pipeline of
-specialized agents. Human input is required at exactly two points.
+specialized agents. Human input is required at four points.
 
 ## Human Touchpoints
 
-1. **Gherkin approval** — after the Story Agent produces Gherkin scenarios, the human reviews
-   and approves them. This is the only opportunity to correct business intent before implementation begins.
-2. **Outcome review** — after all agents complete, the human reviews the working feature.
+1. **Gherkin approval** — after the Story Agent produces Gherkin scenarios, the human reviews and approves them. This is the opportunity to correct business intent before implementation begins.
+2. **Test approval** — after the Test Agent writes the acceptance tests (RED 1 DRAFT), the human reviews the test code before it is committed. This catches translation errors from Gherkin to code before DSL, drivers, and backend are built on top.
+3. **Driver approval** — after the Driver Agent completes RED 3, the human reviews the driver implementation before backend/frontend work begins. This validates the full test spec (tests + DSL + drivers) as a unit, preventing agents from chasing false failures caused by a wrong driver.
+4. **Outcome review** — after all agents complete, the human reviews the working feature.
 
 ## Pipeline
 
@@ -23,7 +24,11 @@ User Story
     ┌─────────────────────────────────────────────────────────┐
     │  Per-scenario loop (repeats until all scenarios GREEN)  │
     │                                                         │
-    │  [Test Agent]    →  Acceptance tests   RED 1            │
+    │  [Test Agent]    →  Acceptance tests   RED 1 DRAFT      │
+    │      │                                                  │
+    │      │                              ← HUMAN APPROVES TESTS
+    │      │                                                  │
+    │  [Test Agent]    →  Commit tests      RED 1 COMMIT      │
     │      │                                                  │
     │      ▼                                                  │
     │  [DSL Agent]     →  DSL + interfaces   RED 2            │
@@ -31,7 +36,8 @@ User Story
     │      ▼                                                  │
     │  [Driver Agent]  →  Drivers            RED 3            │
     │      │                                                  │
-    │      ▼                                                  │
+    │      │                              ← HUMAN APPROVES DRIVERS
+    │      │                                                  │
     │  [Backend Agent] →  Working backend    GREEN 2          │
     │      │                                                  │
     │      ▼                                                  │
@@ -64,7 +70,8 @@ The approach depends on whether new DSL is needed:
 
 ### Test Agent
 - **Input:** Approved Gherkin scenarios
-- **Output:** Committed acceptance tests (`@Disabled("RED 1 - Tests")`)
+- **DRAFT output:** Written test code, presented to human for approval — not yet committed
+- **COMMIT output:** Committed acceptance tests (`@Disabled("RED 1 - Tests")`)
 - **Governed by:** `acceptance-tests.md` — RED 1 (DRAFT) and RED 1 (COMMIT) phases
 - **Handoff:** Tests committed, test class name passed to DSL Agent
 
@@ -79,7 +86,7 @@ The approach depends on whether new DSL is needed:
 - **Output:** Implemented drivers, tests committed (`@Disabled("RED 3 - Driver")`)
 - **Governed by:** `acceptance-tests.md` — RED 3 phases; `driver-port.md` for coding rules
 - **Note:** If failure is due to an external system stub, invoke Contract Tests sub-process (`contract-tests.md`) before continuing.
-- **Handoff:** Passing driver layer, tests still disabled
+- **Handoff:** Driver implementation presented to human for approval before backend/frontend work begins
 
 ### Backend Agent
 - **Input:** Driver interfaces, existing backend codebase
