@@ -21,7 +21,8 @@ If a test covers both channels, run both suites.
    - Each Gherkin scenario maps directly to one test method — one-to-one, no interpretation needed.
    - Only specify the minimum data needed — inputs directly relevant to what is being tested, and assertions directly relevant to the expected outcome. Do not add extra fields, extra assertions, or noise. If a field is not relevant to the scenario being tested, omit it entirely and let the DSL use its default value.
    - If the DSL needs to be extended with new methods, call them directly in the test as if they exist — do not add them to the DSL interface yet. Compile errors are expected and intentional.
-   - **Single-scenario focus:** If multiple scenarios are provided and new DSL methods are needed (compile errors expected), implement only the **first scenario** in this cycle. Add a `// TODO: <Scenario Name>` comment for each remaining scenario — do not write their test methods yet. They will be added in subsequent cycles after this scenario reaches GREEN.
+   - **Single-scenario focus (new DSL needed):** If multiple scenarios are provided and new DSL methods are needed (compile errors expected), implement only the **first scenario** in this cycle. Add a `// TODO: <Scenario Name>` comment for each remaining scenario — do not write their test methods yet. They will be added in subsequent cycles after this scenario reaches GREEN.
+   - **Batch (existing DSL only):** If all scenarios can be written using existing DSL methods (no compile errors expected), implement all of them together in one cycle.
    - After writing each test, verify it matches the acceptance criteria exactly — Given maps to Given, When maps to When, Then maps to Then. Every precondition stated in the scenario must appear in the test. If anything is unclear, ask before proceeding.
 2. Run the tests and verify they fail (compile error is expected if new DSL methods are needed):
    ```

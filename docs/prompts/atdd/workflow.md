@@ -49,10 +49,10 @@ User Story
 
 ### When does the loop apply?
 
-If the story has multiple scenarios and new DSL methods are needed (compile errors in RED 1),
-the Test Agent implements only the **first scenario** and leaves the rest as `// TODO:` comments.
-Each subsequent loop picks up the next scenario. If all scenarios share existing DSL (no compile
-errors), they can all be implemented in a single pass.
+The approach depends on whether new DSL is needed:
+
+- **New DSL needed (compile errors in RED 1):** The Test Agent implements only the **first scenario** and leaves the rest as `// TODO:` comments. Each loop cycle picks up the next scenario. This validates the DSL design before multiplying it across all scenarios.
+- **Existing DSL only (no compile errors):** All scenarios are implemented together in a single pass — no looping needed.
 
 ## Agent Definitions
 
