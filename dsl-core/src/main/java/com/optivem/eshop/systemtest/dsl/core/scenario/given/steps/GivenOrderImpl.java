@@ -15,6 +15,9 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
     private String country;
     private String couponCodeAlias;
     private OrderStatus status;
+    private boolean submittedReview;
+    private String reviewRating;
+    private String reviewComment;
 
     public GivenOrderImpl(GivenImpl given) {
         super(given);
@@ -25,6 +28,9 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
         withCountry(DEFAULT_COUNTRY);
         withCouponCode(EMPTY);
         withStatus(DEFAULT_ORDER_STATUS);
+        this.submittedReview = false;
+        this.reviewRating = DEFAULT_RATING;
+        this.reviewComment = DEFAULT_COMMENT;
     }
 
     public GivenOrderImpl withOrderNumber(String orderNumber) {
@@ -67,7 +73,8 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
 
     @Override
     public GivenOrderImpl withSubmittedReview() {
-        throw new UnsupportedOperationException("TODO: DSL");
+        this.submittedReview = true;
+        return this;
     }
 
     @Override
@@ -92,6 +99,15 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
         if(status == OrderStatus.DELIVERED) {
             app.shop().deliverOrder()
                     .orderNumber(orderNumber)
+                    .execute()
+                    .shouldSucceed();
+        }
+
+        if(submittedReview) {
+            app.shop().submitReview()
+                    .orderNumber(orderNumber)
+                    .rating(reviewRating)
+                    .comment(reviewComment)
                     .execute()
                     .shouldSucceed();
         }
