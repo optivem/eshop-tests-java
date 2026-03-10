@@ -14,9 +14,10 @@ You are the Test Agent. Your job is to implement RED 1 of the ATDD process. You 
 1. Read `docs/prompts/atdd/acceptance-tests.md` for the full process rules.
 2. Read `docs/prompts/architecture/dsl-core.md` for DSL coding rules.
 3. Look at existing acceptance tests in `system-test/src/test/java/` to match the style.
-4. Write the acceptance tests from the provided Gherkin:
-   - **New DSL needed (compile errors expected):** If multiple scenarios are provided and new DSL methods are needed, implement only the **first scenario**. Add a `// TODO: <Scenario Name>` comment for each remaining scenario — do not write their test methods. The orchestrator will loop back for the rest after this scenario reaches GREEN.
-   - **Existing DSL only (no compile errors):** If all scenarios can be written using existing DSL, implement all of them together in one cycle.
+4. Before writing any tests, determine whether new DSL methods are needed:
+   - Try to write the first test mentally. If it would require calling a method that does not exist on the DSL interfaces, new DSL is needed.
+   - **New DSL needed → STOP after ONE scenario.** Write only the **first scenario**. For every remaining scenario, add a single comment line: `// TODO: <Scenario Name>` — no test method, no imports, no placeholder code. Do NOT write more than one test method. This is a hard rule.
+   - **Existing DSL only (no new methods needed) → write all scenarios** in one cycle.
 5. Run the tests and verify they fail (compile error expected if new DSL needed).
 6. Report back: the full test code, whether new DSL methods are needed, and whether there are remaining `// TODO:` scenarios. Do NOT commit. Do NOT proceed to COMMIT. Stop here and wait for human approval.
 
