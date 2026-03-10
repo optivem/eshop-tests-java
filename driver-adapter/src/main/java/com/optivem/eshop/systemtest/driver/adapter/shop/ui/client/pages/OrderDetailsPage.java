@@ -26,9 +26,6 @@ public class OrderDetailsPage extends BasePage {
     private static final String APPLIED_COUPON_OUTPUT_SELECTOR = "[aria-label='Display Applied Coupon']";
     private static final String CANCEL_ORDER_OUTPUT_SELECTOR = "[aria-label='Cancel Order']";
     private static final String DELIVER_ORDER_SELECTOR = "[aria-label='Deliver Order']";
-    private static final String RATING_INPUT_SELECTOR = "[aria-label='Rating']";
-    private static final String COMMENT_INPUT_SELECTOR = "[aria-label='Comment']";
-    private static final String SUBMIT_REVIEW_SELECTOR = "[aria-label='Submit Review']";
 
     // Display text constants
     private static final String TEXT_NONE = "None";
@@ -117,18 +114,6 @@ public class OrderDetailsPage extends BasePage {
 
     public void clickDeliverOrder() {
         pageClient.click(DELIVER_ORDER_SELECTOR);
-    }
-
-    public void inputRating(String rating) {
-        pageClient.fill(RATING_INPUT_SELECTOR, rating);
-    }
-
-    public void inputComment(String comment) {
-        pageClient.fill(COMMENT_INPUT_SELECTOR, comment);
-    }
-
-    public void clickSubmitReview() {
-        pageClient.click(SUBMIT_REVIEW_SELECTOR);
     }
 
     private BigDecimal readTextMoney(String selector) {

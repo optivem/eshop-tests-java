@@ -12,7 +12,6 @@ import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
@@ -189,22 +188,6 @@ public class ShopUiDriver implements ShopDriver {
                 .build();
 
         return success(response);
-    }
-
-    @Override
-    public Result<Void, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        var viewResult = viewOrder(request.getOrderNumber());
-        if (viewResult.isFailure()) {
-            return viewResult.mapVoid();
-        }
-        orderDetailsPage.inputRating(request.getRating());
-        orderDetailsPage.inputComment(request.getComment());
-        orderDetailsPage.clickSubmitReview();
-        var result = orderDetailsPage.getResult();
-        if (result.isFailure()) {
-            return result.mapVoid();
-        }
-        return success();
     }
 
     @Override
