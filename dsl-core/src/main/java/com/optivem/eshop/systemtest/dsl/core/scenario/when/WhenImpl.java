@@ -70,7 +70,8 @@ public class WhenImpl implements WhenStage {
     }
 
     public WhenSubmitReviewImpl submitReview() {
-        throw new UnsupportedOperationException("TODO: DSL");
+        ensureDefaults();
+        return new WhenSubmitReviewImpl(app);
     }
 
 }
