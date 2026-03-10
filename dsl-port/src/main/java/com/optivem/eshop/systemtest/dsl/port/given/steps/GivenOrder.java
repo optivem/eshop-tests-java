@@ -19,5 +19,7 @@ public interface GivenOrder extends GivenStep {
     GivenOrder withStatus(String status);
 
     GivenOrder withStatus(OrderStatus status);
+
+    GivenOrder withSubmittedReview();
 }
 

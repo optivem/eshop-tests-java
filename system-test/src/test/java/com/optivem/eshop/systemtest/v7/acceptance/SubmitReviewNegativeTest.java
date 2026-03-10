@@ -4,6 +4,7 @@ import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
 import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.testing.Channel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
 class SubmitReviewNegativeTest extends BaseAcceptanceTest {
@@ -66,5 +67,16 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
                     .errorMessage("Product is not reviewable");
     }
 
-    // TODO: Cannot submit a duplicate review
+    @Disabled("RED 1 - Tests")
+    @TestTemplate
+    @Channel({ChannelType.UI, ChannelType.API})
+    void cannotSubmitADuplicateReview() {
+        scenario
+                .given().order()
+                    .withStatus(OrderStatus.DELIVERED)
+                    .withSubmittedReview()
+                .when().submitReview()
+                .then().shouldFail()
+                    .errorMessage("A review has already been submitted for this order");
+    }
 }

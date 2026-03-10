@@ -66,6 +66,11 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
     }
 
     @Override
+    public GivenOrderImpl withSubmittedReview() {
+        throw new UnsupportedOperationException("TODO: DSL");
+    }
+
+    @Override
     public void execute(AppDsl app) {
 
         app.shop().placeOrder()
