@@ -21,15 +21,15 @@ Steps 2–14 below form a **per-scenario loop**. Repeat them for each scenario u
 
 6. STOP. Present the DSL implementation and driver interface changes to the user and wait for approval. Do NOT continue until approved.
 
-7. Launch **dsl-agent (COMMIT)**. It will add driver stubs, mark tests `@Disabled("RED 2 - DSL")`, and commit RED 2.
+7. Launch **dsl-agent (COMMIT)**. It will add driver stubs, mark tests `@Disabled("RED 2 - DSL")`, and commit RED 2. Note whether it reports **external system interfaces changed = yes**.
 
-8. Launch **driver-agent (WRITE)**. It will implement the drivers and report back without committing. Note whether it reports a stub failure or an application error.
+8. Launch **driver-agent (WRITE)**. It will implement the drivers and report back without committing.
 
 9. STOP. Present the driver implementation to the user and wait for approval. Do NOT continue until approved.
 
 10. Launch **driver-agent (COMMIT)**. It will mark tests `@Disabled("RED 3 - Driver")` and commit RED 3.
-    - If the driver-agent (WRITE) reported a **stub failure**: follow the contract-tests sub-process in `docs/prompts/atdd/contract-tests.md` (RED 3.1 WRITE → RED 3.1 COMMIT → RED 3.2 WRITE → RED 3.2 COMMIT) before continuing to step 11.
-    - If the driver-agent (WRITE) reported an **application error**: proceed directly to step 11.
+    - If the dsl-agent reported **external system interfaces changed = yes**: follow the contract-tests sub-process in `docs/prompts/atdd/contract-tests.md` (RED 3.1 WRITE → RED 3.1 COMMIT → RED 3.2 WRITE → RED 3.2 COMMIT) before continuing to step 11.
+    - Otherwise: proceed directly to step 11.
 
 11. Launch **backend-agent**. It will implement the backend until API tests pass.
 

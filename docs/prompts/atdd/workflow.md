@@ -45,7 +45,7 @@ User Story
     │      │                                                  │
     │  [Driver Agent]  →  Commit drivers     RED 3 COMMIT     │
     │      │                                                  │
-    │      ├── stub failure? ──► RED 3.1/3.2 (contract-tests) │
+    │      ├── external/ changed? ► RED 3.1/3.2 (contract-tests)│
     │      │                                                  │
     │  [Backend Agent] →  Working backend    GREEN 2          │
     │      │                                                  │
@@ -93,10 +93,10 @@ The approach depends on whether new DSL is needed:
 
 ### Driver Agent
 - **Input:** Driver interface signatures and disabled tests
-- **WRITE output:** Implemented drivers + failure reason (stub error vs application error), presented to human for approval — not yet committed
+- **WRITE output:** Implemented drivers, presented to human for approval — not yet committed
 - **COMMIT output:** Tests committed (`@Disabled("RED 3 - Driver")`)
 - **Governed by:** `acceptance-tests.md` — RED 3 phases; `driver-port.md` for coding rules
-- **Handoff:** Failure reason passed to orchestrator; orchestrator routes to contract-tests sub-process or GREEN 2
+- **Handoff:** Orchestrator routes to contract-tests sub-process or GREEN 2 based on DSL agent's external system flag
 
 ### Backend Agent
 - **Input:** Driver interfaces, existing backend codebase
@@ -128,4 +128,4 @@ human rather than guess. Examples:
 
 ## Optional Sub-Process
 
-If the Driver Agent (WRITE) reports a stub failure, the orchestrator invokes the Contract Tests pipeline defined in `contract-tests.md` (RED 3.1 WRITE → RED 3.1 COMMIT → RED 3.2 WRITE → RED 3.2 COMMIT) before proceeding to GREEN 2.
+If the DSL Agent reports **external system interfaces changed = yes** (i.e. any new methods were added to interfaces under `external/`), the orchestrator invokes the Contract Tests pipeline defined in `contract-tests.md` (RED 3.1 WRITE → RED 3.1 COMMIT → RED 3.2 WRITE → RED 3.2 COMMIT) before proceeding to GREEN 2.

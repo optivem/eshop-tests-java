@@ -50,7 +50,8 @@ If a test covers both channels, run both suites.
 1. Enable the tests marked `@Disabled("RED 1 - Tests")`.
 2. Implement the DSL for real — replace `UnsupportedOperationException("TODO: DSL")` with actual logic.
 3. Update the Driver interfaces as needed.
-4. STOP. Present the DSL implementation and Driver interface changes to the user and ask for approval. Do NOT continue.
+4. Check whether any new or changed driver interfaces are in an `external/` package (e.g. `driver-port/.../external/clock`). Set a flag: **external system interfaces changed = yes/no**.
+5. STOP. Present the DSL implementation, Driver interface changes, and the external system interfaces flag to the user and ask for approval. Do NOT continue.
 
 ## RED 2 - DSL (COMMIT)
 
@@ -71,10 +72,8 @@ If a test covers both channels, run both suites.
 2. Implement the Drivers — replace `UnsupportedOperationException("TODO: Driver")` with actual logic.
    - Only look at files in the `driver-adapter` and `driver-port` directories.
    - Do NOT read or search backend/frontend source code. Model the new method on existing driver methods in the same file.
-3. Run the tests and note how they fail — specifically whether the failure is:
-   - An **external system stub error** (the stub does not support the operation), or
-   - An **application error** (the backend/frontend endpoint does not exist yet).
-4. STOP. Present the Driver implementation and the failure reason to the user and ask for approval. Do NOT continue.
+3. Run the tests and verify they fail with a runtime error.
+4. STOP. Present the Driver implementation to the user and ask for approval. Do NOT continue.
 
 ## RED 3 - Driver (COMMIT)
 
@@ -83,7 +82,7 @@ If a test covers both channels, run both suites.
 3. COMMIT with message `<Scenario> | RED 3 - Driver`.
 4. STOP. Do not proceed further. Phase progression is controlled by the orchestrator, not by this agent.
 
-_See `contract-tests.md` for the RED 3.1 and RED 3.2 phases (triggered by the orchestrator when a stub failure is detected)._
+_See `contract-tests.md` for the RED 3.1 and RED 3.2 phases (triggered by the orchestrator when RED 2 reported external system interface changes)._
 
 ## GREEN 2 - System (WRITE)
 

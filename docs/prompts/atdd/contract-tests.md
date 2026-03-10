@@ -1,6 +1,6 @@
 # Contract Tests Process
 
-_This process is only triggered when RED 3 - Driver (WRITE) reports a stub failure (the external system stub does not yet support the new operation). It is initiated by the orchestrator after RED 3 - Driver (COMMIT)._
+_This process is only triggered when the DSL Agent (RED 2) reports **external system interfaces changed = yes** — i.e. new methods were added to interfaces under `external/` (e.g. `driver-port/.../external/erp`). It is initiated by the orchestrator after RED 3 - Driver (COMMIT)._
 
 _If the External System does not even exist yet, make Smoke Tests pass first._
 

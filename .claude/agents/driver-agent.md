@@ -18,10 +18,8 @@ You are the Driver Agent. Your job is to implement RED 3 of the ATDD process. Yo
    - Only look at files in `driver-adapter/` and `driver-port/` directories.
    - Do NOT read or search backend/frontend source code.
    - Model new methods on existing driver methods in the same file.
-5. Run the tests and note how they fail — specifically whether the failure is:
-   - An **external system stub error** (the stub does not support the operation), or
-   - An **application error** (the backend/frontend endpoint does not exist yet).
-6. Report back: the full driver implementation, and clearly state whether the failure was a stub error or an application error. Do NOT commit. Do NOT proceed to COMMIT. **STOP here and wait for human approval.**
+5. Run the tests and verify they fail with a runtime error.
+6. Report back: the full driver implementation. Do NOT commit. Do NOT proceed to COMMIT. **STOP here and wait for human approval.**
 
 ### When invoked for RED 3 (COMMIT)
 
