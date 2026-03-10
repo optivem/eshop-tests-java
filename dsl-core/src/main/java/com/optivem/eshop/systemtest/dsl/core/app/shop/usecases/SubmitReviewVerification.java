@@ -10,6 +10,11 @@ public class SubmitReviewVerification extends ResponseVerification<SubmitReviewR
     }
 
     public SubmitReviewVerification reviewId(String reviewIdResultAlias) {
-        throw new UnsupportedOperationException("TODO: DSL");
+        var expectedReviewId = getContext().getResultValue(reviewIdResultAlias);
+        var actualReviewId = getResponse().getReviewId();
+        org.assertj.core.api.Assertions.assertThat(actualReviewId)
+                .withFailMessage("Expected review ID to be '%s', but was '%s'", expectedReviewId, actualReviewId)
+                .isEqualTo(expectedReviewId);
+        return this;
     }
 }

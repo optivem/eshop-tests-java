@@ -47,6 +47,15 @@ public class WhenSubmitReviewImpl extends BaseWhenStep<SubmitReviewResponse, Sub
 
     @Override
     protected ExecutionResult<SubmitReviewResponse, SubmitReviewVerification> execute(AppDsl app) {
-        throw new UnsupportedOperationException("TODO: DSL");
+        var result = app.shop().submitReview()
+                .orderNumber(orderNumber)
+                .reviewId(reviewId)
+                .rating(rating)
+                .comment(comment)
+                .execute();
+
+        return new ExecutionResultBuilder<>(result)
+                .orderNumber(orderNumber)
+                .build();
     }
 }

@@ -39,6 +39,25 @@ public class SubmitReview extends BaseShopUseCase<SubmitReviewResponse, SubmitRe
 
     @Override
     public UseCaseResult<SubmitReviewResponse, SubmitReviewVerification> execute() {
-        throw new UnsupportedOperationException("TODO: DSL");
+        var orderNumber = context.getResultValue(orderNumberResultAlias);
+
+        var request = SubmitReviewRequest.builder()
+                .orderNumber(orderNumber)
+                .rating(rating)
+                .comment(comment)
+                .build();
+
+        var result = driver.submitReview(request);
+
+        if (reviewIdResultAlias != null) {
+            if (result.isSuccess()) {
+                var reviewId = result.getValue().getReviewId();
+                context.setResultEntry(reviewIdResultAlias, reviewId);
+            } else {
+                context.setResultEntryFailed(reviewIdResultAlias, result.getError().toString());
+            }
+        }
+
+        return new UseCaseResult<>(result, context, SubmitReviewVerification::new);
     }
 }
