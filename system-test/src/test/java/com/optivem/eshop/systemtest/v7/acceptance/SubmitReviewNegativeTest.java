@@ -4,11 +4,9 @@ import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
 import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.testing.Channel;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
 class SubmitReviewNegativeTest extends BaseAcceptanceTest {
-    @Disabled("RED 1 - Tests")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void cannotSubmitReviewOnNonDeliveredOrder() {
@@ -19,7 +17,6 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
                     .errorMessage("Order has not been delivered yet");
     }
 
-    @Disabled("RED 1 - Tests")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void cannotSubmitReviewWithRating0() {
@@ -32,7 +29,6 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
                     .errorMessage("Rating must be between 1 and 5");
     }
 
-    @Disabled("RED 1 - Tests")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void cannotSubmitReviewWithRating6() {
@@ -45,7 +41,6 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
                     .errorMessage("Rating must be between 1 and 5");
     }
 
-    @Disabled("RED 1 - Tests")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void cannotSubmitReviewWithCommentExceeding500Characters() {
@@ -58,7 +53,6 @@ class SubmitReviewNegativeTest extends BaseAcceptanceTest {
                     .errorMessage("Comment must not exceed 500 characters");
     }
 
-    @Disabled("RED 1 - Tests")
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
     void cannotSubmitReviewWhenProductIsNotReviewable() {
