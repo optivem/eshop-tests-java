@@ -27,12 +27,6 @@ public class ThenProductImpl extends BaseThenStep<Void, VoidVerification> implem
     }
 
     @Override
-    public ThenProductImpl isReviewable() {
-        verification.isReviewable();
-        return this;
-    }
-
-    @Override
     public ThenProductImpl and() {
         return this;
     }

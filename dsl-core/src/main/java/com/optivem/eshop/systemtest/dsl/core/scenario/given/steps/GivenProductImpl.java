@@ -10,7 +10,7 @@ import static com.optivem.eshop.systemtest.dsl.core.scenario.ScenarioDefaults.*;
 public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
     private String sku;
     private String unitPrice;
-    private String reviewable;
+
     public GivenProductImpl(GivenImpl given) {
         super(given);
         withSku(DEFAULT_SKU);
@@ -32,17 +32,11 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
         return this;
     }
 
-    public GivenProductImpl isReviewable() {
-        this.reviewable = "true";
-        return this;
-    }
-
     @Override
     public void execute(AppDsl app) {
         app.erp().returnsProduct()
                 .sku(sku)
                 .unitPrice(unitPrice)
-                .reviewable(reviewable)
                 .execute()
                 .shouldSucceed();
     }

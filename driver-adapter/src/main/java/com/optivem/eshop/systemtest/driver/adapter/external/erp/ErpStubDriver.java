@@ -25,7 +25,6 @@ public class ErpStubDriver extends BaseErpDriver<ErpStubClient> {
                 .price(Converter.toBigDecimal(request.getPrice()))
                 .category("")
                 .brand("")
-                .reviewable(Boolean.parseBoolean(request.getReviewable()))
                 .build();
 
         return client.configureGetProduct(extProductDetailsResponse)
