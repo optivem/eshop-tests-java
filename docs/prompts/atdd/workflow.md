@@ -3,14 +3,15 @@
 ## Overview
 
 This workflow takes a user story and produces a working, tested feature using a pipeline of
-specialized agents. Human input is required at four points.
+specialized agents. Human input is required at five points.
 
 ## Human Touchpoints
 
 1. **Gherkin approval** — after the Story Agent produces Gherkin scenarios, the human reviews and approves them. This is the opportunity to correct business intent before implementation begins.
 2. **Test approval** — after the Test Agent writes the acceptance tests (RED 1 DRAFT), the human reviews the test code before it is committed. This catches translation errors from Gherkin to code before DSL, drivers, and backend are built on top.
-3. **Driver approval** — after the Driver Agent completes RED 3, the human reviews the driver implementation before backend/frontend work begins. This validates the full test spec (tests + DSL + drivers) as a unit, preventing agents from chasing false failures caused by a wrong driver.
-4. **Outcome review** — after all agents complete, the human reviews the working feature.
+3. **DSL approval** — after the DSL Agent implements the DSL (RED 2 DRAFT), the human reviews the DSL design and driver interface signatures before they are committed. DSL method names and driver DTOs are the architectural contract — errors here cascade into all downstream agents.
+4. **Driver approval** — after the Driver Agent completes RED 3, the human reviews the driver implementation before backend/frontend work begins. This validates the full test spec (tests + DSL + drivers) as a unit, preventing agents from chasing false failures caused by a wrong driver.
+5. **Outcome review** — after all agents complete, the human reviews the working feature.
 
 ## Pipeline
 
@@ -31,7 +32,11 @@ User Story
     │  [Test Agent]    →  Commit tests      RED 1 COMMIT      │
     │      │                                                  │
     │      ▼                                                  │
-    │  [DSL Agent]     →  DSL + interfaces   RED 2            │
+    │  [DSL Agent]     →  DSL + interfaces   RED 2 DRAFT      │
+    │      │                                                  │
+    │      │                              ← HUMAN APPROVES DSL
+    │      │                                                  │
+    │  [DSL Agent]     →  Commit DSL        RED 2 COMMIT      │
     │      │                                                  │
     │      ▼                                                  │
     │  [Driver Agent]  →  Drivers            RED 3            │
@@ -77,7 +82,8 @@ The approach depends on whether new DSL is needed:
 
 ### DSL Agent
 - **Input:** Test class name and failing tests
-- **Output:** DSL implementation + driver interfaces committed (`@Disabled("RED 2 - DSL")`)
+- **DRAFT output:** DSL implementation + driver interface signatures, presented to human for approval — not yet committed
+- **COMMIT output:** Driver stubs added, tests committed (`@Disabled("RED 2 - DSL")`)
 - **Governed by:** `acceptance-tests.md` — RED 2 phases; `dsl-core.md` for coding rules
 - **Handoff:** Driver interface signatures passed to Driver Agent
 
