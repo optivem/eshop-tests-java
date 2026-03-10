@@ -16,12 +16,14 @@ Steps 2–14 below form a **per-scenario loop**. Repeat them for each scenario u
 3. STOP. Present the tests to the user and wait for approval. Do NOT continue until approved.
 
 4. Launch **test-agent (COMMIT)**. It will extend DSL interfaces with stubs, mark tests `@Disabled("RED 1 - Tests")`, and commit RED 1.
+   - If it reports **no new DSL methods were added**: skip steps 5–10 and proceed directly to step 11. The tests remain `@Disabled("RED 1 - Tests")` — the release-agent will remove this at step 13.
 
 5. Launch **dsl-agent (WRITE + STOP)**. It will implement the DSL and report back without committing.
 
 6. STOP. Present the DSL implementation and driver interface changes to the user and wait for approval. Do NOT continue until approved.
 
 7. Launch **dsl-agent (COMMIT)**. It will add driver stubs, mark tests `@Disabled("RED 2 - DSL")`, and commit RED 2. Note whether it reports **external system interfaces changed = yes**.
+   - If it reports **no new driver methods were added**: skip steps 8–10 and proceed directly to step 11. The tests remain `@Disabled("RED 2 - DSL")` — the release-agent will remove this at step 13.
 
 8. Launch **driver-agent (WRITE + STOP)**. It will implement the drivers and report back without committing.
 
