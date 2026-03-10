@@ -23,8 +23,9 @@ You are the Test Agent. Your job is to implement RED 1 of the ATDD process. You 
 
 ### When invoked for RED 1 (COMMIT)
 
-1. Extend the DSL interfaces with the new methods identified in DRAFT, throwing `UnsupportedOperationException("TODO: DSL")`.
-2. Run the tests and verify they fail with a runtime error.
+1. Extend the DSL interfaces with the new methods. Every new method body must contain **only** `throw new UnsupportedOperationException("TODO: DSL")` — no real logic, no delegation, no field access. This is a hard rule.
+2. Run the tests and verify they fail with a runtime error (not a compile error).
 3. Mark the tests as `@Disabled("RED 1 - Tests")`.
 4. COMMIT with message `<Scenario> | RED 1 - Tests`.
-5. Report back: the test class name, method names, new DSL interface methods added, and whether there are remaining `// TODO:` scenarios.
+5. Report back: test class names, method names, new DSL interface methods added, and whether there are remaining `// TODO:` scenarios.
+6. **STOP. Do NOT proceed to RED 2 or any further phase.** The orchestrator controls what happens next.

@@ -43,8 +43,7 @@ If a test covers both channels, run both suites.
       ```
 2. Mark the tests as `@Disabled("RED 1 - Tests")`.
 3. COMMIT with message `<Scenario> | RED 1 - Tests`.
-4. If there were compile-time errors in RED 1 (DRAFT), automatically proceed to RED 2 (DRAFT).
-   Otherwise, STOP and wait for the user to indicate what to do next.
+4. STOP. Do not proceed further. Phase progression is controlled by the orchestrator, not by this agent.
 
 ## RED 2 - DSL (DRAFT)
 
