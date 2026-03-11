@@ -1,7 +1,6 @@
 package com.optivem.eshop.systemtest.v7.contract.erp;
 
 import com.optivem.eshop.systemtest.v7.contract.base.BaseExternalSystemContractTest;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public abstract class BaseErpContractTest extends BaseExternalSystemContractTest {
@@ -19,7 +18,6 @@ public abstract class BaseErpContractTest extends BaseExternalSystemContractTest
                 .then().product("SKU-456").hasReviewable("true");
     }
 
-    @Disabled("CT - RED - DRIVER")
     @Test
     void shouldReturnStockQuantityField() {
         scenario
