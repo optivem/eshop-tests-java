@@ -40,7 +40,11 @@ public class GetProductVerification extends ResponseVerification<GetProductRespo
     }
 
     public GetProductVerification stockQuantity(String expectedStockQuantity) {
-        throw new UnsupportedOperationException("TODO: DSL");
+        var actualStockQuantity = getResponse().getStockQuantity();
+        assertThat(actualStockQuantity)
+                .withFailMessage("Expected stockQuantity to be '%s', but was '%s'", expectedStockQuantity, actualStockQuantity)
+                .isEqualTo(expectedStockQuantity);
+        return this;
     }
 
     public GetProductVerification reviewable(String expectedReviewable) {

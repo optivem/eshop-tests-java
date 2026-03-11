@@ -34,6 +34,7 @@ public abstract class BaseErpDriver<TClient extends BaseErpClient> implements Er
                         .sku(productDetails.getId())
                         .price(productDetails.getPrice())
                         .reviewable(productDetails.getReviewable())
+                        .stockQuantity(null)
                         .build())
                 .mapError(ext -> ErrorResponse.builder().message(ext.getMessage()).build());
     }
