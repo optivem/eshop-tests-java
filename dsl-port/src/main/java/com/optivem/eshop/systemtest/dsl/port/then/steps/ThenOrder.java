@@ -55,5 +55,9 @@ public interface ThenOrder extends ThenStep<ThenOrder> {
     ThenOrder hasTotalPriceGreaterThanZero();
 
     ThenOrder hasOrderNumberPrefix(String expectedPrefix);
+
+    ThenOrder hasReviewRating(String expectedRating);
+
+    ThenOrder hasReviewComment(String expectedComment);
 }
 

@@ -162,6 +162,14 @@ public class ThenOrderImpl<TSuccessResponse, TSuccessVerification extends Respon
         return this;
     }
 
+    public ThenOrderImpl<TSuccessResponse, TSuccessVerification> hasReviewRating(String expectedRating) {
+        throw new UnsupportedOperationException("TODO: DSL");
+    }
+
+    public ThenOrderImpl<TSuccessResponse, TSuccessVerification> hasReviewComment(String expectedComment) {
+        throw new UnsupportedOperationException("TODO: DSL");
+    }
+
     @Override
     public ThenOrderImpl<TSuccessResponse, TSuccessVerification> and() {
         return this;
