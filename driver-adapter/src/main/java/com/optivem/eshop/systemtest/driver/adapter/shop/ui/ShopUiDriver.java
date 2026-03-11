@@ -7,14 +7,11 @@ import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.HomePage
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.NewOrderPage;
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderDetailsPage;
 import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.OrderHistoryPage;
-import com.optivem.eshop.systemtest.driver.adapter.shop.ui.client.pages.ReviewPage;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.BrowseCouponsResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PublishCouponRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.OrderStatus;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderRequest;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.PlaceOrderResponse;
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewRequest;
-import com.optivem.eshop.systemtest.driver.port.shop.dtos.SubmitReviewResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.dtos.ViewOrderResponse;
 import com.optivem.eshop.systemtest.driver.port.shop.ShopDriver;
 import com.optivem.eshop.systemtest.driver.port.shared.dtos.ErrorResponse;
@@ -210,31 +207,6 @@ public class ShopUiDriver implements ShopDriver {
         }
 
         return success();
-    }
-
-    @Override
-    public Result<SubmitReviewResponse, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        var viewResult = viewOrder(request.getOrderNumber());
-
-        if (viewResult.isFailure()) {
-            return failure(viewResult.getError());
-        }
-
-        var reviewPage = orderDetailsPage.clickSubmitReview();
-        reviewPage.inputRating(request.getRating());
-        reviewPage.inputComment(request.getComment());
-        reviewPage.clickSubmitReview();
-
-        var result = reviewPage.getResult();
-
-        if (result.isFailure()) {
-            return failure(result.getError());
-        }
-
-        var reviewId = ReviewPage.getReviewId(result.getValue());
-
-        var response = SubmitReviewResponse.builder().reviewId(reviewId).build();
-        return Result.success(response);
     }
 
     // --- page navigation ---

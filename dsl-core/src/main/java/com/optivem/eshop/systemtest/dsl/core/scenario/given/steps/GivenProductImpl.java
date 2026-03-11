@@ -16,7 +16,7 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
         super(given);
         withSku(DEFAULT_SKU);
         withUnitPrice(DEFAULT_UNIT_PRICE);
-        withReviewable(DEFAULT_REVIEWABLE);
+        withReviewable("true");
     }
 
     public GivenProductImpl withSku(String sku) {
