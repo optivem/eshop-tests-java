@@ -32,6 +32,10 @@ public class GivenProductImpl extends BaseGivenStep implements GivenProduct {
         return this;
     }
 
+    public GivenProductImpl withReviewable(String reviewable) {
+        throw new UnsupportedOperationException("TODO: DSL");
+    }
+
     @Override
     public void execute(AppDsl app) {
         app.erp().returnsProduct()
