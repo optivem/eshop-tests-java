@@ -108,6 +108,8 @@ public class ShopUiDriver implements ShopDriver {
         var totalPrice = orderDetailsPage.getTotalPrice();
         var status = orderDetailsPage.getStatus();
         var appliedCoupon = orderDetailsPage.getAppliedCoupon();
+        var reviewRating = orderDetailsPage.getReviewRating();
+        var reviewComment = orderDetailsPage.getReviewComment();
 
         var response = ViewOrderResponse.builder()
                 .orderNumber(displayOrderNumber)
@@ -125,6 +127,8 @@ public class ShopUiDriver implements ShopDriver {
                 .country(country)
                 .status(status)
                 .appliedCouponCode(appliedCoupon)
+                .reviewRating(reviewRating)
+                .reviewComment(reviewComment)
                 .build();
 
         return success(response);
@@ -212,7 +216,23 @@ public class ShopUiDriver implements ShopDriver {
 
     @Override
     public Result<Void, ErrorResponse> submitReview(SubmitReviewRequest request) {
-        throw new UnsupportedOperationException("TODO: Driver");
+        var viewResult = viewOrder(request.getOrderNumber());
+
+        if (viewResult.isFailure()) {
+            return viewResult.mapVoid();
+        }
+
+        orderDetailsPage.inputReviewRating(request.getRating());
+        orderDetailsPage.inputReviewComment(request.getComment());
+        orderDetailsPage.clickSubmitReview();
+
+        var result = orderDetailsPage.getResult();
+
+        if (result.isFailure()) {
+            return result.mapVoid();
+        }
+
+        return success();
     }
 
     // --- page navigation ---
