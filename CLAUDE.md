@@ -13,15 +13,17 @@ _Shared instructions (ATDD rules, architecture, git safety) are in the `eshop-te
 Acceptance tests use the ScenarioDSL pattern — **not** raw driver calls.
 
 ```java
-class SubmitReviewPositiveTest extends BaseAcceptanceTest {
+class PlaceOrderPositiveTest extends BaseAcceptanceTest {
     @TestTemplate
     @Channel({ChannelType.UI, ChannelType.API})
-    void canSubmitReviewOnDeliveredOrder() {
+    void canPlaceOrder() {
         scenario
-                .given().order()
-                    .withStatus(OrderStatus.DELIVERED)
-                .when().submitReview()
-                    .withRating("5")
+                .given().product()
+                    .withSku("SKU-001")
+                    .withUnitPrice("10.00")
+                .when().placeOrder()
+                    .withSku("SKU-001")
+                    .withQuantity("2")
                 .then().shouldSucceed();
     }
 }
