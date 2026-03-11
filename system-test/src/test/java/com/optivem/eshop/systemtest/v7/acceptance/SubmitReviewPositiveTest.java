@@ -3,6 +3,7 @@ package com.optivem.eshop.systemtest.v7.acceptance;
 import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
 import com.optivem.eshop.systemtest.channel.ChannelType;
 import com.optivem.testing.Channel;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestTemplate;
 
 class SubmitReviewPositiveTest extends BaseAcceptanceTest {
@@ -23,5 +24,19 @@ class SubmitReviewPositiveTest extends BaseAcceptanceTest {
                     .hasReviewComment("Excellent functionality");
     }
 
-    // TODO: Can submit a review without a comment
+    @Disabled("AT - RED - TEST")
+    @TestTemplate
+    @Channel({ChannelType.UI, ChannelType.API})
+    void canSubmitReviewWithoutComment() {
+        scenario
+                .given().order()
+                    .withStatus("DELIVERED")
+                .and().product()
+                    .withReviewable("true")
+                .when().submitReview()
+                    .withRating("3")
+                .then().shouldSucceed()
+                .and().order()
+                    .hasReviewRating("3");
+    }
 }
