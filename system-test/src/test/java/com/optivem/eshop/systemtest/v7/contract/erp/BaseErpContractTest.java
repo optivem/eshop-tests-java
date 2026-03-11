@@ -19,7 +19,7 @@ public abstract class BaseErpContractTest extends BaseExternalSystemContractTest
                 .then().product("SKU-456").hasReviewable("true");
     }
 
-    @Disabled("CT - RED - DSL")
+    @Disabled("CT - RED - DRIVER")
     @Test
     void shouldReturnStockQuantityField() {
         scenario
