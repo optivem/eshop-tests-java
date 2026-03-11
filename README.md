@@ -89,7 +89,7 @@ Run only a specific test suite by ID:
 Run only one test method within a suite:
 
 ```powershell
-.\Run-SystemTests.ps1 -Suite v7-acceptance-api -Test canSubmitReviewOnDeliveredOrder
+.\Run-SystemTests.ps1 -Suite v7-acceptance-api -Test canPlaceOrder
 ```
 
 ### Individual Component Builds
@@ -163,17 +163,17 @@ To reference an issue from another repository, use the full `owner/repo#number` 
 Or provide a user story as free text:
 
 ```
-/implement-story As a customer, I want to submit a review on a delivered order
+/implement-story As a customer, I want to place an order for a product
 ```
 
 Or include acceptance criteria for more precision:
 
 ```
-/implement-story As a customer, I want to submit a review on a delivered order
+/implement-story As a customer, I want to place an order for a product
 
 Acceptance Criteria:
-- Given a delivered order and a reviewable product, when I submit a review with rating and comment, then it succeeds
-- Given a non-delivered order, when I submit a review, then it fails
+- Given a product in the catalogue, when I place an order with a valid quantity, then it succeeds
+- Given a product in the catalogue, when I place an order with an invalid quantity, then it fails
 ```
 
 **One-time setup** — authenticate the GitHub MCP server:
