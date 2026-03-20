@@ -39,7 +39,7 @@ This will:
 2. Build the Backend (Java compilation and JAR creation)
 3. Start Docker containers (Frontend, Backend, PostgreSQL, & Mock External APIs)
 4. Wait for all services to be healthy
-5. Run all System Tests (API E2E, UI E2E, and Smoke Tests)
+5. Run all System Tests (E2E API, E2E UI, and Smoke Tests)
 
 You can open these URLs in your browser:
 
