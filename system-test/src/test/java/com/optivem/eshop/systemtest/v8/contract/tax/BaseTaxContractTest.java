@@ -1,6 +1,6 @@
-package com.optivem.eshop.systemtest.v7.contract.tax;
+package com.optivem.eshop.systemtest.v8.contract.tax;
 
-import com.optivem.eshop.systemtest.v7.contract.base.BaseExternalSystemContractTest;
+import com.optivem.eshop.systemtest.v8.contract.base.BaseExternalSystemContractTest;
 import org.junit.jupiter.api.Test;
 
 public abstract class BaseTaxContractTest extends BaseExternalSystemContractTest {

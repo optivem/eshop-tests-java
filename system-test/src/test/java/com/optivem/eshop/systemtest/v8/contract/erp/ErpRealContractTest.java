@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.v7.contract.erp;
+package com.optivem.eshop.systemtest.v8.contract.erp;
 
 import com.optivem.eshop.dsl.port.ExternalSystemMode;
 

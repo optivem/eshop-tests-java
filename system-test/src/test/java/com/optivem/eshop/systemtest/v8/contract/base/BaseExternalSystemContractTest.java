@@ -1,4 +1,4 @@
-package com.optivem.eshop.systemtest.v7.contract.base;
+package com.optivem.eshop.systemtest.v8.contract.base;
 
 import com.optivem.eshop.systemtest.v5.base.BaseAppDslTest;
 import com.optivem.eshop.dsl.port.ExternalSystemMode;

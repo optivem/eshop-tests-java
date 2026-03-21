@@ -1,6 +1,6 @@
-package com.optivem.eshop.systemtest.v7.acceptance;
+package com.optivem.eshop.systemtest.v8.acceptance;
 
-import com.optivem.eshop.systemtest.v7.acceptance.base.BaseAcceptanceTest;
+import com.optivem.eshop.systemtest.v8.acceptance.base.BaseAcceptanceTest;
 import com.optivem.eshop.dsl.channel.ChannelType;
 import com.optivem.eshop.dsl.driver.port.shop.dtos.OrderStatus;
 import com.optivem.testing.Channel;

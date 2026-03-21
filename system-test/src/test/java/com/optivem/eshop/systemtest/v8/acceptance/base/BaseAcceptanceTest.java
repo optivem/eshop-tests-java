@@ -1,6 +1,6 @@
-package com.optivem.eshop.systemtest.v7.acceptance.base;
+package com.optivem.eshop.systemtest.v8.acceptance.base;
 
-import com.optivem.eshop.systemtest.v7.base.BaseScenarioDslTest;
+import com.optivem.eshop.systemtest.v8.base.BaseScenarioDslTest;
 import com.optivem.eshop.dsl.port.ExternalSystemMode;
 
 public class BaseAcceptanceTest extends BaseScenarioDslTest {

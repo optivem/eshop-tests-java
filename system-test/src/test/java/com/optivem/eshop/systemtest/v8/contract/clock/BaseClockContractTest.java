@@ -1,6 +1,6 @@
-package com.optivem.eshop.systemtest.v7.contract.clock;
+package com.optivem.eshop.systemtest.v8.contract.clock;
 
-import com.optivem.eshop.systemtest.v7.contract.base.BaseExternalSystemContractTest;
+import com.optivem.eshop.systemtest.v8.contract.base.BaseExternalSystemContractTest;
 import org.junit.jupiter.api.Test;
 
 public abstract class BaseClockContractTest extends BaseExternalSystemContractTest {
