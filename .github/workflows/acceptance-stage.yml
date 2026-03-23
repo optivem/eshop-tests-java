@@ -109,115 +109,26 @@ jobs:
       - name: Build Project
         run: ./gradlew clean compileJava compileTestJava
 
-      # === mod02: Smoke ===
-      - name: mod02 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod02 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      # === mod03: E2E ===
-      - name: mod03 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod03 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod03 - E2E
-        run: ./gradlew :system-test:test -Dversion=mod03 -Dtype=e2e -Denvironment=acceptance
-
-      # === mod04: Clients ===
-      - name: mod04 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod04 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod04 - E2E
-        run: ./gradlew :system-test:test -Dversion=mod04 -Dtype=e2e -Denvironment=acceptance
-
-      # === mod05: Drivers ===
-      - name: mod05 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod05 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod05 - E2E
-        run: ./gradlew :system-test:test -Dversion=mod05 -Dtype=e2e -Denvironment=acceptance
-
-      # === mod06: Channels ===
-      - name: mod06 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod06 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
-
-      - name: mod06 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
-
-      # === mod07: App DSL ===
-      - name: mod07 - Smoke (real)
-        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod07 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
-
-      - name: mod07 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
-
-      # === mod08: Scenario DSL ===
-      - name: mod08 - Smoke
-        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      - name: mod08 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
-
-      - name: mod08 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
-
-      # === mod09: External Stubs ===
-      - name: mod09 - Smoke (Stub)
-        run: ./gradlew :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=stub -Denvironment=acceptance
-
-      - name: mod09 - Smoke (Real)
-        run: ./gradlew :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
-
-      # === mod10: Acceptance Tests ===
-      - name: mod10 - Acceptance - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
-
-      - name: mod10 - Acceptance - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
-
-      - name: mod10 - Acceptance (Isolated) - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
-
-      - name: mod10 - Acceptance (Isolated) - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
-
-      # === mod11: Contract Tests ===
-      - name: mod11 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
-
-      - name: mod11 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
-
-      - name: mod11 - Contract (Stub)
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
-
-      - name: mod11 - Contract (Real)
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
-
-      # === latest ===
-      - name: latest - Acceptance - API Channel
+      - name: Acceptance - API Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: latest - Acceptance - UI Channel
+      - name: Acceptance - UI Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: latest - Acceptance (Isolated) - API Channel
+      - name: Acceptance (Isolated) - API Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: latest - Acceptance (Isolated) - UI Channel
+      - name: Acceptance (Isolated) - UI Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: latest - E2E - API Channel
+      - name: E2E - API Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=e2e -Dchannel=API -Denvironment=acceptance
 
-      - name: latest - E2E - UI Channel
+      - name: E2E - UI Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
 
-      - name: latest - Contract (Stub)
+      - name: Contract (Stub)
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
 
-      - name: latest - Contract (Real)
+      - name: Contract (Real)
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
