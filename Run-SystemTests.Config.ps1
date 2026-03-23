@@ -164,18 +164,6 @@ $Config = @{
             TestInstallCommands = $null; },
 
         # === mod11: Contract Tests ===
-        @{  Id = "mod11-e2e-real-api";
-            Name = "mod11 (contract) - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "mod11-e2e-real-ui";
-            Name = "mod11 (contract) - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
         @{  Id = "mod11-contract-stub";
             Name = "mod11 (contract) - Contract (stub)";
             Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=stub -Dmode=stub -Denvironment=local";
@@ -185,6 +173,18 @@ $Config = @{
         @{  Id = "mod11-contract-real";
             Name = "mod11 (contract) - Contract (real)";
             Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=real -Dmode=real -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod11-e2e-api";
+            Name = "mod11 (contract) - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod11-e2e-ui";
+            Name = "mod11 (contract) - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
@@ -226,18 +226,6 @@ $Config = @{
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "e2e-real-api";
-            Name = "latest - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "e2e-real-ui";
-            Name = "latest - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
         @{  Id = "contract-stub";
             Name = "latest - Contract (stub)";
             Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=contract -DexternalSystemMode=stub -Dmode=stub -Denvironment=local";
@@ -247,6 +235,18 @@ $Config = @{
         @{  Id = "contract-real";
             Name = "latest - Contract (real)";
             Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=contract -DexternalSystemMode=real -Dmode=real -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "e2e-api";
+            Name = "latest - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "e2e-ui";
+            Name = "latest - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; }

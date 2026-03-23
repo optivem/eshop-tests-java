@@ -185,14 +185,14 @@ jobs:
         run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
       # === mod11: Contract Tests ===
-      - name: mod11 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
-
-      - name: mod11 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
-
       - name: mod11 - Contract (Stub)
         run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
 
       - name: mod11 - Contract (Real)
         run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
+
+      - name: mod11 - E2E - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
+
+      - name: mod11 - E2E - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
