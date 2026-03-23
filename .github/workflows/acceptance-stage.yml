@@ -109,6 +109,12 @@ jobs:
       - name: Build Project
         run: ./gradlew clean compileJava compileTestJava
 
+      - name: Smoke (Stub)
+        run: ./gradlew :system-test:test -Dversion=latest -Dtype=smoke -DexternalSystemMode=stub -Denvironment=acceptance
+
+      - name: Smoke (Real)
+        run: ./gradlew :system-test:test -Dversion=latest -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+
       - name: Acceptance - API Channel
         run: ./gradlew :system-test:test -Dversion=latest -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
 

@@ -190,6 +190,18 @@ $Config = @{
             TestInstallCommands = $null; },
 
         # === latest ===
+        @{  Id = "smoke-stub";
+            Name = "latest - Smoke (stub)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=smoke -DexternalSystemMode=stub -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "smoke-real";
+            Name = "latest - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
         @{  Id = "acceptance-api";
             Name = "latest - Acceptance (stub) - API";
             Command = "& .\gradlew.bat :system-test:test -Dversion=latest -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=local";
