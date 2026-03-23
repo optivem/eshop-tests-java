@@ -1,6 +1,6 @@
 package com.optivem.eshop.dsl.core.scenario.then;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.dsl.core.scenario.then.steps.ThenClockImpl;
 import com.optivem.eshop.dsl.core.scenario.then.steps.ThenProductImpl;
@@ -11,9 +11,9 @@ import com.optivem.eshop.dsl.port.then.steps.ThenCountry;
 import com.optivem.eshop.dsl.port.then.steps.ThenProduct;
 
 public class ThenImpl implements ThenStage {
-    protected final AppDsl app;
+    protected final UseCaseDsl app;
 
-    public ThenImpl(AppDsl app) {
+    public ThenImpl(UseCaseDsl app) {
         this.app = app;
     }
 

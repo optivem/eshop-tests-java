@@ -1,7 +1,7 @@
 package com.optivem.eshop.dsl.core.scenario.given.steps;
 
 import com.optivem.eshop.dsl.common.Converter;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.dsl.port.given.steps.GivenOrder;
 import com.optivem.eshop.dsl.driver.port.shop.dtos.OrderStatus;
@@ -65,7 +65,7 @@ public class GivenOrderImpl extends BaseGivenStep implements GivenOrder {
     }
 
     @Override
-    public void execute(AppDsl app) {
+    public void execute(UseCaseDsl app) {
 
         app.shop().placeOrder()
                 .orderNumber(orderNumber)

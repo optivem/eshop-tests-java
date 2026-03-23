@@ -1,6 +1,6 @@
 package com.optivem.eshop.dsl.core.scenario.when;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.when.steps.WhenBrowseCouponsImpl;
 import com.optivem.eshop.dsl.core.scenario.when.steps.WhenCancelOrderImpl;
 import com.optivem.eshop.dsl.core.scenario.when.steps.WhenPlaceOrderImpl;
@@ -11,17 +11,17 @@ import com.optivem.eshop.dsl.port.when.WhenStage;
 import static com.optivem.eshop.dsl.core.scenario.ScenarioDefaults.*;
 
 public class WhenImpl implements WhenStage {
-    private final AppDsl app;
+    private final UseCaseDsl app;
     private boolean hasProduct;
     private boolean hasTaxRate;
 
-    public WhenImpl(AppDsl app, boolean hasProduct, boolean hasTaxRate) {
+    public WhenImpl(UseCaseDsl app, boolean hasProduct, boolean hasTaxRate) {
         this.app = app;
         this.hasProduct = hasProduct;
         this.hasTaxRate = hasTaxRate;
     }
 
-    public WhenImpl(AppDsl app) {
+    public WhenImpl(UseCaseDsl app) {
         this(app, false, false);
     }
 

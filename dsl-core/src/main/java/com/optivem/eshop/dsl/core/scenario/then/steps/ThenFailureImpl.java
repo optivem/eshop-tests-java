@@ -4,7 +4,7 @@ import com.optivem.eshop.dsl.core.shared.UseCaseResult;
 import com.optivem.eshop.dsl.core.shared.ErrorVerification;
 import com.optivem.eshop.dsl.core.shared.ResponseVerification;
 import com.optivem.eshop.dsl.core.shared.VoidVerification;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.dsl.port.then.steps.ThenFailure;
 
@@ -12,7 +12,7 @@ public class ThenFailureImpl<TSuccessResponse, TSuccessVerification extends Resp
         extends BaseThenStep<Void, VoidVerification> implements ThenFailure {
     private final ErrorVerification failureVerification;
 
-    public ThenFailureImpl(AppDsl app, ExecutionResultContext executionResult,
+    public ThenFailureImpl(UseCaseDsl app, ExecutionResultContext executionResult,
             UseCaseResult<TSuccessResponse, TSuccessVerification> result) {
         super(app, executionResult, null);
         if (result == null) {

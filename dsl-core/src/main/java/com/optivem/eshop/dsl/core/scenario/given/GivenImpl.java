@@ -1,6 +1,6 @@
 package com.optivem.eshop.dsl.core.scenario.given;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.then.ThenImpl;
 import com.optivem.eshop.dsl.core.scenario.given.steps.GivenClockImpl;
 import com.optivem.eshop.dsl.core.scenario.given.steps.GivenCountryImpl;
@@ -15,14 +15,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GivenImpl implements GivenStage {
-    private final AppDsl app;
+    private final UseCaseDsl app;
     private GivenClockImpl clock;
     private final List<GivenProductImpl> products;
     private final List<GivenOrderImpl> orders;
     private final List<GivenCountryImpl> countries;
     private final List<GivenCouponImpl> coupons;
 
-    public GivenImpl(AppDsl app) {
+    public GivenImpl(UseCaseDsl app) {
         this.app = app;
         this.clock = null;
         this.products = new ArrayList<>();

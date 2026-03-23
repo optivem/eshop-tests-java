@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.legacy.mod04.base;
 
 import com.optivem.eshop.systemtest.configuration.BaseConfigurableTest;
-import com.optivem.eshop.dsl.core.app.AppConfiguration;
+import com.optivem.eshop.dsl.core.usecase.Configuration;
 import com.optivem.eshop.dsl.driver.adapter.external.erp.client.ErpRealClient;
 import com.optivem.eshop.dsl.driver.adapter.shop.api.client.ShopApiClient;
 import com.optivem.eshop.dsl.driver.adapter.shop.ui.client.ShopUiClient;
@@ -14,7 +14,7 @@ import org.junit.jupiter.api.BeforeEach;
 import java.util.UUID;
 
 public class BaseClientTest extends BaseConfigurableTest {
-    protected AppConfiguration configuration;
+    protected Configuration configuration;
 
     protected ShopUiClient shopUiClient;
     protected ShopApiClient shopApiClient;

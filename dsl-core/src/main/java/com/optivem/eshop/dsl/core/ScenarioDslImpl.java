@@ -1,16 +1,16 @@
 package com.optivem.eshop.dsl.core;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.assume.AssumeImpl;
 import com.optivem.eshop.dsl.port.ScenarioDsl;
 import com.optivem.eshop.dsl.core.scenario.given.GivenImpl;
 import com.optivem.eshop.dsl.core.scenario.when.WhenImpl;
 
 public class ScenarioDslImpl implements ScenarioDsl {
-    private final AppDsl app;
+    private final UseCaseDsl app;
     private boolean executed = false;
 
-    public ScenarioDslImpl(AppDsl app) {
+    public ScenarioDslImpl(UseCaseDsl app) {
         this.app = app;
     }
 

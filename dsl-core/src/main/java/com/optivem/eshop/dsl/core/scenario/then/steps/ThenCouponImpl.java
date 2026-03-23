@@ -1,16 +1,16 @@
 package com.optivem.eshop.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.dsl.core.shared.ResponseVerification;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.dsl.port.then.steps.ThenCoupon;
-import com.optivem.eshop.dsl.core.app.shop.usecases.BrowseCouponsVerification;
+import com.optivem.eshop.dsl.core.usecase.shop.usecases.BrowseCouponsVerification;
 
 public class ThenCouponImpl<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> extends BaseThenStep<TSuccessResponse, TSuccessVerification> implements ThenCoupon {
     private final BrowseCouponsVerification verification;
     private final String couponCode;
 
-    public ThenCouponImpl(AppDsl app, ExecutionResultContext executionResult, String couponCode, TSuccessVerification successVerification) {
+    public ThenCouponImpl(UseCaseDsl app, ExecutionResultContext executionResult, String couponCode, TSuccessVerification successVerification) {
         super(app, executionResult, successVerification);
         this.couponCode = couponCode;
         this.verification = app.shop().browseCoupons()

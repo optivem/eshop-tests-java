@@ -1,13 +1,13 @@
 package com.optivem.eshop.dsl.core.scenario.assume;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.port.assume.AssumeStage;
 import com.optivem.eshop.dsl.port.assume.steps.AssumeRunning;
 
 public class AssumeImpl implements AssumeStage {
-    private final AppDsl app;
+    private final UseCaseDsl app;
 
-    public AssumeImpl(AppDsl app) {
+    public AssumeImpl(UseCaseDsl app) {
         this.app = app;
     }
 

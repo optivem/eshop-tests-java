@@ -1,15 +1,15 @@
 package com.optivem.eshop.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.dsl.core.shared.ResponseVerification;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 
 public abstract class BaseThenStep<TSuccessResponse, TSuccessVerification extends ResponseVerification<TSuccessResponse>> {
-    protected final AppDsl app;
+    protected final UseCaseDsl app;
     protected final ExecutionResultContext executionResult;
     protected final TSuccessVerification successVerification;
 
-    protected BaseThenStep(AppDsl app, ExecutionResultContext executionResult, TSuccessVerification successVerification) {
+    protected BaseThenStep(UseCaseDsl app, ExecutionResultContext executionResult, TSuccessVerification successVerification) {
         this.app = app;
         this.executionResult = executionResult;
         this.successVerification = successVerification;

@@ -3,12 +3,12 @@ package com.optivem.eshop.dsl.core.scenario.when.steps;
 import static com.optivem.eshop.dsl.core.scenario.ScenarioDefaults.*;
 
 import com.optivem.eshop.dsl.common.Converter;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResult;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultBuilder;
 import com.optivem.eshop.dsl.driver.port.shop.dtos.PlaceOrderResponse;
 import com.optivem.eshop.dsl.port.when.steps.WhenPlaceOrder;
-import com.optivem.eshop.dsl.core.app.shop.usecases.PlaceOrderVerification;
+import com.optivem.eshop.dsl.core.usecase.shop.usecases.PlaceOrderVerification;
 
 public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOrderVerification> implements WhenPlaceOrder {
     private String orderNumber;
@@ -17,7 +17,7 @@ public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOr
     private String country;
     private String couponCode;
 
-    public WhenPlaceOrderImpl(AppDsl app) {
+    public WhenPlaceOrderImpl(UseCaseDsl app) {
         super(app);
         withOrderNumber(DEFAULT_ORDER_NUMBER);
         withSku(DEFAULT_SKU);
@@ -60,7 +60,7 @@ public class WhenPlaceOrderImpl extends BaseWhenStep<PlaceOrderResponse, PlaceOr
     }
 
     @Override
-    protected ExecutionResult<PlaceOrderResponse, PlaceOrderVerification> execute(AppDsl app) {
+    protected ExecutionResult<PlaceOrderResponse, PlaceOrderVerification> execute(UseCaseDsl app) {
         var result = app.shop().placeOrder()
                 .orderNumber(orderNumber)
                 .sku(sku)

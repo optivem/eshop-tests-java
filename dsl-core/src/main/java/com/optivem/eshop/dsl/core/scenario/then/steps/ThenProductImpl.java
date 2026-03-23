@@ -1,7 +1,7 @@
 package com.optivem.eshop.dsl.core.scenario.then.steps;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
-import com.optivem.eshop.dsl.core.app.external.erp.usecases.GetProductVerification;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
+import com.optivem.eshop.dsl.core.usecase.external.erp.usecases.GetProductVerification;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.dsl.core.shared.VoidVerification;
 import com.optivem.eshop.dsl.port.then.steps.ThenProduct;
@@ -9,7 +9,7 @@ import com.optivem.eshop.dsl.port.then.steps.ThenProduct;
 public class ThenProductImpl extends BaseThenStep<Void, VoidVerification> implements ThenProduct {
     private final GetProductVerification verification;
 
-    public ThenProductImpl(AppDsl app, ExecutionResultContext executionResult, GetProductVerification verification) {
+    public ThenProductImpl(UseCaseDsl app, ExecutionResultContext executionResult, GetProductVerification verification) {
         super(app, executionResult, null);
         this.verification = verification;
     }

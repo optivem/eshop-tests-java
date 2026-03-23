@@ -1,12 +1,12 @@
 package com.optivem.eshop.dsl.core.scenario.then.steps;
 
 import com.optivem.eshop.dsl.core.shared.ResponseVerification;
-import com.optivem.eshop.dsl.core.app.AppDsl;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
 import com.optivem.eshop.dsl.core.scenario.ExecutionResultContext;
 import com.optivem.eshop.dsl.port.then.steps.ThenOrder;
 import com.optivem.eshop.dsl.driver.port.shop.dtos.OrderStatus;
-import com.optivem.eshop.dsl.core.app.shop.usecases.PlaceOrderVerification;
-import com.optivem.eshop.dsl.core.app.shop.usecases.ViewOrderVerification;
+import com.optivem.eshop.dsl.core.usecase.shop.usecases.PlaceOrderVerification;
+import com.optivem.eshop.dsl.core.usecase.shop.usecases.ViewOrderVerification;
 
 import static com.optivem.eshop.dsl.core.scenario.ScenarioDefaults.DEFAULT_COUPON_CODE;
 
@@ -14,7 +14,7 @@ public class ThenOrderImpl<TSuccessResponse, TSuccessVerification extends Respon
         extends BaseThenStep<TSuccessResponse, TSuccessVerification> implements ThenOrder {
     private final ViewOrderVerification orderVerification;
 
-    public ThenOrderImpl(AppDsl app, ExecutionResultContext executionResult, String orderNumber, TSuccessVerification successVerification) {
+    public ThenOrderImpl(UseCaseDsl app, ExecutionResultContext executionResult, String orderNumber, TSuccessVerification successVerification) {
         super(app, executionResult, successVerification);
         if (orderNumber == null) {
             throw new IllegalStateException("Cannot verify order: no order number available from the executed operation");

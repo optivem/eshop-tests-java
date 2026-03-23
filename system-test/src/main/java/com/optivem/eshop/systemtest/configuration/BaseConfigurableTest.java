@@ -1,7 +1,7 @@
 package com.optivem.eshop.systemtest.configuration;
 
-import com.optivem.eshop.dsl.core.app.AppDsl;
-import com.optivem.eshop.dsl.core.app.AppConfiguration;
+import com.optivem.eshop.dsl.core.usecase.UseCaseDsl;
+import com.optivem.eshop.dsl.core.usecase.Configuration;
 import com.optivem.eshop.dsl.driver.port.external.clock.ClockDriver;
 import com.optivem.eshop.dsl.driver.port.external.erp.ErpDriver;
 import com.optivem.eshop.dsl.channel.ChannelType;
@@ -30,17 +30,17 @@ public abstract class BaseConfigurableTest {
         return null;
     }
 
-    protected AppConfiguration loadConfiguration() {
+    protected Configuration loadConfiguration() {
         var fixedEnvironment = getFixedEnvironment();
         var fixedExternalSystemMode = getFixedExternalSystemMode();
 
         var environment = PropertyLoader.getEnvironment(fixedEnvironment);
         var externalSystemMode = PropertyLoader.getExternalSystemMode(fixedExternalSystemMode);
-        return AppConfigurationLoader.load(environment, externalSystemMode);
+        return ConfigurationLoader.load(environment, externalSystemMode);
     }
 
-    protected AppDsl createAppDsl(AppConfiguration configuration) {
-        return new AppDsl(
+    protected UseCaseDsl createUseCaseDsl(Configuration configuration) {
+        return new UseCaseDsl(
                 configuration,
                 () -> createShopDriver(configuration),
                 () -> createErpDriver(configuration),
@@ -49,7 +49,7 @@ public abstract class BaseConfigurableTest {
         );
     }
 
-    private ShopDriver createShopDriver(AppConfiguration configuration) {
+    private ShopDriver createShopDriver(Configuration configuration) {
         var channel = ChannelContext.get();
         if (ChannelType.UI.equals(channel)) {
             return new ShopUiDriver(configuration.getShopUiBaseUrl(), BrowserLifecycleExtension.getBrowser());
@@ -60,21 +60,21 @@ public abstract class BaseConfigurableTest {
         }
     }
 
-    private ErpDriver createErpDriver(AppConfiguration configuration) {
+    private ErpDriver createErpDriver(Configuration configuration) {
         return switch (configuration.getExternalSystemMode()) {
             case REAL -> new ErpRealDriver(configuration.getErpBaseUrl());
             case STUB -> new ErpStubDriver(configuration.getErpBaseUrl());
         };
     }
 
-    private TaxDriver createTaxDriver(AppConfiguration configuration) {
+    private TaxDriver createTaxDriver(Configuration configuration) {
         return switch (configuration.getExternalSystemMode()) {
             case REAL -> new TaxRealDriver(configuration.getTaxBaseUrl());
             case STUB -> new TaxStubDriver(configuration.getTaxBaseUrl());
         };
     }
 
-    private ClockDriver createClockDriver(AppConfiguration configuration) {
+    private ClockDriver createClockDriver(Configuration configuration) {
         return switch (configuration.getExternalSystemMode()) {
             case REAL -> new ClockRealDriver();
             case STUB -> new ClockStubDriver(configuration.getClockBaseUrl());
