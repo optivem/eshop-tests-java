@@ -51,7 +51,7 @@ tasks.named('test') {
 
     filter {
         def type    = System.getProperty('type')    // smoke | acceptance | e2e | contract
-        def version = System.getProperty('version') // v1 | v2 | ... | v8
+        def version = System.getProperty('version') // mod02 | mod03 | ... | mod11
         def mode    = System.getProperty('mode')    // stub | real (contract tests only)
         if (type && version) {
             includeTestsMatching "*${version}*${type}*"

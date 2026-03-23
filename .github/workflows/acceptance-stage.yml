@@ -109,85 +109,90 @@ jobs:
       - name: Build Project
         run: ./gradlew clean compileJava compileTestJava
 
-      # === v1 ===
-      - name: v1 - Smoke
-        run: ./gradlew :system-test:test -Dversion=v1 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      # === mod02: Smoke ===
+      - name: mod02 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod02 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v1 - E2E
-        run: ./gradlew :system-test:test -Dversion=v1 -Dtype=e2e -Denvironment=acceptance
+      # === mod03: E2E ===
+      - name: mod03 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod03 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      # === v2 ===
-      - name: v2 - Smoke
-        run: ./gradlew :system-test:test -Dversion=v2 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      - name: mod03 - E2E
+        run: ./gradlew :system-test:test -Dversion=mod03 -Dtype=e2e -Denvironment=acceptance
 
-      - name: v2 - E2E
-        run: ./gradlew :system-test:test -Dversion=v2 -Dtype=e2e -Denvironment=acceptance
+      # === mod04: Clients ===
+      - name: mod04 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod04 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      # === v3 ===
-      - name: v3 - Smoke
-        run: ./gradlew :system-test:test -Dversion=v3 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      - name: mod04 - E2E
+        run: ./gradlew :system-test:test -Dversion=mod04 -Dtype=e2e -Denvironment=acceptance
 
-      - name: v3 - E2E
-        run: ./gradlew :system-test:test -Dversion=v3 -Dtype=e2e -Denvironment=acceptance
+      # === mod05: Drivers ===
+      - name: mod05 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod05 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      # === v4 ===
-      - name: v4 - Smoke
-        run: ./gradlew :system-test:test -Dversion=v4 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      - name: mod05 - E2E
+        run: ./gradlew :system-test:test -Dversion=mod05 -Dtype=e2e -Denvironment=acceptance
 
-      - name: v4 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=v4 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
+      # === mod06: Channels ===
+      - name: mod06 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v4 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v4 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
+      - name: mod06 - E2E - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
 
-      # === v5 ===
-      - name: v5 - Smoke (real)
-        run: ./gradlew :system-test:test -Dversion=v5 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      - name: mod06 - E2E - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod06 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
 
-      - name: v5 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=v5 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
+      # === mod07: App DSL ===
+      - name: mod07 - Smoke (real)
+        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v5 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v5 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
+      - name: mod07 - E2E - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
 
-      # === v6 ===
-      - name: v6 - Smoke
-        run: ./gradlew :system-test:test -Dversion=v6 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      - name: mod07 - E2E - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod07 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
 
-      - name: v6 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=v6 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
+      # === mod08: Scenario DSL ===
+      - name: mod08 - Smoke
+        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v6 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v6 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
+      - name: mod08 - E2E - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
 
-      # === v7 ===
-      - name: v7 - Smoke (Stub)
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=smoke -DexternalSystemMode=stub -Denvironment=acceptance
+      - name: mod08 - E2E - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod08 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
 
-      - name: v7 - Smoke (Real)
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
+      # === mod09: External Stubs ===
+      - name: mod09 - Smoke (Stub)
+        run: ./gradlew :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=stub -Denvironment=acceptance
 
-      # === v8 ===
-      - name: v8 - Acceptance - API Channel
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
+      - name: mod09 - Smoke (Real)
+        run: ./gradlew :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v8 - Acceptance - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
+      # === mod10: Acceptance Tests ===
+      - name: mod10 - Acceptance - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: v8 - Acceptance (Isolated) - API Channel
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
+      - name: mod10 - Acceptance - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: v8 - Acceptance (Isolated) - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
+      - name: mod10 - Acceptance (Isolated) - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: v8 - Contract (Stub)
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
+      - name: mod10 - Acceptance (Isolated) - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: v8 - Contract (Real)
-        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
+      # === mod11: Contract Tests ===
+      - name: mod11 - E2E - API Channel
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
 
-      - name: v7 - E2E - API Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
+      - name: mod11 - E2E - UI Channel
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
 
-      - name: v7 - E2E - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=e2e -Dchannel=UI -Denvironment=acceptance
+      - name: mod11 - Contract (Stub)
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
+
+      - name: mod11 - Contract (Real)
+        run: ./gradlew :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance

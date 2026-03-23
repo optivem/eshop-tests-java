@@ -13,167 +13,178 @@ $Config = @{
 
     Suites = @(
 
-        # === v1: Raw ===
-        @{  Id = "v1-smoke";
-            Name = "v1 (raw) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v1 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "v1-e2e";
-            Name = "v1 (raw) - E2E (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v1 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
+        # === mod02: Smoke ===
+        @{  Id = "mod02-smoke";
+            Name = "mod02 (smoke) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod02 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
 
-        # === v2: Clients ===
-        @{  Id = "v2-smoke";
-            Name = "v2 (clients) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v2 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+        # === mod03: E2E ===
+        @{  Id = "mod03-smoke";
+            Name = "mod03 (e2e) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod03 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v2-e2e";
-            Name = "v2 (clients) - E2E (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v2 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-
-        # === v3: Drivers ===
-        @{  Id = "v3-smoke";
-            Name = "v3 (drivers) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v3 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "v3-e2e";
-            Name = "v3 (drivers) - E2E (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v3 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
+        @{  Id = "mod03-e2e";
+            Name = "mod03 (e2e) - E2E (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod03 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
 
-        # === v4: Channels ===
-        @{  Id = "v4-smoke";
-            Name = "v4 (channels) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v4 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+        # === mod04: Clients ===
+        @{  Id = "mod04-smoke";
+            Name = "mod04 (clients) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod04 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v4-e2e-api";
-            Name = "v4 (channels) - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v4 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "v4-e2e-ui";
-            Name = "v4 (channels) - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v4 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
+        @{  Id = "mod04-e2e";
+            Name = "mod04 (clients) - E2E (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod04 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
 
-        # === v5: App DSL ===
-        @{  Id = "v5-smoke";
-            Name = "v5 (app dsl) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v5 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+        # === mod05: Drivers ===
+        @{  Id = "mod05-smoke";
+            Name = "mod05 (drivers) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod05 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v5-e2e-api";
-            Name = "v5 (app dsl) - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v5 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
-            Path = ".";
-            TestReportPath = "system-test\build\reports\tests\test\index.html";
-            TestInstallCommands = $null; },
-        @{  Id = "v5-e2e-ui";
-            Name = "v5 (app dsl) - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v5 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
+        @{  Id = "mod05-e2e";
+            Name = "mod05 (drivers) - E2E (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod05 -Dtype=e2e -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
 
-        # === v6: Scenario DSL ===
-        @{  Id = "v6-smoke";
-            Name = "v6 (scenario dsl) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v6 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+        # === mod06: Channels ===
+        @{  Id = "mod06-smoke";
+            Name = "mod06 (channels) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod06 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v6-e2e-api";
-            Name = "v6 (scenario dsl) - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v6 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
+        @{  Id = "mod06-e2e-api";
+            Name = "mod06 (channels) - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod06 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v6-e2e-ui";
-            Name = "v6 (scenario dsl) - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v6 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
+        @{  Id = "mod06-e2e-ui";
+            Name = "mod06 (channels) - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod06 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
 
-        # === v7: Scenario DSL (full) ===
-        @{  Id = "v7-smoke-stub";
-            Name = "v7 (scenario dsl) - Smoke (stub)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v7 -Dtype=smoke -DexternalSystemMode=stub -Denvironment=local";
+        # === mod07: App DSL ===
+        @{  Id = "mod07-smoke";
+            Name = "mod07 (app dsl) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod07 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v7-smoke-real";
-            Name = "v7 (scenario dsl) - Smoke (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v7 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
+        @{  Id = "mod07-e2e-api";
+            Name = "mod07 (app dsl) - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod07 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        # === v8: ATDD ===
-        @{  Id = "v8-acceptance-api";
-            Name = "v8 (atdd) - Acceptance (stub) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=local";
+        @{  Id = "mod07-e2e-ui";
+            Name = "mod07 (app dsl) - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod07 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v8-acceptance-ui";
-            Name = "v8 (atdd) - Acceptance (stub) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=local";
+
+        # === mod08: Scenario DSL ===
+        @{  Id = "mod08-smoke";
+            Name = "mod08 (scenario dsl) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod08 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v8-acceptance-isolated-api";
-            Name = "v8 (atdd) - Acceptance Isolated (stub) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=local";
+        @{  Id = "mod08-e2e-api";
+            Name = "mod08 (scenario dsl) - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod08 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v8-acceptance-isolated-ui";
-            Name = "v8 (atdd) - Acceptance Isolated (stub) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=local";
+        @{  Id = "mod08-e2e-ui";
+            Name = "mod08 (scenario dsl) - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod08 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v8-contract-stub";
-            Name = "v8 (atdd) - Contract (stub)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=stub -Dmode=stub -Denvironment=local";
+
+        # === mod09: External Stubs ===
+        @{  Id = "mod09-smoke-stub";
+            Name = "mod09 (external stubs) - Smoke (stub)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=stub -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v8-contract-real";
-            Name = "v8 (atdd) - Contract (real)";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=real -Dmode=real -Denvironment=local";
+        @{  Id = "mod09-smoke-real";
+            Name = "mod09 (external stubs) - Smoke (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod09 -Dtype=smoke -DexternalSystemMode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v7-e2e-real-api";
-            Name = "v7 (scenario dsl) - E2E (real) - API";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v7 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
+
+        # === mod10: Acceptance Tests ===
+        @{  Id = "mod10-acceptance-api";
+            Name = "mod10 (acceptance) - Acceptance (stub) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; },
-        @{  Id = "v7-e2e-real-ui";
-            Name = "v7 (scenario dsl) - E2E (real) - UI";
-            Command = "& .\gradlew.bat :system-test:test -Dversion=v7 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
+        @{  Id = "mod10-acceptance-ui";
+            Name = "mod10 (acceptance) - Acceptance (stub) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod10 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod10-acceptance-isolated-api";
+            Name = "mod10 (acceptance) - Acceptance Isolated (stub) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod10-acceptance-isolated-ui";
+            Name = "mod10 (acceptance) - Acceptance Isolated (stub) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod10 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+
+        # === mod11: Contract Tests ===
+        @{  Id = "mod11-e2e-real-api";
+            Name = "mod11 (contract) - E2E (real) - API";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=API -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod11-e2e-real-ui";
+            Name = "mod11 (contract) - E2E (real) - UI";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=e2e -DexternalSystemMode=real -Dchannel=UI -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod11-contract-stub";
+            Name = "mod11 (contract) - Contract (stub)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=stub -Dmode=stub -Denvironment=local";
+            Path = ".";
+            TestReportPath = "system-test\build\reports\tests\test\index.html";
+            TestInstallCommands = $null; },
+        @{  Id = "mod11-contract-real";
+            Name = "mod11 (contract) - Contract (real)";
+            Command = "& .\gradlew.bat :system-test:test -Dversion=mod11 -Dtype=contract -DexternalSystemMode=real -Dmode=real -Denvironment=local";
             Path = ".";
             TestReportPath = "system-test\build\reports\tests\test\index.html";
             TestInstallCommands = $null; }
