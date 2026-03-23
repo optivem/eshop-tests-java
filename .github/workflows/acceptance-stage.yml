@@ -167,23 +167,24 @@ jobs:
       - name: v7 - Smoke (Real)
         run: ./gradlew :system-test:test -Dversion=v7 -Dtype=smoke -DexternalSystemMode=real -Denvironment=acceptance
 
-      - name: v7 - Acceptance - API Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
+      # === v8 ===
+      - name: v8 - Acceptance - API Channel
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: v7 - Acceptance - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
+      - name: v8 - Acceptance - UI Channel
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DexcludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: v7 - Acceptance (Isolated) - API Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
+      - name: v8 - Acceptance (Isolated) - API Channel
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=API -Denvironment=acceptance
 
-      - name: v7 - Acceptance (Isolated) - UI Channel
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
+      - name: v8 - Acceptance (Isolated) - UI Channel
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=acceptance -DincludeTags=isolated -Dchannel=UI -Denvironment=acceptance
 
-      - name: v7 - Contract (Stub)
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
+      - name: v8 - Contract (Stub)
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=stub -Denvironment=acceptance
 
-      - name: v7 - Contract (Real)
-        run: ./gradlew :system-test:test -Dversion=v7 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
+      - name: v8 - Contract (Real)
+        run: ./gradlew :system-test:test -Dversion=v8 -Dtype=contract -DexternalSystemMode=real -Denvironment=acceptance
 
       - name: v7 - E2E - API Channel
         run: ./gradlew :system-test:test -Dversion=v7 -Dtype=e2e -Dchannel=API -Denvironment=acceptance
